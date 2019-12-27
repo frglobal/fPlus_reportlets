@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20170720" releaseVersion="10.0.0">
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars/>
+<WebPage isPage="false" showAsImage="false" autoScale="false" tdHeavy="false"/>
+</WebPageContent>
+<WebWriteContent>
+<ToolBars/>
+<EditRowColor setColor="false"/>
+<WebWrite SheetPosition="3"/>
+<RptLocation isShowAtLeft="true"/>
+<UnloadCheck check="false"/>
+<ShowWidgets/>
+<OtherAttr autoStash="false"/>
+</WebWriteContent>
+</ReportWebAttr>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+<Background name="ColorBackground" color="-1"/>
+</ReportSettings>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0" useParamsTemplate="false"/>
+<PWTitle>
+<![CDATA[參數]]></PWTitle>
+<ParameterUI class="com.fr.form.main.parameter.FormParameterUI">
+<Parameters/>
+<Layout class="com.fr.form.ui.container.WParameterLayout">
+<WidgetName name="para"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Margin top="0" left="0" bottom="0" right="0"/>
+<Border>
+<border style="0" color="-723724" borderRadius="0" type="0" borderStyle="0"/>
+<WidgetTitle>
+<O>
+<![CDATA[新增標題]]></O>
+<FRFont name="Dialog" style="0" size="72"/>
+<Position pos="0"/>
+</WidgetTitle>
+<Alpha alpha="1.0"/>
+</Border>
+<Background name="ColorBackground" color="-15260867"/>
+<LCAttr vgap="0" hgap="0" compInterval="0"/>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.parameter.FormSubmitButton">
+<WidgetName name="formSubmit0"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[查詢]]></Text>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</InnerWidget>
+<BoundsAttr x="311" y="244" width="80" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.FreeButton">
+<Listener event="click">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[FR.doHyperlinkByPost("/webroot/decision/view/report?viewlet=GettingStarted.cpt&op=write_plus",{},"_dialog",{"width":1200,"height":800,"isCenter":true,"title":""});]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="button0"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[button0]]></Text>
+</InnerWidget>
+<BoundsAttr x="313" y="210" width="80" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="nameWidget0"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_query_btn]]></Name>
+</InnerWidget>
+<BoundsAttr x="109" y="226" width="80" height="54"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.TextEditor">
+<WidgetName name="p1"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue>
+<O>
+<![CDATA[]]></O>
+</widgetValue>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</InnerWidget>
+<BoundsAttr x="112" y="143" width="80" height="21"/>
+</Widget>
+<Sorted sorted="false"/>
+<MobileWidgetList>
+<Widget widgetName="p1"/>
+<Widget widgetName="button0"/>
+<Widget widgetName="nameWidget0"/>
+<Widget widgetName="formSubmit0"/>
+</MobileWidgetList>
+<FrozenWidgets/>
+<Display display="true"/>
+<DelayDisplayContent delay="true"/>
+<UseParamsTemplate use="false"/>
+<Position position="0"/>
+<Design_Width design_width="1297"/>
+<NameTagModified/>
+<WidgetNameTagMap/>
+<ParamAttr class="com.fr.report.mobile.DefaultMobileParamStyle"/>
+</Layout>
+<DesignAttr width="1297" height="459"/>
+</ParameterUI>
+<Background name="ColorBackground" color="-15260867"/>
+</ReportParameterAttr>
+<StyleList/>
+<DesignerVersion DesignerVersion="KAA"/>
+<PreviewType PreviewType="3"/>
+<TemplateIdAttMark class="com.fr.base.iofile.attr.TemplateIdAttrMark">
+<TemplateIdAttMark TemplateId="abafdf12-818b-4267-b789-8a47af2efc32"/>
+</TemplateIdAttMark>
+</WorkBook>

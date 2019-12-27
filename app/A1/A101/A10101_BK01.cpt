@@ -1,0 +1,3072 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20170720" releaseVersion="10.0.0">
+<TableDataMap>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[cco]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT count(cust_id) as counts FROM `cust_main`]]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebWriteContent>
+<Listener event="writesuccess">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[var topWin = window.parent;
+var tabBar = topWin.FS.tabPane;
+var currentTab = tabBar._getSelectedTab();
+var cust_id = contentPane.getCellValue(5,6);
+var url = "ReportServer?reportlet=cco/O01/web/ord_main_list.cpt&op=write&p_cust_id="+cust_id;
+
+
+//關閉目標籤頁
+tabBar._doCloseTab(currentTab);
+//刷新目標tab
+topWin.FS.tabPane.addItem({title:"O01報價作業_Web",src:url}) ;]]></Content>
+</JavaScript>
+</Listener>
+<Listener event="afterload">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="dataCounts"/>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=RANGE(1,VALUE("ds1",1))]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[window.subPagination = $('#subPagination');
+
+/*window.pageBar.pagination({
+    dataSource: dataCounts,
+    pageSize: 1,
+    showGoInput: true,
+    showGoButton: true,
+    callback: function(data, pagination) {
+    console.log(data);
+    }
+  });
+  */
+  ]]></Content>
+</JavaScript>
+</Listener>
+<ToolBars/>
+<EditRowColor setColor="false"/>
+<WebWrite SheetPosition="3"/>
+<RptLocation isShowAtLeft="true"/>
+<UnloadCheck/>
+<ShowWidgets show="true"/>
+<OtherAttr autoStash="false"/>
+</WebWriteContent>
+<Background name="ColorBackground" color="-460551"/>
+</ReportWebAttr>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[576000,1440000,576000,1152000,720000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,288000,1152000,1152000,720000,1104900,288000,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,723900,288000,1728000,288000,2880000,288000,2880000,288000,2880000,288000,2880000,288000,2880000,288000,2743200,288000,288000,2880000,288000,2880000,288000,2880000,288000,2880000,288000,2880000,288000,22593300,288000,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="20" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="21" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="23" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="24" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="25" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="26" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="27" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="28" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="29" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="1" s="0">
+<PrivilegeControl/>
+<HighlightList>
+<Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
+<Name>
+<![CDATA[defaultHide]]></Name>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.cell.cellattr.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="1" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="1" cs="9" s="2">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[="Company Info"]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="1" cs="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="1" s="0">
+<PrivilegeControl/>
+<CellGUIAttr>
+<ToolTipText>
+<![CDATA[!testbtn]]></ToolTipText>
+</CellGUIAttr>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.NameWidget">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_contact_btn]]></Name>
+</Widget>
+<Expand/>
+</C>
+<C c="19" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="20" r="1" s="0">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NameWidget">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_payment_btn]]></Name>
+</Widget>
+<Expand/>
+</C>
+<C c="21" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="1" s="0">
+<PrivilegeControl/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.NameWidget">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_query_btn]]></Name>
+</Widget>
+<Expand/>
+</C>
+<C c="23" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="24" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="25" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="26" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="27" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="28" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="29" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="2" cs="9" s="4">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$gp_fileNameWithAppPrefix]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="2" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="19" r="2" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="20" r="2" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="21" r="2" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="22" r="2" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="23" r="2" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="24" r="2" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="25" r="2" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="26" r="2" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="27" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="28" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="29" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="3" cs="11" s="0">
+<O>
+<![CDATA[<div id=\"subPagination\"></div>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="29" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="4" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="4" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="4" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="4" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="4" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="4" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="4" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="4" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="4" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="4" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="4" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="4" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="4" s="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="20" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="21" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="23" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="24" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="25" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="26" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="27" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="28" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="29" r="4" rs="33" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="5" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="5" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="5" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="5" cs="3" s="11">
+<O>
+<![CDATA[company_id]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="5" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="5" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="5" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="5" cs="3" s="11">
+<O>
+<![CDATA[region]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="5" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="5" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="5" cs="11" rs="31" s="0">
+<O>
+<![CDATA[<iframe id=\"subFrame\" name=\"subFrame\" scrolling=\"auto\" src=\"/webroot/decision/view/report?viewlet=fPlus/app/A1/A101/A10101_01.cpt&op=write_plus\" style=\"height:700px; width:100%; border:none;\"></iframe>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="0" r="6" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="6" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="6" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="6" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="6" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="6" cs="3" s="13">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="6" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="6" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="6" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="6" cs="3" s="13">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.ComboBox">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="6" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="6" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="6" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="6" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="7" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="7" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="7" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="7" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="7" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="7" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="7" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="7" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="7" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="7" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="7" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="7" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="7" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="7" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="7" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="7" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="7" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="7" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="8" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="8" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="8" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="8" s="9">
+<PrivilegeControl/>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript腳本1">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="p_quo_ono"/>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$p_quo_ono]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[var topWin = window.parent;
+var tabBar = topWin.FS.tabPane;
+var currentTab = tabBar._getSelectedTab();
+var url = "ReportServer?reportlet=cco/Q01/web/quo_main_list.cpt&op=write&p_quo_ono="+p_quo_ono;
+
+//刷新目標tab
+topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand dir="0"/>
+</C>
+<C c="4" r="8" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="8" cs="3" s="11">
+<O>
+<![CDATA[short_name]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="8" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="8" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="8" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="8" cs="3" s="11">
+<O>
+<![CDATA[lang_code]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="8" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="8" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="8" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="8" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="9" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="9" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="9" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="9" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="9" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="9" cs="3" s="13">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="9" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="9" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="9" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="9" cs="3" s="13">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.ComboBox">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="9" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="9" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="9" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="9" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="10" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="10" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="10" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="10" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="10" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="10" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="10" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="10" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="10" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="10" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="10" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="10" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="10" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="10" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="10" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="10" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="10" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="10" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="11" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="11" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="11" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="11" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="11" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="11" cs="3" s="11">
+<O>
+<![CDATA[full_name]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="11" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="11" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="11" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="11" cs="3" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="11" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="11" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="11" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="11" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="12" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="12" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="12" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="12" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="12" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="12" cs="9" s="15">
+<PrivilegeControl/>
+<CellGUIAttr>
+<ToolTipText>
+<![CDATA[!fuulllname]]></ToolTipText>
+</CellGUIAttr>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="12" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="12" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="12" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="12" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="13" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="13" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="13" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="13" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="13" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="13" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="13" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="13" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="13" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="13" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="13" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="13" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="13" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="13" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="13" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="13" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="13" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="13" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="14" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="14" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="14" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="14" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="14" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="14" cs="3" s="11">
+<O>
+<![CDATA[company_address]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="14" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="14" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="14" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="14" cs="3" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="14" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="14" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="14" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="14" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="15" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="15" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="15" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="15" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="15" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="15" cs="9" s="13">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="15" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="15" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="15" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="15" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="16" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="16" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="16" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="16" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="16" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="16" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="16" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="16" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="16" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="16" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="16" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="16" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="16" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="16" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="16" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="16" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="16" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="16" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="17" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="17" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="17" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="17" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="17" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="17" cs="3" s="11">
+<O>
+<![CDATA[full_name_en]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="17" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="17" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="17" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="17" cs="3" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="17" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="17" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="17" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="17" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="18" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="18" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="18" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="18" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="18" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="18" cs="9" s="13">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="18" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="18" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="18" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="18" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="19" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="19" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="19" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="19" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="19" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="19" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="19" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="19" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="19" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="19" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="19" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="19" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="19" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="19" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="19" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="19" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="19" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="19" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="20" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="20" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="20" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="20" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="20" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="20" cs="3" s="11">
+<O>
+<![CDATA[short_name_en]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="20" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="20" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="20" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="20" cs="3" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="20" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="20" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="20" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="20" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="21" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="21" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="21" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="21" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="21" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="21" cs="9" s="13">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="21" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="21" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="21" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="21" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="22" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="22" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="22" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="22" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="22" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="22" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="22" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="22" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="22" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="22" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="22" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="22" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="22" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="22" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="22" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="22" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="22" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="22" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="23" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="23" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="23" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="23" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="23" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="23" cs="3" s="11">
+<O>
+<![CDATA[address_en]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="23" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="23" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="23" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="23" cs="3" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="23" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="23" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="23" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="23" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="24" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="24" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="24" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="24" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="24" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="24" cs="9" s="13">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="24" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="24" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="24" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="24" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="25" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="25" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="25" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="25" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="25" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="25" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="25" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="25" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="25" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="25" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="25" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="25" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="25" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="25" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="25" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="25" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="25" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="25" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="26" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="26" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="26" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="26" s="9">
+<PrivilegeControl/>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript腳本1">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="p_quo_ono"/>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$p_quo_ono]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[var topWin = window.parent;
+var tabBar = topWin.FS.tabPane;
+var currentTab = tabBar._getSelectedTab();
+var url = "ReportServer?reportlet=cco/Q01/web/quo_main_list.cpt&op=write&p_quo_ono="+p_quo_ono;
+
+//刷新目標tab
+topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand dir="0"/>
+</C>
+<C c="4" r="26" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="26" cs="3" s="11">
+<O>
+<![CDATA[business_code\t]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="26" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="26" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="26" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="26" cs="3" s="11">
+<O>
+<![CDATA[industry_code]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="26" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="26" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="26" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="26" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="27" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="27" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="27" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="27" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="27" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="27" cs="3" s="13">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="27" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="27" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="27" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="27" cs="3" s="13">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="27" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="27" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="27" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="27" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="28" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="28" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="28" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="28" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="28" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="28" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="28" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="28" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="28" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="28" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="28" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="28" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="28" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="28" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="28" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="28" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="28" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="28" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="29" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="29" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="29" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="29" s="9">
+<PrivilegeControl/>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript腳本1">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="p_quo_ono"/>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$p_quo_ono]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[var topWin = window.parent;
+var tabBar = topWin.FS.tabPane;
+var currentTab = tabBar._getSelectedTab();
+var url = "ReportServer?reportlet=cco/Q01/web/quo_main_list.cpt&op=write&p_quo_ono="+p_quo_ono;
+
+//刷新目標tab
+topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand dir="0"/>
+</C>
+<C c="4" r="29" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="29" cs="3" s="11">
+<O>
+<![CDATA[is Customer]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="29" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="29" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="29" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="29" cs="3" s="11">
+<O>
+<![CDATA[cust_type]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="29" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="29" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="29" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="29" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="30" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="30" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="30" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="30" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="30" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="30" cs="3" s="13">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.CheckBox">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[]]></Text>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="30" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="30" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="30" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="30" cs="3" s="13">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.ComboBox">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="30" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="30" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="30" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="30" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="31" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="31" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="31" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="31" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="31" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="31" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="31" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="31" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="31" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="31" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="31" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="31" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="31" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="31" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="31" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="31" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="31" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="31" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="32" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="32" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="32" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="32" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="32" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="32" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="32" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="32" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="32" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="32" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="32" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="32" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="32" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="32" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="32" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="32" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="32" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="32" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="33" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="33" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="33" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="33" s="9">
+<PrivilegeControl/>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript腳本1">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="p_quo_ono"/>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$p_quo_ono]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[var topWin = window.parent;
+var tabBar = topWin.FS.tabPane;
+var currentTab = tabBar._getSelectedTab();
+var url = "ReportServer?reportlet=cco/Q01/web/quo_main_list.cpt&op=write&p_quo_ono="+p_quo_ono;
+
+//刷新目標tab
+topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand dir="0"/>
+</C>
+<C c="4" r="33" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="33" cs="3" s="11">
+<O>
+<![CDATA[is Supplier]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="33" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="33" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="33" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="33" cs="3" s="11">
+<O>
+<![CDATA[supplier_type]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="33" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="33" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="33" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="33" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="34" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="34" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="34" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="34" s="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="34" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="34" cs="3" s="13">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.CheckBox">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[]]></Text>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="34" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="34" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="34" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="34" cs="3" s="13">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.ComboBox">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="34" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="34" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="34" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="34" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="35" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="35" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="35" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="35" s="16">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="35" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="35" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="35" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="35" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="35" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="35" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="35" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="35" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="35" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="35" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="35" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="35" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="35" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="35" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="36" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="36" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="36" s="18">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="36" cs="13" s="19">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="36" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="36" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="36" cs="12" s="19">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="37" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="37" cs="29" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+<Background name="ColorBackground" color="-1"/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<ReportWriteAttr>
+<SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
+<Name>
+<![CDATA[quo_main]]></Name>
+<Attributes dsName="cco"/>
+<DMLConfig class="com.fr.write.config.UpdateConfig">
+<Table schema="" name="ord_main"/>
+<ColumnConfig name="ord_no" isKey="true" skipUnmodified="false">
+<ColumnRow column="7" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="ord_date" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="cust_id" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="11"/>
+</ColumnConfig>
+<ColumnConfig name="sale_man" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="sale_total" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="final_total" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="sale_tax" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="ord_company" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="memo" isKey="false" skipUnmodified="false">
+<ColumnRow column="3" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="create_time" isKey="false" skipUnmodified="false">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=NOW()]]></Attributes>
+</O>
+</ColumnConfig>
+<ColumnConfig name="create_man" isKey="false" skipUnmodified="false">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$g_p_curr_emp]]></Attributes>
+</O>
+</ColumnConfig>
+<ColumnConfig name="update_man" isKey="false" skipUnmodified="false">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$g_p_curr_emp]]></Attributes>
+</O>
+</ColumnConfig>
+<Condition class="com.fr.data.condition.ListCondition"/>
+</DMLConfig>
+</SubmitVisitor>
+<SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
+<Name>
+<![CDATA[quo_detail]]></Name>
+<Attributes dsName="cco"/>
+<DMLConfig class="com.fr.write.config.IntelliDMLConfig">
+<Table schema="" name="ord_detail_m"/>
+<ColumnConfig name="ord_no" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="seq" isKey="false" skipUnmodified="false">
+<ColumnRow column="3" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="prod_id" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="prod_name" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="prod_spec" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="qty" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="sale_price" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="sale_amt" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="memo" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="update_man" isKey="false" skipUnmodified="false">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$g_p_curr_emp]]></Attributes>
+</O>
+</ColumnConfig>
+<ColumnConfig name="uid" isKey="true" skipUnmodified="false">
+<ColumnRow column="2" row="35"/>
+</ColumnConfig>
+<Condition class="com.fr.data.condition.ListCondition"/>
+</DMLConfig>
+</SubmitVisitor>
+</ReportWriteAttr>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="0" useParamsTemplate="false"/>
+<PWTitle>
+<![CDATA[參數]]></PWTitle>
+<ParameterUI class="com.fr.form.main.parameter.FormParameterUI">
+<Parameters/>
+<Layout class="com.fr.form.ui.container.WParameterLayout">
+<WidgetName name="para"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Margin top="0" left="0" bottom="0" right="0"/>
+<Border>
+<border style="0" color="-723724" borderRadius="0" type="0" borderStyle="0"/>
+<WidgetTitle>
+<O>
+<![CDATA[新增標題]]></O>
+<FRFont name="Dialog" style="0" size="72"/>
+<Position pos="0"/>
+</WidgetTitle>
+<Alpha alpha="1.0"/>
+</Border>
+<Background name="ColorBackground" color="-15260867"/>
+<LCAttr vgap="0" hgap="0" compInterval="0"/>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="nameWidget3"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_langSet_btn]]></Name>
+</InnerWidget>
+<BoundsAttr x="207" y="4" width="32" height="32"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="nameWidget2"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_updateMode_btn]]></Name>
+</InnerWidget>
+<BoundsAttr x="166" y="4" width="32" height="32"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="nameWidget1"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_deleteMode_btn]]></Name>
+</InnerWidget>
+<BoundsAttr x="125" y="4" width="32" height="32"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="gw_query_btn01"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_query_btn]]></Name>
+</InnerWidget>
+<BoundsAttr x="42" y="4" width="32" height="32"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="nameWidget0"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_addMode_btn]]></Name>
+</InnerWidget>
+<BoundsAttr x="84" y="4" width="32" height="32"/>
+</Widget>
+<Sorted sorted="false"/>
+<MobileWidgetList>
+<Widget widgetName="gw_query_btn01"/>
+<Widget widgetName="nameWidget0"/>
+<Widget widgetName="nameWidget1"/>
+<Widget widgetName="nameWidget2"/>
+<Widget widgetName="nameWidget3"/>
+</MobileWidgetList>
+<FrozenWidgets/>
+<Display display="true"/>
+<DelayDisplayContent delay="false"/>
+<UseParamsTemplate use="false"/>
+<Position position="0"/>
+<Design_Width design_width="766"/>
+<NameTagModified/>
+<WidgetNameTagMap/>
+<ParamAttr class="com.fr.report.mobile.DefaultMobileParamStyle"/>
+</Layout>
+<DesignAttr width="766" height="42"/>
+</ParameterUI>
+<Parameter>
+<Attributes name="p_mode"/>
+<O>
+<![CDATA[update]]></O>
+</Parameter>
+<Background name="ColorBackground" color="-15260867"/>
+</ReportParameterAttr>
+<StyleList>
+<Style imageLayout="1">
+<FRFont name="Dialog" style="0" size="72"/>
+<Background name="ColorBackground" color="-460551"/>
+<Border/>
+</Style>
+<Style imageLayout="1">
+<FRFont name="Dialog" style="0" size="72"/>
+<Background name="ColorBackground" color="-13792016"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="2" imageLayout="1" paddingLeft="10">
+<FRFont name="Source Han Sans K" style="0" size="128" foreground="-15260867"/>
+<Background name="ColorBackground" color="-460551"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4" imageLayout="1">
+<FRFont name="微軟正黑體" style="0" size="80" foreground="-8355712"/>
+<Background name="ColorBackground" color="-460551"/>
+<Border/>
+</Style>
+<Style imageLayout="1" paddingLeft="10">
+<FRFont name="Source Han Sans K Light" style="0" size="72" foreground="-6908266"/>
+<Background name="ColorBackground" color="-460551"/>
+<Border/>
+</Style>
+<Style style_name="Frame_Gray_001_02"/>
+<Style style_name="Frame_Gray_001_03"/>
+<Style style_name="Frame_Gray_001_04"/>
+<Style imageLayout="1">
+<FRFont name="微軟正黑體" style="0" size="80"/>
+<Background name="ColorBackground" color="-460551"/>
+<Border/>
+</Style>
+<Style style_name="Frame_Gray_001_01"/>
+<Style imageLayout="1">
+<FRFont name="Dialog" style="0" size="72"/>
+<Background name="ColorBackground" color="-2302238"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="2" imageLayout="1">
+<FRFont name="Source Han Sans K Light" style="0" size="96"/>
+<Background name="ColorBackground" color="-2302238"/>
+<Border/>
+</Style>
+<Style style_name="Frame_Gray_001_05"/>
+<Style imageLayout="1">
+<FRFont name="Source Han Sans K" style="0" size="112"/>
+<Background name="ColorBackground" color="-1"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="2" imageLayout="1">
+<FRFont name="微軟正黑體" style="0" size="96"/>
+<Background name="ColorBackground" color="-2302238"/>
+<Border/>
+</Style>
+<Style imageLayout="1" paddingLeft="10">
+<FRFont name="Source Han Sans K" style="0" size="112"/>
+<Background name="ColorBackground" color="-1"/>
+<Border/>
+</Style>
+<Style style_name="Frame_Gray_001_08"/>
+<Style style_name="Frame_Gray_001_07"/>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-460551"/>
+<Border/>
+</Style>
+<Style imageLayout="1">
+<FRFont name="Dialog" style="0" size="72"/>
+<Background name="ColorBackground" color="-460551"/>
+<Border>
+<Bottom style="5" color="-13792016"/>
+</Border>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="KAA"/>
+<PreviewType PreviewType="3"/>
+<TemplateIdAttMark class="com.fr.base.iofile.attr.TemplateIdAttrMark">
+<TemplateIdAttMark TemplateId="daef6425-1ec1-4256-985e-06f1a8340ee0"/>
+</TemplateIdAttMark>
+</WorkBook>

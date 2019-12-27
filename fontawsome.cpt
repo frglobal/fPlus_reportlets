@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20170720" releaseVersion="10.0.0">
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[2057400,3124200,2590800,3162300,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[3352800,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="0">
+<O>
+<![CDATA[add]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="0">
+<O>
+<![CDATA[minus]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="0">
+<O>
+<![CDATA[pen]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="0">
+<O>
+<![CDATA[edit]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="0">
+<O>
+<![CDATA[language]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="1" s="0">
+<O>
+<![CDATA[<i class=\"fas fa-search\"></i>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="1" r="1" s="0">
+<O>
+<![CDATA[<i class=\"far fa-address-card 2x\"></i>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="2" r="1" s="0">
+<O>
+<![CDATA[<i class=\"fas fa-dollar-sign\"></i>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="3" r="1" s="0">
+<O>
+<![CDATA[<i class=\"fas fa-plus\"></i>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="4" r="1" s="0">
+<O>
+<![CDATA[<i class=\"fas fa-minus\"></i>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="5" r="1" s="0">
+<O>
+<![CDATA[<i class=\"fas fa-pen\"></i>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="6" r="1" s="0">
+<O>
+<![CDATA[<i class=\"fas fa-edit\"></i>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="7" r="1" s="0">
+<O>
+<![CDATA[<i class=\"fas fa-language\"></i>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="0" r="2">
+<O>
+<![CDATA[global]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="2">
+<O>
+<![CDATA[save]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="3" s="0">
+<O>
+<![CDATA[<i class=\"fas fa-globe\"></i>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="1" r="3" s="0">
+<O>
+<![CDATA[<i class=\"fas fa-save\"></i>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+<Background name="ColorBackground" color="-1"/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0" useParamsTemplate="true"/>
+<PWTitle>
+<![CDATA[參數]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style imageLayout="1">
+<FRFont name="Dialog" style="0" size="144"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="KAA"/>
+<PreviewType PreviewType="1"/>
+<TemplateIdAttMark class="com.fr.base.iofile.attr.TemplateIdAttrMark">
+<TemplateIdAttMark TemplateId="925a9cad-664c-4551-b07a-67d313025fc9"/>
+</TemplateIdAttMark>
+</WorkBook>

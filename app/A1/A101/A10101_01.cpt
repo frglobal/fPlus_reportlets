@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20170720" releaseVersion="10.0.0">
+<TableDataMap>
+<TableData name="cust_main" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="pageNumber"/>
+<O>
+<![CDATA[3]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="pageSize"/>
+<O>
+<![CDATA[10]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[cco]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT cust_id,short_name,tw_uno FROM `cust_main`
+limit ${pageSize} offset ${(pageNumber-1)*pageSize}]]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebWriteContent>
+<Listener event="afterload">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[if (!parent) {} else {
+	parent.window.subContentPane = contentPane;
+	parent.window.subWindow = window;
+}]]></Content>
+</JavaScript>
+</Listener>
+<ToolBars/>
+<EditRowColor setColor="false"/>
+<WebWrite SheetPosition="3"/>
+<RptLocation isShowAtLeft="true"/>
+<UnloadCheck/>
+<ShowWidgets show="true"/>
+<OtherAttr autoStash="false"/>
+</WebWriteContent>
+<Background name="ColorBackground" color="-460551"/>
+</ReportWebAttr>
+<ElementCaseMobileAttr>
+<ElementCaseMobileAttrProvider horizontal="1" vertical="1" zoom="true" refresh="false" isUseHTML="false" isMobileCanvasSize="false" appearRefresh="false" allowFullScreen="false" allowDoubleClickOrZoom="true" functionalWhenUnactivated="false"/>
+</ElementCaseMobileAttr>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[288000,1440000,685800,288000,1524000,288000,1152000,288000,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,723900,288000,2880000,288000,5760000,288000,9791700,288000,2880000,288000,2880000,288000,2880000,288000,2880000,288000,2880000,288000,2880000,288000,2880000,288000,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="0" s="1">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="2"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="4" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="20" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="21" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="0" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="1" s="0">
+<PrivilegeControl/>
+<HighlightList>
+<Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
+<Name>
+<![CDATA[defaultHide]]></Name>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.cell.cellattr.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="1" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="1" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="1" cs="4" s="4">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[="Contact Info"]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="1" cs="3" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="1" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="2" cs="4" s="7">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$gp_fileNameWithAppPrefix]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="20" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="21" r="2" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="2" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="20" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="21" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="4" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="4" s="8">
+<O>
+<![CDATA[person_id]]></O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="4" r="4" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="5" r="4" s="8">
+<O>
+<![CDATA[contact_object]]></O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="6" r="4" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="7" r="4" s="8">
+<O>
+<![CDATA[address\t]]></O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="8" r="4" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="9" r="4" s="8">
+<O>
+<![CDATA[email]]></O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="10" r="4" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="11" r="4" s="8">
+<O>
+<![CDATA[tel]]></O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="12" r="4" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="13" r="4" s="8">
+<O>
+<![CDATA[wechat]]></O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="14" r="4" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="15" r="4" s="8">
+<O>
+<![CDATA[line]]></O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="16" r="4" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="17" r="4" s="8">
+<O>
+<![CDATA[facebook]]></O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="18" r="4" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="19" r="4" s="8">
+<O>
+<![CDATA[whatsapp]]></O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="20" r="4" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="21" r="4" s="8">
+<O>
+<![CDATA[memo]]></O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="22" r="4" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="5" s="1">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="2"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="4" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="20" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="21" r="5" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="5" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="6" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="6" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="2" r="6" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="3" r="6" s="9">
+<O t="DSColumn">
+<Attributes dsName="cust_main" columnName="cust_id"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand dir="0" leftParentDefault="false"/>
+</C>
+<C c="4" r="6" s="10">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="5" r="6" s="9">
+<O t="DSColumn">
+<Attributes dsName="cust_main" columnName="short_name"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand dir="0"/>
+</C>
+<C c="6" r="6" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="7" r="6" s="11">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand dir="0" leftParentDefault="false" left="D7"/>
+</C>
+<C c="8" r="6" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="9" r="6" s="11">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="10" r="6" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="11" r="6" s="11">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="12" r="6" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="13" r="6" s="11">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="14" r="6" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="15" r="6" s="11">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="16" r="6" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="17" r="6" s="11">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="18" r="6" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="19" r="6" s="11">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="20" r="6" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="21" r="6" s="11">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="22" r="6" s="2">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="0" r="7" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="2" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="3" r="7" s="1">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="2"/>
+<CellPageAttr/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="4" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="5" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="6" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="7" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="8" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="9" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="10" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="11" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="12" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="13" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="14" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="15" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="16" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="17" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="18" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="19" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="20" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="21" r="7" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="22" r="7" s="2">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<FrozenColumnRow columnrow="H6"/>
+<PaperSetting orientation="1">
+<PaperSize width="60480000" height="89280000"/>
+<Margin top="432000" left="432000" bottom="432000" right="432000"/>
+</PaperSetting>
+<Background name="ColorBackground" color="-1"/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<ReportWriteAttr>
+<SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
+<Name>
+<![CDATA[quo_main]]></Name>
+<Attributes dsName="cco"/>
+<DMLConfig class="com.fr.write.config.UpdateConfig">
+<Table schema="" name="ord_main"/>
+<ColumnConfig name="ord_no" isKey="true" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="ord_date" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="cust_id" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="sale_man" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="sale_total" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="final_total" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="sale_tax" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="ord_company" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="memo" isKey="false" skipUnmodified="false">
+<ColumnRow column="3" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="create_time" isKey="false" skipUnmodified="false">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=NOW()]]></Attributes>
+</O>
+</ColumnConfig>
+<ColumnConfig name="create_man" isKey="false" skipUnmodified="false">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$g_p_curr_emp]]></Attributes>
+</O>
+</ColumnConfig>
+<ColumnConfig name="update_man" isKey="false" skipUnmodified="false">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$g_p_curr_emp]]></Attributes>
+</O>
+</ColumnConfig>
+<Condition class="com.fr.data.condition.ListCondition"/>
+</DMLConfig>
+</SubmitVisitor>
+<SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
+<Name>
+<![CDATA[quo_detail]]></Name>
+<Attributes dsName="cco"/>
+<DMLConfig class="com.fr.write.config.IntelliDMLConfig">
+<Table schema="" name="ord_detail_m"/>
+<ColumnConfig name="ord_no" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="seq" isKey="false" skipUnmodified="false">
+<ColumnRow column="3" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="prod_id" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="prod_name" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="prod_spec" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="qty" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="sale_price" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="sale_amt" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="memo" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="update_man" isKey="false" skipUnmodified="false">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$g_p_curr_emp]]></Attributes>
+</O>
+</ColumnConfig>
+<ColumnConfig name="uid" isKey="true" skipUnmodified="false">
+<ColumnRow column="2" row="5"/>
+</ColumnConfig>
+<Condition class="com.fr.data.condition.ListCondition"/>
+</DMLConfig>
+</SubmitVisitor>
+</ReportWriteAttr>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="0" useParamsTemplate="false"/>
+<PWTitle>
+<![CDATA[參數]]></PWTitle>
+<Parameter>
+<Attributes name="p_mode"/>
+<O>
+<![CDATA[update]]></O>
+</Parameter>
+</ReportParameterAttr>
+<StyleList>
+<Style imageLayout="1">
+<FRFont name="Dialog" style="0" size="72"/>
+<Background name="ColorBackground" color="-460551"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="2" imageLayout="1">
+<FRFont name="Dialog" style="0" size="72"/>
+<Background name="ColorBackground" color="-460551"/>
+<Border/>
+</Style>
+<Style imageLayout="1">
+<FRFont name="Dialog" style="0" size="72"/>
+<Background name="ColorBackground" color="-657929"/>
+<Border/>
+</Style>
+<Style imageLayout="1">
+<FRFont name="Dialog" style="0" size="72"/>
+<Background name="ColorBackground" color="-13792016"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="2" imageLayout="1" paddingLeft="10">
+<FRFont name="Source Han Sans K" style="0" size="128"/>
+<Background name="ColorBackground" color="-460551"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4" imageLayout="1">
+<FRFont name="微軟正黑體" style="0" size="80" foreground="-8355712"/>
+<Background name="ColorBackground" color="-460551"/>
+<Border/>
+</Style>
+<Style imageLayout="1">
+<FRFont name="Dialog" style="0" size="72"/>
+<Background name="ColorBackground" color="-657931"/>
+<Border/>
+</Style>
+<Style imageLayout="1" paddingLeft="10">
+<FRFont name="Source Han Sans K Light" style="0" size="72" foreground="-6908266"/>
+<Background name="ColorBackground" color="-460551"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1" paddingLeft="11">
+<FRFont name="Source Han Sans K Light" style="0" size="88"/>
+<Background name="ColorBackground" color="-460551"/>
+<Border>
+<Bottom style="5" color="-13400848"/>
+</Border>
+</Style>
+<Style horizontal_alignment="2" imageLayout="1">
+<FRFont name="Source Han Sans K Light" style="0" size="88" foreground="-13421773"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1" color="-3815218"/>
+<Bottom style="1" color="-3815218"/>
+<Left style="1" color="-3815218"/>
+<Right style="1" color="-3815218"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="微軟正黑體" style="0" size="72"/>
+<Background name="ColorBackground" color="-460551"/>
+<Border/>
+</Style>
+<Style style_name="Frame_White_001_09"/>
+</StyleList>
+<DesignerVersion DesignerVersion="KAA"/>
+<PreviewType PreviewType="1"/>
+<TemplateIdAttMark class="com.fr.base.iofile.attr.TemplateIdAttrMark">
+<TemplateIdAttMark TemplateId="d483ecd8-9245-4793-ac9a-1d992778d9ef"/>
+</TemplateIdAttMark>
+</WorkBook>
