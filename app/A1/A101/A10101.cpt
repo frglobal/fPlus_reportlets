@@ -234,49 +234,12 @@ mainPagination.addHook('afterPaging', function() {
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="1">
+<C c="14" r="1" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="1">
+<C c="15" r="1" s="3">
 <PrivilegeControl/>
-<Widget class="com.fr.form.ui.FreeButton">
-<Listener event="click">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters>
-<Parameter>
-<Attributes name="dataset"/>
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=RANGE(1,VALUE("ds2",1))]]></Attributes>
-</O>
-</Parameter>
-<Parameter>
-<Attributes name="offset"/>
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=20]]></Attributes>
-</O>
-</Parameter>
-</Parameters>
-<Content>
-<![CDATA[var fileName = "A10101.cpt";
-var formula = "SQL(\"frplus_dev\",\"SELECT CONCAT(file_path,\'&\',default_op) AS rpath FROM app_list WHERE file_name =\'" + fileName + "\'\",1,1)"
-
-F_.cellFormula(formula, function callback(value) {
-	console.log(value);
-	var main = F_.widget.pagination.config(dataset, offset,"_self", value);
-	console.log(main);
-	window.mainPagination.pagination(main);
-});]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<Text>
-<![CDATA[]]></Text>
-</Widget>
 <Expand/>
 </C>
 <C c="16" r="1" s="0">
