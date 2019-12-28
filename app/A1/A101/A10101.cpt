@@ -9,7 +9,8 @@
 <![CDATA[cco]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[SELECT count(cust_id) as counts FROM `cust_main`]]></Query>
+<![CDATA[SELECT cust_id,short_name,full_name FROM `cust_main`
+order by cust_id]]></Query>
 <PageQuery>
 <![CDATA[]]></PageQuery>
 </TableData>
@@ -24,7 +25,7 @@
 <Attributes name="dataset"/>
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=RANGE(1,VALUE("ds2",1))]]></Attributes>
+<![CDATA[=VALUE("ds2",1)]]></Attributes>
 </O>
 </Parameter>
 <Parameter>
@@ -35,9 +36,12 @@
 </O>
 </Parameter>
 </Parameters>
+<JSImport>
+<![CDATA[fPlus/js/method/getURLFormula.js]]></JSImport>
 <Content>
 <![CDATA[window.subPagination = $('#subPagination');
 window.mainPagination = $('#mainPagination');
+
 let configSet = {
 	dataSource: dataset,
 	pageSize: offset,
@@ -47,11 +51,18 @@ let configSet = {
 
 mainPagination.pagination(configSet);
 mainPagination.addHook('afterPaging', function() {
-    // function body
-    console.log(mainPagination.pagination('getSelectedPageData').toString());
-    let path = F_.FRServletURL+"?viewlet="+url;
-    								F_.doHyperlink("post", path, {pageNumber:pagination.pageNumber,pageSize:pagination.pageSize}, target);
+	// function body
+	let pageData = mainPagination.pagination('getSelectedPageData').toString();
+	contentPane.setCellValue(5, 7, pageData);
 });]]></Content>
+</JavaScript>
+</Listener>
+<Listener event="startload">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[//stored contentPane all widgets.
+window.mainPaneObjs = []A; ]]></Content>
 </JavaScript>
 </Listener>
 <ToolBars/>
@@ -288,13 +299,6 @@ mainPagination.addHook('afterPaging', function() {
 <C c="22" r="1" s="0">
 <PrivilegeControl/>
 <CellPageAttr/>
-<Widget class="com.fr.form.ui.NameWidget">
-<WidgetAttr description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<Name>
-<![CDATA[gw_query_btn]]></Name>
-</Widget>
 <Expand/>
 </C>
 <C c="23" r="1" s="0">
@@ -752,8 +756,23 @@ mainPagination.addHook('afterPaging', function() {
 <Expand/>
 </C>
 <C c="5" r="7" cs="3" s="15">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="cust_id"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<SelectCount count="=1"/>
+<Parameters/>
+</O>
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="company_id"/>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -762,7 +781,7 @@ mainPagination.addHook('afterPaging', function() {
 <widgetValue/>
 <MobileScanCodeAttr scanCode="true" textInputMode="0"/>
 </Widget>
-<Expand/>
+<Expand dir="0"/>
 </C>
 <C c="8" r="7" s="11">
 <PrivilegeControl/>
@@ -779,6 +798,13 @@ mainPagination.addHook('afterPaging', function() {
 <C c="11" r="7" cs="3" s="15">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.ComboBox">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+</JavaScript>
+</Listener>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -978,8 +1004,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <Expand/>
 </C>
 <C c="5" r="10" cs="3" s="15">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=ds2.select(short_name,cust_id = F8)]]></Attributes>
+</O>
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+</JavaScript>
+</Listener>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -988,7 +1025,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <widgetValue/>
 <MobileScanCodeAttr scanCode="true" textInputMode="0"/>
 </Widget>
-<Expand/>
+<Expand dir="0"/>
 </C>
 <C c="8" r="10" s="11">
 <PrivilegeControl/>
@@ -1005,6 +1042,13 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <C c="11" r="10" cs="3" s="15">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.ComboBox">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+</JavaScript>
+</Listener>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -1179,6 +1223,10 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <Expand/>
 </C>
 <C c="5" r="13" cs="9" s="17">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=ds2.select(full_name,cust_id = F8)]]></Attributes>
+</O>
 <PrivilegeControl/>
 <CellGUIAttr>
 <ToolTipText>
@@ -1186,6 +1234,13 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </CellGUIAttr>
 <CellPageAttr/>
 <Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+</JavaScript>
+</Listener>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -1194,7 +1249,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <widgetValue/>
 <MobileScanCodeAttr scanCode="true" textInputMode="0"/>
 </Widget>
-<Expand/>
+<Expand dir="0"/>
 </C>
 <C c="14" r="13" s="11">
 <PrivilegeControl/>
@@ -1365,6 +1420,13 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <C c="5" r="16" cs="9" s="15">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+</JavaScript>
+</Listener>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -1544,6 +1606,13 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <C c="5" r="19" cs="9" s="15">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+</JavaScript>
+</Listener>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -1723,6 +1792,13 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <C c="5" r="22" cs="9" s="15">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+</JavaScript>
+</Listener>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -1902,6 +1978,13 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <C c="5" r="25" cs="9" s="15">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+</JavaScript>
+</Listener>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -2104,8 +2187,21 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <Expand/>
 </C>
 <C c="5" r="28" cs="3" s="15">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="tw_uno"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+</JavaScript>
+</Listener>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -2114,7 +2210,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <widgetValue/>
 <MobileScanCodeAttr scanCode="true" textInputMode="0"/>
 </Widget>
-<Expand/>
+<Expand dir="0"/>
 </C>
 <C c="8" r="28" s="11">
 <PrivilegeControl/>
@@ -2131,6 +2227,13 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <C c="11" r="28" cs="3" s="15">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+</JavaScript>
+</Listener>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -2335,6 +2438,13 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <C c="5" r="31" cs="3" s="15">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.CheckBox">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+</JavaScript>
+</Listener>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -2358,6 +2468,13 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <C c="11" r="31" cs="3" s="15">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.ComboBox">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+</JavaScript>
+</Listener>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -2631,6 +2748,13 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <C c="5" r="35" cs="3" s="15">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.CheckBox">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+</JavaScript>
+</Listener>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -2654,6 +2778,13 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <C c="11" r="35" cs="3" s="15">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.ComboBox">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+</JavaScript>
+</Listener>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>

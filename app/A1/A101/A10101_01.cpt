@@ -1030,11 +1030,119 @@ limit ${pageSize} offset ${(pageNumber-1)*pageSize}]]></Query>
 <Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="0" useParamsTemplate="false"/>
 <PWTitle>
 <![CDATA[參數]]></PWTitle>
+<ParameterUI class="com.fr.form.main.parameter.FormParameterUI">
+<Parameters/>
+<Layout class="com.fr.form.ui.container.WParameterLayout">
+<WidgetName name="para"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Margin top="0" left="0" bottom="0" right="0"/>
+<Border>
+<border style="0" color="-723724" borderRadius="0" type="0" borderStyle="0"/>
+<WidgetTitle>
+<O>
+<![CDATA[新增標題]]></O>
+<FRFont name="Dialog" style="0" size="72"/>
+<Position pos="0"/>
+</WidgetTitle>
+<Alpha alpha="1.0"/>
+</Border>
+<Background name="ColorBackground" color="-15260867"/>
+<LCAttr vgap="0" hgap="0" compInterval="0"/>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="gw_query_btn01_c"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_query_btn]]></Name>
+</InnerWidget>
+<BoundsAttr x="19" y="7" width="32" height="32"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="gw_addMode_btn01_c"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_addMode_btn]]></Name>
+</InnerWidget>
+<BoundsAttr x="61" y="7" width="32" height="32"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="gw_deleteMode_btn01_c"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_deleteMode_btn]]></Name>
+</InnerWidget>
+<BoundsAttr x="102" y="7" width="32" height="32"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="gw_updateMode_btn01_c"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_updateMode_btn]]></Name>
+</InnerWidget>
+<BoundsAttr x="143" y="7" width="32" height="32"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="gw_save_btn01_c"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_save_btn]]></Name>
+</InnerWidget>
+<BoundsAttr x="184" y="7" width="33" height="32"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="gw_langSet_btn01_c"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_langSet_btn]]></Name>
+</InnerWidget>
+<BoundsAttr x="226" y="7" width="32" height="32"/>
+</Widget>
+<Sorted sorted="false"/>
+<MobileWidgetList>
+<Widget widgetName="gw_query_btn01_c"/>
+<Widget widgetName="gw_addMode_btn01_c"/>
+<Widget widgetName="gw_deleteMode_btn01_c"/>
+<Widget widgetName="gw_updateMode_btn01_c"/>
+<Widget widgetName="gw_save_btn01_c"/>
+<Widget widgetName="gw_langSet_btn01_c"/>
+</MobileWidgetList>
+<FrozenWidgets/>
+<Display display="true"/>
+<DelayDisplayContent delay="false"/>
+<UseParamsTemplate use="false"/>
+<Position position="0"/>
+<Design_Width design_width="960"/>
+<NameTagModified/>
+<WidgetNameTagMap/>
+<ParamAttr class="com.fr.report.mobile.DefaultMobileParamStyle"/>
+</Layout>
+<DesignAttr width="960" height="45"/>
+</ParameterUI>
 <Parameter>
 <Attributes name="p_mode"/>
 <O>
 <![CDATA[update]]></O>
 </Parameter>
+<Background name="ColorBackground" color="-15260867"/>
 </ReportParameterAttr>
 <StyleList>
 <Style imageLayout="1">
