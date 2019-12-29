@@ -35,13 +35,22 @@ order by cust_id]]></Query>
 <![CDATA[=1]]></Attributes>
 </O>
 </Parameter>
+<Parameter>
+<Attributes name="pageNum"/>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$pageNum]]></Attributes>
+</O>
+</Parameter>
 </Parameters>
 <JSImport>
 <![CDATA[fPlus/js/method/getURLFormula.js]]></JSImport>
 <Content>
-<![CDATA[window.subPagination = $('#subPagination');
+<![CDATA[//get pagination element
+window.subPagination = $('#subPagination');
 window.mainPagination = $('#mainPagination');
 
+//set pagination config
 let configSet = {
 	dataSource: dataset,
 	pageSize: offset,
@@ -49,20 +58,31 @@ let configSet = {
 	showGoButton: true
 };
 
+//generate pagination
 mainPagination.pagination(configSet);
+
+//event function
 mainPagination.addHook('afterPaging', function() {
 	// function body
 	let pageData = mainPagination.pagination('getSelectedPageData').toString();
 	contentPane.setCellValue(5, 7, pageData);
-});]]></Content>
+});
+
+//set widgets initial properties or style here
+//init pagination pageNumber after cancelMode.
+if (typeof pageNum === "undefined") {
+} else {
+mainPagination.pagination("go",pageNum);
+};]]></Content>
 </JavaScript>
 </Listener>
 <Listener event="startload">
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[//stored contentPane all widgets.
-window.mainPaneObjs = []A; ]]></Content>
+<![CDATA[//set global variables.
+window.mainPaneWidgets = []A; 
+window.mainPaneMode = "view";]]></Content>
 </JavaScript>
 </Listener>
 <ToolBars/>
@@ -764,16 +784,18 @@ window.mainPaneObjs = []A; ]]></Content>
 <Parameters/>
 </O>
 <PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
 <Widget class="com.fr.form.ui.TextEditor">
 <Listener event="afterinit">
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
 </JavaScript>
 </Listener>
 <WidgetName name="company_id"/>
-<WidgetAttr description="">
+<WidgetAttr disabled="true" description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -797,15 +819,17 @@ window.mainPaneObjs = []A; ]]></Content>
 </C>
 <C c="11" r="7" cs="3" s="15">
 <PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
 <Widget class="com.fr.form.ui.ComboBox">
 <Listener event="afterinit">
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
 </JavaScript>
 </Listener>
-<WidgetAttr description="">
+<WidgetAttr disabled="true" description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <widgetValue/>
@@ -1009,15 +1033,17 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <![CDATA[=ds2.select(short_name,cust_id = F8)]]></Attributes>
 </O>
 <PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
 <Widget class="com.fr.form.ui.TextEditor">
 <Listener event="afterinit">
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
 </JavaScript>
 </Listener>
-<WidgetAttr description="">
+<WidgetAttr disabled="true" description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -1025,6 +1051,10 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <widgetValue/>
 <MobileScanCodeAttr scanCode="true" textInputMode="0"/>
 </Widget>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
 <Expand dir="0"/>
 </C>
 <C c="8" r="10" s="11">
@@ -1041,15 +1071,17 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </C>
 <C c="11" r="10" cs="3" s="15">
 <PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
 <Widget class="com.fr.form.ui.ComboBox">
 <Listener event="afterinit">
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
 </JavaScript>
 </Listener>
-<WidgetAttr description="">
+<WidgetAttr disabled="true" description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <widgetValue/>
@@ -1228,7 +1260,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <![CDATA[=ds2.select(full_name,cust_id = F8)]]></Attributes>
 </O>
 <PrivilegeControl/>
-<CellGUIAttr>
+<CellGUIAttr adjustmode="0">
 <ToolTipText>
 <![CDATA[!fuulllname]]></ToolTipText>
 </CellGUIAttr>
@@ -1238,10 +1270,10 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
 </JavaScript>
 </Listener>
-<WidgetAttr description="">
+<WidgetAttr disabled="true" description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -1419,15 +1451,17 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </C>
 <C c="5" r="16" cs="9" s="15">
 <PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
 <Widget class="com.fr.form.ui.TextEditor">
 <Listener event="afterinit">
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
 </JavaScript>
 </Listener>
-<WidgetAttr description="">
+<WidgetAttr disabled="true" description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -1605,15 +1639,17 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </C>
 <C c="5" r="19" cs="9" s="15">
 <PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
 <Widget class="com.fr.form.ui.TextEditor">
 <Listener event="afterinit">
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
 </JavaScript>
 </Listener>
-<WidgetAttr description="">
+<WidgetAttr disabled="true" description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -1791,15 +1827,17 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </C>
 <C c="5" r="22" cs="9" s="15">
 <PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
 <Widget class="com.fr.form.ui.TextEditor">
 <Listener event="afterinit">
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
 </JavaScript>
 </Listener>
-<WidgetAttr description="">
+<WidgetAttr disabled="true" description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -1977,15 +2015,17 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </C>
 <C c="5" r="25" cs="9" s="15">
 <PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
 <Widget class="com.fr.form.ui.TextEditor">
 <Listener event="afterinit">
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
 </JavaScript>
 </Listener>
-<WidgetAttr description="">
+<WidgetAttr disabled="true" description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -2194,15 +2234,17 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <Parameters/>
 </O>
 <PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
 <Widget class="com.fr.form.ui.TextEditor">
 <Listener event="afterinit">
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
 </JavaScript>
 </Listener>
-<WidgetAttr description="">
+<WidgetAttr disabled="true" description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -2226,15 +2268,17 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </C>
 <C c="11" r="28" cs="3" s="15">
 <PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
 <Widget class="com.fr.form.ui.TextEditor">
 <Listener event="afterinit">
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
 </JavaScript>
 </Listener>
-<WidgetAttr description="">
+<WidgetAttr disabled="true" description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -2437,15 +2481,17 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </C>
 <C c="5" r="31" cs="3" s="15">
 <PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
 <Widget class="com.fr.form.ui.CheckBox">
 <Listener event="afterinit">
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
 </JavaScript>
 </Listener>
-<WidgetAttr description="">
+<WidgetAttr disabled="true" description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -2467,15 +2513,17 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </C>
 <C c="11" r="31" cs="3" s="15">
 <PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
 <Widget class="com.fr.form.ui.ComboBox">
 <Listener event="afterinit">
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
 </JavaScript>
 </Listener>
-<WidgetAttr description="">
+<WidgetAttr disabled="true" description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <widgetValue/>
@@ -2747,15 +2795,17 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </C>
 <C c="5" r="35" cs="3" s="15">
 <PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
 <Widget class="com.fr.form.ui.CheckBox">
 <Listener event="afterinit">
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
 </JavaScript>
 </Listener>
-<WidgetAttr description="">
+<WidgetAttr disabled="true" description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -2777,15 +2827,17 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </C>
 <C c="11" r="35" cs="3" s="15">
 <PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
 <Widget class="com.fr.form.ui.ComboBox">
 <Listener event="afterinit">
 <JavaScript class="com.fr.js.JavaScriptImpl">
 <Parameters/>
 <Content>
-<![CDATA[window.mainPaneObjs.push(this);]]></Content>
+<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
 </JavaScript>
 </Listener>
-<WidgetAttr description="">
+<WidgetAttr disabled="true" description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <widgetValue/>
@@ -3064,6 +3116,28 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <LCAttr vgap="0" hgap="0" compInterval="0"/>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="nameWidget0"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_cancelMode_btn]]></Name>
+</InnerWidget>
+<BoundsAttr x="340" y="4" width="80" height="32"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="gw_bug_btn01"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_bug_btn]]></Name>
+</InnerWidget>
+<BoundsAttr x="249" y="4" width="32" height="32"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
 <WidgetName name="gw_save_btn01"/>
 <WidgetAttr description="">
 <PrivilegeControl/>
@@ -3082,7 +3156,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <Name>
 <![CDATA[gw_langSet_btn]]></Name>
 </InnerWidget>
-<BoundsAttr x="249" y="4" width="32" height="32"/>
+<BoundsAttr x="290" y="4" width="32" height="32"/>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.NameWidget">
@@ -3135,7 +3209,9 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <Widget widgetName="gw_deleteMode_btn01"/>
 <Widget widgetName="gw_updateMode_btn01"/>
 <Widget widgetName="gw_save_btn01"/>
+<Widget widgetName="gw_bug_btn01"/>
 <Widget widgetName="gw_langSet_btn01"/>
+<Widget widgetName="nameWidget0"/>
 </MobileWidgetList>
 <FrozenWidgets/>
 <Display display="true"/>

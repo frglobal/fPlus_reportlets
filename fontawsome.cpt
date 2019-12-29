@@ -124,6 +124,18 @@
 <PrivilegeControl/>
 <Expand/>
 </C>
+<C c="2" r="2">
+<O>
+<![CDATA[bug]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="2">
+<O>
+<![CDATA[x]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
 <C c="0" r="3" s="0">
 <O>
 <![CDATA[<i class=\"fas fa-globe\"></i>]]></O>
@@ -135,6 +147,22 @@
 <C c="1" r="3" s="0">
 <O>
 <![CDATA[<i class=\"fas fa-save\"></i>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="2" r="3" s="0">
+<O>
+<![CDATA[<i class=\"fas fa-bug\"></i>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="3" r="3" s="0">
+<O>
+<![CDATA[<i class=\"fas fa-times\"></i>]]></O>
 <PrivilegeControl/>
 <CellGUIAttr showAsHTML="true"/>
 <CellPageAttr/>
