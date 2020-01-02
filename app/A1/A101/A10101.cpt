@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WorkBook xmlVersion="20170720" releaseVersion="10.0.0">
 <TableDataMap>
-<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<TableData name="company_m01" class="com.fr.data.impl.DBTableData">
 <Parameters/>
 <Attributes maxMemRowCount="-1"/>
 <Connection class="com.fr.data.impl.NameDatabaseConnection">
 <DatabaseName>
-<![CDATA[cco]]></DatabaseName>
+<![CDATA[frPlusR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[SELECT cust_id,short_name,full_name FROM `cust_main`
-order by cust_id]]></Query>
+<![CDATA[SELECT * FROM `company_m`]]></Query>
 <PageQuery>
 <![CDATA[]]></PageQuery>
 </TableData>
@@ -25,7 +24,7 @@ order by cust_id]]></Query>
 <Attributes name="dataset"/>
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=VALUE("ds2",1)]]></Attributes>
+<![CDATA[=VALUE("company_m01",1)]]></Attributes>
 </O>
 </Parameter>
 <Parameter>
@@ -47,7 +46,7 @@ order by cust_id]]></Query>
 <![CDATA[fPlus/js/method/getURLFormula.js]]></JSImport>
 <Content>
 <![CDATA[//get pagination element
-window.subPagination = $('#subPagination');
+window.paraGWs = _g().parameterEl.options.form.name_widgets;
 window.mainPagination = $('#mainPagination');
 
 //set pagination config
@@ -65,7 +64,8 @@ mainPagination.pagination(configSet);
 mainPagination.addHook('afterPaging', function() {
 	// function body
 	let pageData = mainPagination.pagination('getSelectedPageData').toString();
-	contentPane.setCellValue(5, 7, pageData);
+	contentPane.setCellValue(5, 8, pageData);
+	$("#subFrame").attr("src","");
 });
 
 //set widgets initial properties or style here
@@ -82,15 +82,37 @@ mainPagination.pagination("go",pageNum);
 <Parameters/>
 <Content>
 <![CDATA[//set global variables.
-window.mainPaneWidgets = []A; 
-window.mainPaneMode = "view";]]></Content>
+window.contentPaneWidgets = []A; ]]></Content>
+</JavaScript>
+</Listener>
+<Listener event="writesuccess">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="thisFileName"/>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$gp_fileNameWithExtType]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<JSImport>
+<![CDATA[fPlus/js/method/getURLFormula.js]]></JSImport>
+<Content>
+<![CDATA[var formula = getURLFormula(thisFileName);
+
+F_.cellFormula(formula, function callback(value) {
+	let currPage = mainPagination.pagination("getSelectedPageNum");
+	let url = FR.servletURL+"?viewlet="+value;
+	F_.doHyperlink("post", url, {pageNum:currPage}, "_self")
+});]]></Content>
 </JavaScript>
 </Listener>
 <ToolBars/>
 <EditRowColor setColor="false"/>
 <WebWrite SheetPosition="3"/>
 <RptLocation isShowAtLeft="true"/>
-<UnloadCheck/>
+<UnloadCheck check="false"/>
 <ShowWidgets show="true"/>
 <OtherAttr autoStash="false"/>
 </WebWriteContent>
@@ -106,7 +128,7 @@ window.mainPaneMode = "view";]]></Content>
 <ColumnPrivilegeControl/>
 <RowPrivilegeControl/>
 <RowHeight defaultValue="723900">
-<![CDATA[576000,1440000,576000,1152000,720000,723900,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,720000,1104900,288000,723900]]></RowHeight>
+<![CDATA[576000,1440000,576000,288000,1152000,720000,723900,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,288000,1152000,1152000,288000,1152000,1152000,288000,1152000,1152000,288000,720000,1104900,288000,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
 <![CDATA[2743200,723900,288000,1728000,288000,2880000,288000,2880000,288000,2880000,288000,2880000,288000,2880000,288000,2743200,288000,288000,2880000,288000,2880000,288000,2880000,288000,2880000,288000,2880000,288000,22593300,288000,2743200]]></ColumnWidth>
 <CellElementList>
@@ -233,6 +255,8 @@ window.mainPaneMode = "view";]]></Content>
 <Expand/>
 </C>
 <C c="0" r="1" s="0">
+<O>
+<![CDATA[view]]></O>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
@@ -266,16 +290,10 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="1" s="3">
+<C c="13" r="1" cs="3" s="3">
 <PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="1" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="1" s="3">
-<PrivilegeControl/>
+<CellGUIAttr adjustmode="0" showAsDefault="true"/>
+<CellPageAttr/>
 <Expand/>
 </C>
 <C c="16" r="1" s="0">
@@ -288,17 +306,67 @@ window.mainPaneMode = "view";]]></Content>
 </C>
 <C c="18" r="1" s="0">
 <PrivilegeControl/>
-<CellGUIAttr>
-<ToolTipText>
-<![CDATA[!testbtn]]></ToolTipText>
-</CellGUIAttr>
 <CellPageAttr/>
-<Widget class="com.fr.form.ui.NameWidget">
+<Widget class="com.fr.form.ui.FreeButton">
+<Listener event="click">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<JSImport>
+<![CDATA[fPlus/js/method/getURLFormula.js]]></JSImport>
+<Content>
+<![CDATA[//defaultHeight = (document.body.clientHeight-200)+"px";
+var mode = contentPane.getCellValue(0, 1);
+
+if (mode === "insert") {
+	
+	FR.Msg.alert("不可執行提示", "新增狀態不可執行");
+	
+} else {
+
+	$("#subFrame").css("height", "980px");
+
+	var id = contentPane.getCellValue(5, 8);
+
+	var formula = getURLFormula("A10101_01.cpt");
+
+	var url = FR.remoteEvaluate('=' + formula);
+
+	let path = F_.FRServletURL + "?viewlet=" + url;
+
+	F_.doHyperlink("post", path, {
+		companyID: id
+	}, "subFrame");
+
+};]]></Content>
+</JavaScript>
+</Listener>
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[let textColor = "white";
+let html = '<span><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="address-card" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M528 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm0 400H48V80h480v352zM208 256c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm-89.6 128h179.2c12.4 0 22.4-8.6 22.4-19.2v-19.2c0-31.8-30.1-57.6-67.2-57.6-10.8 0-18.7 8-44.8 8-26.9 0-33.4-8-44.8-8-37.1 0-67.2 25.8-67.2 57.6v19.2c0 10.6 10 19.2 22.4 19.2zM360 320h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0-64h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0-64h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8z"></path></svg></span>';
+F_.widget.button.defaultFrame(this,textColor).defaultDisplay(this,html).defaultEffect(this);
+
+this.fireEvent("click");]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="contact_btn"/>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
-<Name>
-<![CDATA[gw_contact_btn]]></Name>
+<Text>
+<![CDATA[]]></Text>
+<initial>
+<Background name="ColorBackground" color="-15260867"/>
+</initial>
+<over>
+<Background name="ColorBackground" color="-8354155"/>
+</over>
+<click>
+<Background name="ColorBackground" color="-11445650"/>
+</click>
+<isCustomType isCustomType="true"/>
 </Widget>
 <Expand/>
 </C>
@@ -308,12 +376,65 @@ window.mainPaneMode = "view";]]></Content>
 </C>
 <C c="20" r="1" s="0">
 <PrivilegeControl/>
-<Widget class="com.fr.form.ui.NameWidget">
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.FreeButton">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[let textColor = "white";
+let html = '<span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="dollar-sign" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 512" data-fa-i2svg=""><path fill="currentColor" d="M209.2 233.4l-108-31.6C88.7 198.2 80 186.5 80 173.5c0-16.3 13.2-29.5 29.5-29.5h66.3c12.2 0 24.2 3.7 34.2 10.5 6.1 4.1 14.3 3.1 19.5-2l34.8-34c7.1-6.9 6.1-18.4-1.8-24.5C238 74.8 207.4 64.1 176 64V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48h-2.5C45.8 64-5.4 118.7.5 183.6c4.2 46.1 39.4 83.6 83.8 96.6l102.5 30c12.5 3.7 21.2 15.3 21.2 28.3 0 16.3-13.2 29.5-29.5 29.5h-66.3C100 368 88 364.3 78 357.5c-6.1-4.1-14.3-3.1-19.5 2l-34.8 34c-7.1 6.9-6.1 18.4 1.8 24.5 24.5 19.2 55.1 29.9 86.5 30v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-48.2c46.6-.9 90.3-28.6 105.7-72.7 21.5-61.6-14.6-124.8-72.5-141.7z"></path></svg></span>';
+F_.widget.button.defaultFrame(this,textColor).defaultDisplay(this,html).defaultEffect(this);]]></Content>
+</JavaScript>
+</Listener>
+<Listener event="click">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="dataset"/>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=RANGE(1,VALUE("ds1",1))]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="offset"/>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=20]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<JSImport>
+<![CDATA[fPlus/js/method/getURLFormula.js]]></JSImport>
+<Content>
+<![CDATA[defaultHeight = (document.body.clientHeight-200)+"px";
+$("#subFrame").css("height",defaultHeight);
+
+var formula = getURLFormula("A10101_02.cpt")
+
+F_.cellFormula(formula, function callback(value) {
+	var d01 = F_.widget.pagination.config(dataset, offset, "subFrame", value);
+	window.subPagination.pagination(d01);
+});]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="payment_btn"/>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
-<Name>
-<![CDATA[gw_payment_btn]]></Name>
+<Text>
+<![CDATA[]]></Text>
+<initial>
+<Background name="ColorBackground" color="-15260867"/>
+</initial>
+<over>
+<Background name="ColorBackground" color="-8354155"/>
+</over>
+<click>
+<Background name="ColorBackground" color="-11445650"/>
+</click>
+<isCustomType isCustomType="true"/>
 </Widget>
 <Expand/>
 </C>
@@ -468,8 +589,6 @@ window.mainPaneMode = "view";]]></Content>
 </C>
 <C c="0" r="3" s="0">
 <PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
 <Expand/>
 </C>
 <C c="1" r="3" s="0">
@@ -480,12 +599,56 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="3" cs="13" s="0">
-<O>
-<![CDATA[<div id=\"mainPagination\"></div>]]></O>
+<C c="3" r="3" s="0">
 <PrivilegeControl/>
-<CellGUIAttr showAsHTML="true"/>
-<CellPageAttr/>
+<Expand/>
+</C>
+<C c="4" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="3" s="0">
+<PrivilegeControl/>
 <Expand/>
 </C>
 <C c="16" r="3" s="0">
@@ -496,15 +659,47 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="18" r="3" cs="11" s="0">
-<O>
-<![CDATA[<div id=\"subPagination\"></div>]]></O>
+<C c="18" r="3" s="0">
 <PrivilegeControl/>
-<CellGUIAttr showAsHTML="true"/>
-<CellPageAttr/>
 <Expand/>
 </C>
-<C c="29" r="3" s="0">
+<C c="19" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="20" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="21" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="23" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="24" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="25" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="26" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="27" r="3" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="28" r="3" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -522,56 +717,12 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="4" s="5">
+<C c="3" r="4" cs="13" s="0">
+<O>
+<![CDATA[<div id=\"mainPagination\"></div>]]></O>
 <PrivilegeControl/>
-<Expand/>
-</C>
-<C c="4" r="4" s="5">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="5" r="4" s="5">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="6" r="4" s="5">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="7" r="4" s="5">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="8" r="4" s="5">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="9" r="4" s="5">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="4" s="5">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="4" s="5">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="12" r="4" s="5">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="13" r="4" s="5">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="4" s="5">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="4" s="5">
-<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
 <Expand/>
 </C>
 <C c="16" r="4" s="0">
@@ -582,51 +733,15 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="18" r="4" s="0">
+<C c="18" r="4" cs="11" rs="44" s="5">
+<O>
+<![CDATA[<iframe id=\"subFrame\" name=\"subFrame\" scrolling=\"auto\" src=\"\" style=\"width:100%; border:none;\")></iframe>]]></O>
 <PrivilegeControl/>
+<CellGUIAttr adjustmode="0" showAsHTML="true"/>
+<CellPageAttr/>
 <Expand/>
 </C>
-<C c="19" r="4" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="20" r="4" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="21" r="4" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="22" r="4" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="23" r="4" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="24" r="4" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="25" r="4" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="26" r="4" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="27" r="4" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="28" r="4" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="29" r="4" rs="44" s="0">
+<C c="29" r="4" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -648,51 +763,51 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="5" s="7">
+<C c="4" r="5" s="6">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="5" s="7">
+<C c="5" r="5" s="6">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="5" s="7">
+<C c="6" r="5" s="6">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="5" s="7">
+<C c="7" r="5" s="6">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="5" s="7">
+<C c="8" r="5" s="6">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="5" s="7">
+<C c="9" r="5" s="6">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="5" s="7">
+<C c="10" r="5" s="6">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="5" s="7">
+<C c="11" r="5" s="6">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="5" s="7">
+<C c="12" r="5" s="6">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="5" s="7">
+<C c="13" r="5" s="6">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="5" s="7">
+<C c="14" r="5" s="6">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="5" s="8">
+<C c="15" r="5" s="6">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -704,12 +819,8 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="18" r="5" cs="11" rs="42" s="0">
-<O>
-<![CDATA[<iframe id=\"subFrame\" name=\"subFrame\" scrolling=\"auto\" src=\"\" style=\"height:1000px; width:100%; border:none;\"></iframe>]]></O>
+<C c="29" r="5" rs="44" s="0">
 <PrivilegeControl/>
-<CellGUIAttr showAsHTML="true"/>
-<CellPageAttr/>
 <Expand/>
 </C>
 <C c="0" r="6" s="0">
@@ -722,47 +833,59 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="6" s="9">
+<C c="2" r="6" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="6" s="10">
+<C c="3" r="6" s="7">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="6" s="11">
+<C c="4" r="6" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="6" cs="3" s="12">
-<O>
-<![CDATA[company_id]]></O>
+<C c="5" r="6" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="6" s="13">
+<C c="6" r="6" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="6" s="13">
+<C c="7" r="6" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="6" s="13">
+<C c="8" r="6" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="6" cs="3" s="12">
-<O>
-<![CDATA[region]]></O>
+<C c="9" r="6" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="6" s="13">
+<C c="10" r="6" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="6" s="14">
+<C c="11" r="6" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="6" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="6" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="6" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="6" s="9">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -784,84 +907,47 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="7" s="0">
+<C c="2" r="7" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="7" s="10">
+<C c="3" r="7" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="7" s="11">
+<C c="4" r="7" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="7" cs="3" s="15">
-<O t="DSColumn">
-<Attributes dsName="ds2" columnName="cust_id"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<SelectCount count="=1"/>
-<Parameters/>
-</O>
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.TextEditor">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetName name="company_id"/>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<TextAttr/>
-<Reg class="com.fr.form.ui.reg.NoneReg"/>
-<widgetValue/>
-<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
-</Widget>
-<Expand dir="0"/>
-</C>
-<C c="8" r="7" s="11">
+<C c="5" r="7" cs="3" s="13">
+<O>
+<![CDATA[company_id]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="7" s="11">
+<C c="8" r="7" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="7" s="11">
+<C c="9" r="7" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="7" cs="3" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.ComboBox">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<widgetValue/>
-</Widget>
-<Expand/>
-</C>
-<C c="14" r="7" s="11">
+<C c="10" r="7" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="7" s="14">
+<C c="11" r="7" cs="3" s="13">
+<O>
+<![CDATA[region]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="7" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="7" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -887,55 +973,96 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="8" s="10">
+<C c="3" r="8" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="8" s="11">
+<C c="4" r="8" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="8" s="11">
+<C c="5" r="8" cs="3" s="16">
+<O t="DSColumn">
+<Attributes dsName="company_m01" columnName="company_id"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<SelectCount count="=1"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="company_id"/>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="8" r="8" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="8" s="11">
+<C c="9" r="8" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="8" s="11">
+<C c="10" r="8" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="8" s="11">
+<C c="11" r="8" cs="3" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(region, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.ComboBox">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Dictionary class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr kiName="iso_code" viName="country_name"/>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[region]]></Name>
+</TableData>
+</TableDataDictAttr>
+</Dictionary>
+<widgetValue/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="8" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="8" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="8" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="8" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="12" r="8" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="13" r="8" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="8" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="8" s="14">
+<C c="15" r="8" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -957,11 +1084,85 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="9" s="9">
+<C c="2" r="9" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="9" s="10">
+<C c="3" r="9" s="11">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="9" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="9" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="9" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="9" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="9" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="9" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="9" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="9" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="9" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="9" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="9" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="9" s="15">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="9" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="9" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="10" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="1" r="10" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="10" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="10" s="11">
 <PrivilegeControl/>
 <NameJavaScriptGroup>
 <NameJavaScript name="JavaScript腳本1">
@@ -988,135 +1189,39 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </NameJavaScriptGroup>
 <Expand dir="0"/>
 </C>
-<C c="4" r="9" s="11">
+<C c="4" r="10" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="9" cs="3" s="12">
+<C c="5" r="10" cs="3" s="13">
 <O>
 <![CDATA[short_name]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="9" s="11">
+<C c="8" r="10" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="9" s="11">
+<C c="9" r="10" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="9" s="11">
+<C c="10" r="10" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="9" cs="3" s="12">
+<C c="11" r="10" cs="3" s="13">
 <O>
-<![CDATA[lang_code]]></O>
+<![CDATA[language_code]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="9" s="11">
+<C c="14" r="10" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="9" s="14">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="16" r="9" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="17" r="9" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="0" r="10" s="0">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Expand/>
-</C>
-<C c="1" r="10" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="2" r="10" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="3" r="10" s="10">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="4" r="10" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="5" r="10" cs="3" s="15">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=ds2.select(short_name, cust_id = F8)]]></Attributes>
-</O>
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.TextEditor">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<TextAttr/>
-<Reg class="com.fr.form.ui.reg.NoneReg"/>
-<widgetValue/>
-<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
-</Widget>
-<CellInsertPolicy/>
-<Expand dir="0"/>
-</C>
-<C c="8" r="10" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="9" r="10" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="10" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="10" cs="3" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.ComboBox">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<widgetValue/>
-</Widget>
-<Expand/>
-</C>
-<C c="14" r="10" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="10" s="14">
+<C c="15" r="10" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1142,55 +1247,90 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="11" s="10">
+<C c="3" r="11" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="11" s="11">
+<C c="4" r="11" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="11" s="11">
+<C c="5" r="11" cs="3" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(short_name, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<CellInsertPolicy/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="11" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="11" s="11">
+<C c="9" r="11" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="11" s="11">
+<C c="10" r="11" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="11" s="11">
+<C c="11" r="11" cs="3" s="17">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(language_code, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.ComboBox">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Dictionary class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr kiName="lang_code" viName="desc_zh-TW"/>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[language_code]]></Name>
+</TableData>
+</TableDataDictAttr>
+</Dictionary>
+<widgetValue/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="11" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="11" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="11" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="11" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="12" r="11" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="13" r="11" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="11" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="11" s="14">
+<C c="15" r="11" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1212,45 +1352,59 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="12" s="9">
+<C c="2" r="12" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="12" s="10">
+<C c="3" r="12" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="12" s="11">
+<C c="4" r="12" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="12" cs="3" s="12">
-<O>
-<![CDATA[full_name]]></O>
+<C c="5" r="12" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="12" s="11">
+<C c="6" r="12" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="12" s="11">
+<C c="7" r="12" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="12" s="11">
+<C c="8" r="12" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="12" cs="3" s="17">
+<C c="9" r="12" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="12" s="11">
+<C c="10" r="12" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="12" s="14">
+<C c="11" r="12" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="12" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="12" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="12" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="12" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1272,52 +1426,45 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="13" s="0">
+<C c="2" r="13" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="13" s="10">
+<C c="3" r="13" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="13" s="11">
+<C c="4" r="13" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="13" cs="9" s="18">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=ds2.select(full_name, cust_id = F8)]]></Attributes>
-</O>
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0">
-<ToolTipText>
-<![CDATA[!fuulllname]]></ToolTipText>
-</CellGUIAttr>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.TextEditor">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<TextAttr/>
-<Reg class="com.fr.form.ui.reg.NoneReg"/>
-<widgetValue/>
-<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
-</Widget>
-<Expand dir="0"/>
-</C>
-<C c="14" r="13" s="11">
+<C c="5" r="13" cs="3" s="13">
+<O>
+<![CDATA[full_name]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="13" s="14">
+<C c="8" r="13" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="13" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="13" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="13" cs="3" s="18">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="13" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="13" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1343,55 +1490,48 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="14" s="10">
+<C c="3" r="14" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="14" s="11">
+<C c="4" r="14" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="14" s="11">
+<C c="5" r="14" cs="9" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(full_name, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0">
+<ToolTipText>
+<![CDATA[!fuulllname]]></ToolTipText>
+</CellGUIAttr>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="14" r="14" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="14" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="7" r="14" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="8" r="14" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="9" r="14" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="14" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="14" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="12" r="14" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="13" r="14" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="14" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="14" s="14">
+<C c="15" r="14" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1413,11 +1553,85 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="15" s="9">
+<C c="2" r="15" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="15" s="10">
+<C c="3" r="15" s="11">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="15" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="15" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="15" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="15" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="15" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="15" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="15" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="15" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="15" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="15" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="15" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="15" s="15">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="15" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="15" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="16" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="1" r="16" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="16" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="16" s="11">
 <PrivilegeControl/>
 <NameJavaScriptGroup>
 <NameJavaScript name="JavaScript腳本1">
@@ -1444,130 +1658,39 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </NameJavaScriptGroup>
 <Expand dir="0"/>
 </C>
-<C c="4" r="15" s="11">
+<C c="4" r="16" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="15" cs="3" s="12">
+<C c="5" r="16" cs="3" s="13">
 <O>
 <![CDATA[zip_no]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="15" s="11">
+<C c="8" r="16" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="15" s="11">
+<C c="9" r="16" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="15" s="11">
+<C c="10" r="16" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="15" cs="3" s="12">
+<C c="11" r="16" cs="3" s="13">
 <O>
 <![CDATA[status]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="15" s="11">
+<C c="14" r="16" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="15" s="14">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="16" r="15" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="17" r="15" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="0" r="16" s="0">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Expand/>
-</C>
-<C c="1" r="16" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="2" r="16" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="3" r="16" s="10">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="4" r="16" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="5" r="16" cs="3" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.TextEditor">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<TextAttr/>
-<Reg class="com.fr.form.ui.reg.NoneReg"/>
-<widgetValue/>
-<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
-</Widget>
-<Expand dir="0"/>
-</C>
-<C c="8" r="16" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="9" r="16" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="16" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="16" cs="3" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.ComboBox">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<widgetValue/>
-</Widget>
-<Expand/>
-</C>
-<C c="14" r="16" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="16" s="14">
+<C c="15" r="16" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1593,55 +1716,80 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="17" s="10">
+<C c="3" r="17" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="17" s="11">
+<C c="4" r="17" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="17" s="11">
+<C c="5" r="17" cs="3" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(zip_no, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="8" r="17" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="17" s="11">
+<C c="9" r="17" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="17" s="11">
+<C c="10" r="17" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="17" s="11">
+<C c="11" r="17" cs="3" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(status, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.ComboBox">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="17" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="17" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="17" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="17" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="12" r="17" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="13" r="17" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="17" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="17" s="14">
+<C c="15" r="17" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1663,45 +1811,59 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="18" s="9">
+<C c="2" r="18" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="18" s="10">
+<C c="3" r="18" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="18" s="11">
+<C c="4" r="18" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="18" cs="3" s="12">
-<O>
-<![CDATA[company_address]]></O>
+<C c="5" r="18" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="18" s="11">
+<C c="6" r="18" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="18" s="11">
+<C c="7" r="18" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="18" s="11">
+<C c="8" r="18" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="18" cs="3" s="17">
+<C c="9" r="18" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="18" s="11">
+<C c="10" r="18" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="18" s="14">
+<C c="11" r="18" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="18" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="18" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="18" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="18" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1723,45 +1885,45 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="19" s="0">
+<C c="2" r="19" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="19" s="10">
+<C c="3" r="19" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="19" s="11">
+<C c="4" r="19" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="19" cs="9" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.TextEditor">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<TextAttr/>
-<Reg class="com.fr.form.ui.reg.NoneReg"/>
-<widgetValue/>
-<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
-</Widget>
-<Expand/>
-</C>
-<C c="14" r="19" s="11">
+<C c="5" r="19" cs="3" s="13">
+<O>
+<![CDATA[address]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="19" s="14">
+<C c="8" r="19" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="19" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="19" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="19" cs="3" s="18">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="19" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="19" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1787,55 +1949,45 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="20" s="10">
+<C c="3" r="20" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="20" s="11">
+<C c="4" r="20" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="20" s="11">
+<C c="5" r="20" cs="9" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(address, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="20" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="20" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="7" r="20" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="8" r="20" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="9" r="20" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="20" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="20" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="12" r="20" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="13" r="20" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="20" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="20" s="14">
+<C c="15" r="20" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1857,45 +2009,59 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="21" s="9">
+<C c="2" r="21" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="21" s="10">
+<C c="3" r="21" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="21" s="11">
+<C c="4" r="21" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="21" cs="3" s="12">
-<O>
-<![CDATA[full_name_en]]></O>
+<C c="5" r="21" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="21" s="11">
+<C c="6" r="21" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="21" s="11">
+<C c="7" r="21" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="21" s="11">
+<C c="8" r="21" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="21" cs="3" s="17">
+<C c="9" r="21" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="21" s="11">
+<C c="10" r="21" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="21" s="14">
+<C c="11" r="21" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="21" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="21" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="21" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="21" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1917,45 +2083,45 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="22" s="0">
+<C c="2" r="22" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="22" s="10">
+<C c="3" r="22" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="22" s="11">
+<C c="4" r="22" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="22" cs="9" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.TextEditor">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<TextAttr/>
-<Reg class="com.fr.form.ui.reg.NoneReg"/>
-<widgetValue/>
-<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
-</Widget>
-<Expand/>
-</C>
-<C c="14" r="22" s="11">
+<C c="5" r="22" cs="3" s="13">
+<O>
+<![CDATA[full_name_en]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="22" s="14">
+<C c="8" r="22" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="22" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="22" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="22" cs="3" s="18">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="22" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="22" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1981,55 +2147,45 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="23" s="10">
+<C c="3" r="23" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="23" s="11">
+<C c="4" r="23" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="23" s="11">
+<C c="5" r="23" cs="9" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(full_name_en, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="23" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="23" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="7" r="23" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="8" r="23" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="9" r="23" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="23" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="23" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="12" r="23" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="13" r="23" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="23" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="23" s="14">
+<C c="15" r="23" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2051,45 +2207,59 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="24" s="9">
+<C c="2" r="24" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="24" s="10">
+<C c="3" r="24" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="24" s="11">
+<C c="4" r="24" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="24" cs="3" s="12">
-<O>
-<![CDATA[short_name_en]]></O>
+<C c="5" r="24" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="24" s="11">
+<C c="6" r="24" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="24" s="11">
+<C c="7" r="24" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="24" s="11">
+<C c="8" r="24" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="24" cs="3" s="17">
+<C c="9" r="24" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="24" s="11">
+<C c="10" r="24" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="24" s="14">
+<C c="11" r="24" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="24" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="24" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="24" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="24" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2111,45 +2281,45 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="25" s="0">
+<C c="2" r="25" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="25" s="10">
+<C c="3" r="25" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="25" s="11">
+<C c="4" r="25" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="25" cs="9" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.TextEditor">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<TextAttr/>
-<Reg class="com.fr.form.ui.reg.NoneReg"/>
-<widgetValue/>
-<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
-</Widget>
-<Expand/>
-</C>
-<C c="14" r="25" s="11">
+<C c="5" r="25" cs="3" s="13">
+<O>
+<![CDATA[short_name_en]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="25" s="14">
+<C c="8" r="25" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="25" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="25" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="25" cs="3" s="18">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="25" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="25" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2175,55 +2345,45 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="26" s="10">
+<C c="3" r="26" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="26" s="11">
+<C c="4" r="26" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="26" s="11">
+<C c="5" r="26" cs="9" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(short_name_en, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="26" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="26" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="7" r="26" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="8" r="26" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="9" r="26" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="26" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="26" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="12" r="26" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="13" r="26" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="26" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="26" s="14">
+<C c="15" r="26" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2245,45 +2405,59 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="27" s="9">
+<C c="2" r="27" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="27" s="10">
+<C c="3" r="27" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="27" s="11">
+<C c="4" r="27" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="27" cs="3" s="12">
-<O>
-<![CDATA[address_en]]></O>
+<C c="5" r="27" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="27" s="11">
+<C c="6" r="27" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="27" s="11">
+<C c="7" r="27" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="27" s="11">
+<C c="8" r="27" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="27" cs="3" s="17">
+<C c="9" r="27" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="27" s="11">
+<C c="10" r="27" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="27" s="14">
+<C c="11" r="27" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="27" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="27" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="27" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="27" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2305,45 +2479,45 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="28" s="0">
+<C c="2" r="28" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="28" s="10">
+<C c="3" r="28" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="28" s="11">
+<C c="4" r="28" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="28" cs="9" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.TextEditor">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<TextAttr/>
-<Reg class="com.fr.form.ui.reg.NoneReg"/>
-<widgetValue/>
-<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
-</Widget>
-<Expand/>
-</C>
-<C c="14" r="28" s="11">
+<C c="5" r="28" cs="3" s="13">
+<O>
+<![CDATA[address_en]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="28" s="14">
+<C c="8" r="28" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="28" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="28" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="28" cs="3" s="18">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="28" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="28" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2369,55 +2543,45 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="29" s="10">
+<C c="3" r="29" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="29" s="11">
+<C c="4" r="29" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="29" s="11">
+<C c="5" r="29" cs="9" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(address_en, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="29" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="29" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="7" r="29" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="8" r="29" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="9" r="29" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="29" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="29" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="12" r="29" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="13" r="29" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="29" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="29" s="14">
+<C c="15" r="29" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2439,11 +2603,85 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="30" s="9">
+<C c="2" r="30" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="30" s="10">
+<C c="3" r="30" s="11">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="30" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="30" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="30" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="30" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="30" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="30" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="30" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="30" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="30" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="30" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="30" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="30" s="15">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="30" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="30" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="31" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="1" r="31" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="31" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="31" s="11">
 <PrivilegeControl/>
 <NameJavaScriptGroup>
 <NameJavaScript name="JavaScript腳本1">
@@ -2470,139 +2708,39 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </NameJavaScriptGroup>
 <Expand dir="0"/>
 </C>
-<C c="4" r="30" s="11">
+<C c="4" r="31" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="30" cs="3" s="12">
+<C c="5" r="31" cs="3" s="13">
 <O>
 <![CDATA[business_code\t]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="30" s="11">
+<C c="8" r="31" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="30" s="11">
+<C c="9" r="31" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="30" s="11">
+<C c="10" r="31" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="30" cs="3" s="12">
+<C c="11" r="31" cs="3" s="13">
 <O>
 <![CDATA[industry_code]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="30" s="11">
+<C c="14" r="31" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="30" s="14">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="16" r="30" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="17" r="30" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="0" r="31" s="0">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Expand/>
-</C>
-<C c="1" r="31" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="2" r="31" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="3" r="31" s="10">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="4" r="31" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="5" r="31" cs="3" s="16">
-<O t="DSColumn">
-<Attributes dsName="ds3" columnName="tw_uno"/>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.TextEditor">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<TextAttr/>
-<Reg class="com.fr.form.ui.reg.NoneReg"/>
-<widgetValue/>
-<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
-</Widget>
-<Expand dir="0"/>
-</C>
-<C c="8" r="31" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="9" r="31" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="31" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="31" cs="3" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.TextEditor">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<TextAttr/>
-<Reg class="com.fr.form.ui.reg.NoneReg"/>
-<widgetValue/>
-<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
-</Widget>
-<Expand/>
-</C>
-<C c="14" r="31" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="31" s="14">
+<C c="15" r="31" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2628,55 +2766,83 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="32" s="10">
+<C c="3" r="32" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="32" s="11">
+<C c="4" r="32" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="32" s="11">
+<C c="5" r="32" cs="3" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(business_code, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="8" r="32" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="32" s="11">
+<C c="9" r="32" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="32" s="11">
+<C c="10" r="32" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="32" s="11">
+<C c="11" r="32" cs="3" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(industry_code, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="32" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="32" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="32" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="32" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="12" r="32" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="13" r="32" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="32" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="32" s="14">
+<C c="15" r="32" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2698,11 +2864,85 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="33" s="9">
+<C c="2" r="33" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="33" s="10">
+<C c="3" r="33" s="11">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="33" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="33" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="33" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="33" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="33" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="33" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="33" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="33" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="33" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="33" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="33" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="33" s="15">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="33" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="33" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="34" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="1" r="34" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="34" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="34" s="11">
 <PrivilegeControl/>
 <NameJavaScriptGroup>
 <NameJavaScript name="JavaScript腳本1">
@@ -2729,128 +2969,39 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </NameJavaScriptGroup>
 <Expand dir="0"/>
 </C>
-<C c="4" r="33" s="11">
+<C c="4" r="34" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="33" cs="3" s="12">
+<C c="5" r="34" cs="3" s="13">
 <O>
-<![CDATA[is Customer]]></O>
+<![CDATA[cust_mark]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="33" s="11">
+<C c="8" r="34" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="33" s="11">
+<C c="9" r="34" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="33" s="11">
+<C c="10" r="34" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="33" cs="3" s="12">
+<C c="11" r="34" cs="3" s="13">
 <O>
 <![CDATA[cust_type]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="33" s="11">
+<C c="14" r="34" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="33" s="14">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="16" r="33" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="17" r="33" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="0" r="34" s="0">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Expand/>
-</C>
-<C c="1" r="34" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="2" r="34" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="3" r="34" s="10">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="4" r="34" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="5" r="34" cs="3" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.CheckBox">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<Text>
-<![CDATA[]]></Text>
-</Widget>
-<Expand/>
-</C>
-<C c="8" r="34" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="9" r="34" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="34" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="34" cs="3" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.ComboBox">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<widgetValue/>
-</Widget>
-<Expand/>
-</C>
-<C c="14" r="34" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="34" s="14">
+<C c="15" r="34" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2876,55 +3027,78 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="35" s="10">
+<C c="3" r="35" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="35" s="11">
+<C c="4" r="35" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="35" s="11">
+<C c="5" r="35" cs="3" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(cust_mark, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.CheckBox">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[]]></Text>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="35" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="35" s="11">
+<C c="9" r="35" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="35" s="11">
+<C c="10" r="35" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="35" s="11">
+<C c="11" r="35" cs="3" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(cust_type, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.ComboBox">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="35" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="35" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="35" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="35" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="12" r="35" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="13" r="35" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="35" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="35" s="14">
+<C c="15" r="35" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2950,55 +3124,55 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="36" s="10">
+<C c="3" r="36" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="36" s="11">
+<C c="4" r="36" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="36" s="11">
+<C c="5" r="36" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="36" s="11">
+<C c="6" r="36" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="36" s="11">
+<C c="7" r="36" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="36" s="11">
+<C c="8" r="36" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="36" s="11">
+<C c="9" r="36" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="36" s="11">
+<C c="10" r="36" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="36" s="11">
+<C c="11" r="36" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="36" s="11">
+<C c="12" r="36" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="36" s="11">
+<C c="13" r="36" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="36" s="11">
+<C c="14" r="36" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="36" s="14">
+<C c="15" r="36" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3020,11 +3194,85 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="37" s="9">
+<C c="2" r="37" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="37" s="10">
+<C c="3" r="37" s="11">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="37" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="37" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="37" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="37" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="37" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="37" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="37" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="37" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="37" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="37" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="37" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="37" s="15">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="37" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="37" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="38" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="1" r="38" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="38" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="38" s="11">
 <PrivilegeControl/>
 <NameJavaScriptGroup>
 <NameJavaScript name="JavaScript腳本1">
@@ -3051,128 +3299,39 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </NameJavaScriptGroup>
 <Expand dir="0"/>
 </C>
-<C c="4" r="37" s="11">
+<C c="4" r="38" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="37" cs="3" s="12">
+<C c="5" r="38" cs="3" s="13">
 <O>
 <![CDATA[is Supplier]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="37" s="11">
+<C c="8" r="38" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="37" s="11">
+<C c="9" r="38" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="37" s="11">
+<C c="10" r="38" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="37" cs="3" s="12">
+<C c="11" r="38" cs="3" s="13">
 <O>
 <![CDATA[supplier_type]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="37" s="11">
+<C c="14" r="38" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="37" s="14">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="16" r="37" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="17" r="37" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="0" r="38" s="0">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Expand/>
-</C>
-<C c="1" r="38" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="2" r="38" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="3" r="38" s="10">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="4" r="38" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="5" r="38" cs="3" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.CheckBox">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<Text>
-<![CDATA[]]></Text>
-</Widget>
-<Expand/>
-</C>
-<C c="8" r="38" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="9" r="38" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="38" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="38" cs="3" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.ComboBox">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<widgetValue/>
-</Widget>
-<Expand/>
-</C>
-<C c="14" r="38" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="38" s="14">
+<C c="15" r="38" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3198,55 +3357,78 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="39" s="10">
+<C c="3" r="39" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="39" s="11">
+<C c="4" r="39" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="39" s="11">
+<C c="5" r="39" cs="3" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(supplier_mark, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.CheckBox">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[]]></Text>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="39" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="39" s="11">
+<C c="9" r="39" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="39" s="11">
+<C c="10" r="39" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="39" s="11">
+<C c="11" r="39" cs="3" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(supplier_type, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.ComboBox">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="39" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="39" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="39" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="39" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="12" r="39" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="13" r="39" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="39" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="39" s="14">
+<C c="15" r="39" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3268,11 +3450,85 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="40" s="9">
+<C c="2" r="40" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="40" s="10">
+<C c="3" r="40" s="11">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="40" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="40" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="40" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="40" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="40" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="40" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="40" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="40" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="40" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="40" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="40" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="40" s="15">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="40" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="40" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="41" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="1" r="41" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="41" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="41" s="11">
 <PrivilegeControl/>
 <NameJavaScriptGroup>
 <NameJavaScript name="JavaScript腳本1">
@@ -3299,133 +3555,39 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </NameJavaScriptGroup>
 <Expand dir="0"/>
 </C>
-<C c="4" r="40" s="11">
+<C c="4" r="41" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="40" cs="3" s="12">
+<C c="5" r="41" cs="3" s="13">
 <O>
 <![CDATA[tel]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="40" s="11">
+<C c="8" r="41" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="40" s="11">
+<C c="9" r="41" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="40" s="11">
+<C c="10" r="41" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="40" cs="3" s="12">
+<C c="11" r="41" cs="3" s="13">
 <O>
 <![CDATA[fax]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="40" s="11">
+<C c="14" r="41" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="40" s="14">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="16" r="40" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="17" r="40" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="0" r="41" s="0">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Expand/>
-</C>
-<C c="1" r="41" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="2" r="41" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="3" r="41" s="10">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="4" r="41" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="5" r="41" cs="3" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.TextEditor">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<TextAttr/>
-<Reg class="com.fr.form.ui.reg.NoneReg"/>
-<widgetValue/>
-<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
-</Widget>
-<Expand dir="0"/>
-</C>
-<C c="8" r="41" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="9" r="41" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="41" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="41" cs="3" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.TextEditor">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<TextAttr/>
-<Reg class="com.fr.form.ui.reg.NoneReg"/>
-<widgetValue/>
-<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
-</Widget>
-<Expand/>
-</C>
-<C c="14" r="41" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="41" s="14">
+<C c="15" r="41" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3451,55 +3613,83 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="42" s="10">
+<C c="3" r="42" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="42" s="11">
+<C c="4" r="42" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="42" s="11">
+<C c="5" r="42" cs="3" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(tel, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="8" r="42" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="42" s="11">
+<C c="9" r="42" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="42" s="11">
+<C c="10" r="42" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="42" s="11">
+<C c="11" r="42" cs="3" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(fax, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.TextEditor">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="42" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="42" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="42" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="42" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="12" r="42" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="13" r="42" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="42" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="42" s="14">
+<C c="15" r="42" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3521,11 +3711,85 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="43" s="9">
+<C c="2" r="43" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="43" s="10">
+<C c="3" r="43" s="11">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="43" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="43" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="43" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="43" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="43" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="43" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="43" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="43" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="43" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="43" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="43" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="43" s="15">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="43" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="43" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="44" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="1" r="44" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="44" s="10">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="44" s="11">
 <PrivilegeControl/>
 <NameJavaScriptGroup>
 <NameJavaScript name="JavaScript腳本1">
@@ -3552,128 +3816,39 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </NameJavaScriptGroup>
 <Expand dir="0"/>
 </C>
-<C c="4" r="43" s="11">
+<C c="4" r="44" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="43" cs="3" s="12">
+<C c="5" r="44" cs="3" s="13">
 <O>
 <![CDATA[main_sales]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="43" s="11">
+<C c="8" r="44" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="43" s="11">
+<C c="9" r="44" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="43" s="11">
+<C c="10" r="44" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="43" cs="3" s="12">
+<C c="11" r="44" cs="3" s="13">
 <O>
-<![CDATA[main_presales]]></O>
+<![CDATA[main_pre_sales]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="43" s="11">
+<C c="14" r="44" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="43" s="14">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="16" r="43" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="17" r="43" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="0" r="44" s="0">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Expand/>
-</C>
-<C c="1" r="44" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="2" r="44" s="0">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="3" r="44" s="10">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="4" r="44" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="5" r="44" cs="3" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.CheckBox">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<Text>
-<![CDATA[]]></Text>
-</Widget>
-<Expand/>
-</C>
-<C c="8" r="44" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="9" r="44" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="44" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="44" cs="3" s="16">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Widget class="com.fr.form.ui.ComboBox">
-<Listener event="afterinit">
-<JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
-<Content>
-<![CDATA[window.mainPaneWidgets.push(this);]]></Content>
-</JavaScript>
-</Listener>
-<WidgetAttr disabled="true" description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<widgetValue/>
-</Widget>
-<Expand/>
-</C>
-<C c="14" r="44" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="44" s="14">
+<C c="15" r="44" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3699,55 +3874,78 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="45" s="10">
+<C c="3" r="45" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="45" s="11">
+<C c="4" r="45" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="45" s="11">
+<C c="5" r="45" cs="3" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(main_sales, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.CheckBox">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[]]></Text>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="45" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="45" s="11">
+<C c="9" r="45" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="45" s="11">
+<C c="10" r="45" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="45" s="11">
+<C c="11" r="45" cs="3" s="16">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=company_m01.select(main_pre_sales, company_id = F9)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.ComboBox">
+<Listener event="afterinit">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.contentPaneWidgets.push(this);]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr disabled="true" description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue/>
+</Widget>
+<Expand/>
+</C>
+<C c="14" r="45" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="45" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="10" r="45" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="11" r="45" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="12" r="45" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="13" r="45" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="45" s="11">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="15" r="45" s="14">
+<C c="15" r="45" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3773,55 +3971,55 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="46" s="19">
+<C c="3" r="46" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="46" s="20">
+<C c="4" r="46" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="46" s="20">
+<C c="5" r="46" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="46" s="20">
+<C c="6" r="46" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="46" s="20">
+<C c="7" r="46" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="46" s="20">
+<C c="8" r="46" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="46" s="20">
+<C c="9" r="46" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="46" s="20">
+<C c="10" r="46" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="46" s="20">
+<C c="11" r="46" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="46" s="20">
+<C c="12" r="46" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="46" s="20">
+<C c="13" r="46" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="46" s="20">
+<C c="14" r="46" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="46" s="21">
+<C c="15" r="46" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3843,11 +4041,59 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="47" s="22">
+<C c="2" r="47" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="47" cs="13" s="23">
+<C c="3" r="47" s="19">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="47" s="20">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="47" s="20">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="47" s="20">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="47" s="20">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="47" s="20">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="47" s="20">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="47" s="20">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="47" s="20">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="47" s="20">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="47" s="20">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="47" s="20">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="47" s="21">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3859,17 +4105,43 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="18" r="47" cs="12" s="23">
-<PrivilegeControl/>
-<Expand/>
-</C>
 <C c="0" r="48" s="0">
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="48" cs="29" s="0">
+<C c="1" r="48" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="48" s="22">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="48" cs="13" s="23">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="48" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="48" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="48" cs="12" s="23">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="49" s="0">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="1" r="49" cs="29" s="0">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3895,101 +4167,190 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <ReportWriteAttr>
 <SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
 <Name>
-<![CDATA[quo_main]]></Name>
-<Attributes dsName="cco"/>
-<DMLConfig class="com.fr.write.config.UpdateConfig">
-<Table schema="" name="ord_main"/>
-<ColumnConfig name="ord_no" isKey="true" skipUnmodified="false">
-<ColumnRow column="7" row="9"/>
+<![CDATA[insert]]></Name>
+<Attributes dsName="frPlusW"/>
+<DMLConfig class="com.fr.write.config.InsertConfig">
+<Table schema="" name="company_m"/>
+<ColumnConfig name="company_id" isKey="true" skipUnmodified="false">
+<ColumnRow column="5" row="8"/>
 </ColumnConfig>
-<ColumnConfig name="ord_date" isKey="false" skipUnmodified="false">
-<ColumnRow column="7" row="6"/>
+<ColumnConfig name="region" isKey="false" skipUnmodified="false">
+<ColumnRow column="11" row="8"/>
 </ColumnConfig>
-<ColumnConfig name="cust_id" isKey="false" skipUnmodified="false">
-<ColumnRow column="7" row="12"/>
+<ColumnConfig name="language_code" isKey="false" skipUnmodified="false">
+<ColumnRow column="11" row="11"/>
 </ColumnConfig>
-<ColumnConfig name="sale_man" isKey="false" skipUnmodified="false">
-<ColumnRow column="7" row="46"/>
+<ColumnConfig name="full_name" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="14"/>
 </ColumnConfig>
-<ColumnConfig name="sale_total" isKey="false" skipUnmodified="false">
-<ColumnRow column="7" row="46"/>
+<ColumnConfig name="short_name" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="11"/>
 </ColumnConfig>
-<ColumnConfig name="final_total" isKey="false" skipUnmodified="false">
-<ColumnRow column="7" row="46"/>
+<ColumnConfig name="full_name_en" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="23"/>
 </ColumnConfig>
-<ColumnConfig name="sale_tax" isKey="false" skipUnmodified="false">
-<ColumnRow column="7" row="46"/>
+<ColumnConfig name="short_name_en" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="26"/>
 </ColumnConfig>
-<ColumnConfig name="ord_company" isKey="false" skipUnmodified="false">
-<ColumnRow column="7" row="46"/>
+<ColumnConfig name="business_code" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="32"/>
 </ColumnConfig>
-<ColumnConfig name="memo" isKey="false" skipUnmodified="false">
-<ColumnRow column="3" row="46"/>
+<ColumnConfig name="cust_mark" isKey="false" skipUnmodified="false">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=IF(F36,"1","0")]]></Attributes>
+</O>
+</ColumnConfig>
+<ColumnConfig name="cust_type" isKey="false" skipUnmodified="false">
+<ColumnRow column="11" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="supplier_mark" isKey="false" skipUnmodified="false">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=IF(F40,"1","0")]]></Attributes>
+</O>
+</ColumnConfig>
+<ColumnConfig name="tel" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="42"/>
+</ColumnConfig>
+<ColumnConfig name="fax" isKey="false" skipUnmodified="false">
+<ColumnRow column="11" row="42"/>
+</ColumnConfig>
+<ColumnConfig name="zip_no" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="17"/>
+</ColumnConfig>
+<ColumnConfig name="address" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="20"/>
+</ColumnConfig>
+<ColumnConfig name="address_en" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="29"/>
+</ColumnConfig>
+<ColumnConfig name="main_sales" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="45"/>
+</ColumnConfig>
+<ColumnConfig name="main_pre_sales" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="45"/>
+</ColumnConfig>
+<ColumnConfig name="status" isKey="false" skipUnmodified="false">
+<ColumnRow column="11" row="17"/>
+</ColumnConfig>
+<ColumnConfig name="create_person" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
 </ColumnConfig>
 <ColumnConfig name="create_time" isKey="false" skipUnmodified="false">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=NOW()]]></Attributes>
-</O>
+<O>
+<![CDATA[]]></O>
 </ColumnConfig>
-<ColumnConfig name="create_man" isKey="false" skipUnmodified="false">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=$g_p_curr_emp]]></Attributes>
-</O>
+<ColumnConfig name="update_person" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
 </ColumnConfig>
-<ColumnConfig name="update_man" isKey="false" skipUnmodified="false">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=$g_p_curr_emp]]></Attributes>
-</O>
+<ColumnConfig name="update_time" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
 </ColumnConfig>
-<Condition class="com.fr.data.condition.ListCondition"/>
+<ColumnConfig name="supplier_type" isKey="false" skipUnmodified="false">
+<ColumnRow column="11" row="39"/>
+</ColumnConfig>
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[A2=="insert"]]></Formula>
+</Condition>
 </DMLConfig>
 </SubmitVisitor>
 <SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
 <Name>
-<![CDATA[quo_detail]]></Name>
-<Attributes dsName="cco"/>
-<DMLConfig class="com.fr.write.config.IntelliDMLConfig">
-<Table schema="" name="ord_detail_m"/>
-<ColumnConfig name="ord_no" isKey="false" skipUnmodified="false">
-<ColumnRow column="7" row="9"/>
+<![CDATA[update]]></Name>
+<Attributes dsName="frPlusW"/>
+<DMLConfig class="com.fr.write.config.UpdateConfig">
+<Table schema="" name="company_m"/>
+<ColumnConfig name="company_id" isKey="true" skipUnmodified="false">
+<ColumnRow column="5" row="8"/>
 </ColumnConfig>
-<ColumnConfig name="seq" isKey="false" skipUnmodified="false">
-<ColumnRow column="3" row="46"/>
+<ColumnConfig name="region" isKey="false" skipUnmodified="false">
+<ColumnRow column="11" row="8"/>
 </ColumnConfig>
-<ColumnConfig name="prod_id" isKey="false" skipUnmodified="false">
-<ColumnRow column="5" row="46"/>
+<ColumnConfig name="language_code" isKey="false" skipUnmodified="false">
+<ColumnRow column="11" row="11"/>
 </ColumnConfig>
-<ColumnConfig name="prod_name" isKey="false" skipUnmodified="false">
-<ColumnRow column="7" row="46"/>
+<ColumnConfig name="full_name" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="14"/>
 </ColumnConfig>
-<ColumnConfig name="prod_spec" isKey="false" skipUnmodified="false">
-<ColumnRow column="7" row="46"/>
+<ColumnConfig name="short_name" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="11"/>
 </ColumnConfig>
-<ColumnConfig name="qty" isKey="false" skipUnmodified="false">
-<ColumnRow column="7" row="46"/>
+<ColumnConfig name="full_name_en" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="23"/>
 </ColumnConfig>
-<ColumnConfig name="sale_price" isKey="false" skipUnmodified="false">
-<ColumnRow column="7" row="46"/>
+<ColumnConfig name="short_name_en" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="26"/>
 </ColumnConfig>
-<ColumnConfig name="sale_amt" isKey="false" skipUnmodified="false">
-<ColumnRow column="7" row="46"/>
+<ColumnConfig name="business_code" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="32"/>
 </ColumnConfig>
-<ColumnConfig name="memo" isKey="false" skipUnmodified="false">
-<ColumnRow column="7" row="46"/>
-</ColumnConfig>
-<ColumnConfig name="update_man" isKey="false" skipUnmodified="false">
+<ColumnConfig name="cust_mark" isKey="false" skipUnmodified="false">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=$g_p_curr_emp]]></Attributes>
+<![CDATA[=IF(F36,"1","0")]]></Attributes>
 </O>
 </ColumnConfig>
-<ColumnConfig name="uid" isKey="true" skipUnmodified="false">
-<ColumnRow column="2" row="46"/>
+<ColumnConfig name="cust_type" isKey="false" skipUnmodified="false">
+<ColumnRow column="11" row="35"/>
 </ColumnConfig>
-<Condition class="com.fr.data.condition.ListCondition"/>
+<ColumnConfig name="supplier_mark" isKey="false" skipUnmodified="false">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=IF(F40,"1","0")]]></Attributes>
+</O>
+</ColumnConfig>
+<ColumnConfig name="tel" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="42"/>
+</ColumnConfig>
+<ColumnConfig name="fax" isKey="false" skipUnmodified="false">
+<ColumnRow column="11" row="42"/>
+</ColumnConfig>
+<ColumnConfig name="zip_no" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="17"/>
+</ColumnConfig>
+<ColumnConfig name="address" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="20"/>
+</ColumnConfig>
+<ColumnConfig name="address_en" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="29"/>
+</ColumnConfig>
+<ColumnConfig name="main_sales" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="45"/>
+</ColumnConfig>
+<ColumnConfig name="main_pre_sales" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="45"/>
+</ColumnConfig>
+<ColumnConfig name="status" isKey="false" skipUnmodified="false">
+<ColumnRow column="11" row="17"/>
+</ColumnConfig>
+<ColumnConfig name="create_person" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="create_time" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="update_person" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="update_time" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="supplier_type" isKey="false" skipUnmodified="false">
+<ColumnRow column="11" row="39"/>
+</ColumnConfig>
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[A2=="update"]]></Formula>
+</Condition>
 </DMLConfig>
 </SubmitVisitor>
 </ReportWriteAttr>
@@ -4020,6 +4381,17 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <Background name="ColorBackground" color="-15260867"/>
 <LCAttr vgap="0" hgap="0" compInterval="0"/>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="gw_insertMode_btn"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_insertMode_btn]]></Name>
+</InnerWidget>
+<BoundsAttr x="84" y="3" width="32" height="32"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.Label">
 <WidgetName name="label0"/>
 <WidgetAttr description="">
@@ -4037,7 +4409,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.NameWidget">
-<WidgetName name="gw_cancelNode_btn01"/>
+<WidgetName name="gw_cancelMode_btn"/>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -4048,7 +4420,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.NameWidget">
-<WidgetName name="gw_bug_btn01"/>
+<WidgetName name="gw_bug_btn"/>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -4059,7 +4431,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.NameWidget">
-<WidgetName name="gw_save_btn01"/>
+<WidgetName name="gw_save_btn"/>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -4070,7 +4442,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.NameWidget">
-<WidgetName name="gw_langSet_btn01"/>
+<WidgetName name="gw_langSet_btn"/>
 <LabelName name="en"/>
 <WidgetAttr description="">
 <PrivilegeControl/>
@@ -4082,7 +4454,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.NameWidget">
-<WidgetName name="gw_updateMode_btn01"/>
+<WidgetName name="gw_updateMode_btn"/>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -4093,7 +4465,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.NameWidget">
-<WidgetName name="gw_deleteMode_btn01"/>
+<WidgetName name="gw_deleteMode_btn"/>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -4104,7 +4476,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.NameWidget">
-<WidgetName name="gw_query_btn01"/>
+<WidgetName name="gw_query_btn"/>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -4113,27 +4485,16 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </InnerWidget>
 <BoundsAttr x="42" y="3" width="32" height="32"/>
 </Widget>
-<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
-<InnerWidget class="com.fr.form.ui.NameWidget">
-<WidgetName name="gw_addMode_btn01"/>
-<WidgetAttr description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<Name>
-<![CDATA[gw_addMode_btn]]></Name>
-</InnerWidget>
-<BoundsAttr x="84" y="3" width="32" height="32"/>
-</Widget>
 <Sorted sorted="false"/>
 <MobileWidgetList>
-<Widget widgetName="gw_query_btn01"/>
-<Widget widgetName="gw_addMode_btn01"/>
-<Widget widgetName="gw_updateMode_btn01"/>
-<Widget widgetName="gw_deleteMode_btn01"/>
-<Widget widgetName="gw_cancelNode_btn01"/>
-<Widget widgetName="gw_save_btn01"/>
-<Widget widgetName="gw_bug_btn01"/>
-<Widget widgetName="gw_langSet_btn01"/>
+<Widget widgetName="gw_query_btn"/>
+<Widget widgetName="gw_insertMode_btn"/>
+<Widget widgetName="gw_updateMode_btn"/>
+<Widget widgetName="gw_deleteMode_btn"/>
+<Widget widgetName="gw_cancelMode_btn"/>
+<Widget widgetName="gw_save_btn"/>
+<Widget widgetName="gw_bug_btn"/>
+<Widget widgetName="gw_langSet_btn"/>
 </MobileWidgetList>
 <FrozenWidgets/>
 <Display display="true"/>
@@ -4149,7 +4510,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </WidgetNameTagMap>
 <ParamAttr class="com.fr.report.mobile.DefaultMobileParamStyle"/>
 </Layout>
-<DesignAttr width="766" height="39"/>
+<DesignAttr width="766" height="36"/>
 </ParameterUI>
 <Parameter>
 <Attributes name="p_mode"/>
@@ -4174,13 +4535,18 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <Background name="ColorBackground" color="-460551"/>
 <Border/>
 </Style>
-<Style horizontal_alignment="4" imageLayout="1">
-<FRFont name="微軟正黑體" style="0" size="80" foreground="-8355712"/>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="Source Han Sans K Light" style="1" size="112" foreground="-15260867"/>
 <Background name="ColorBackground" color="-460551"/>
 <Border/>
 </Style>
 <Style imageLayout="1" paddingLeft="10">
 <FRFont name="Source Han Sans K Light" style="0" size="72" foreground="-6908266"/>
+<Background name="ColorBackground" color="-460551"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="2" vertical_alignment="1" imageLayout="1">
+<FRFont name="Dialog" style="0" size="72"/>
 <Background name="ColorBackground" color="-460551"/>
 <Border/>
 </Style>
@@ -4215,23 +4581,18 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Style>
 <Style style_name="Frame_Gray_001_05"/>
 <Style imageLayout="1">
-<FRFont name="Source Han Sans K" style="0" size="112" foreground="-15260867"/>
-<Background name="ColorBackground" color="-1"/>
+<FRFont name="Source Han Sans K" style="0" size="96" foreground="-15260867"/>
+<Background name="NullBackground"/>
 <Border/>
 </Style>
 <Style imageLayout="1">
-<FRFont name="Source Han Sans K" style="0" size="112"/>
+<FRFont name="Source Han Sans K" style="0" size="96"/>
 <Background name="ColorBackground" color="-1"/>
 <Border/>
 </Style>
 <Style horizontal_alignment="2" imageLayout="1">
 <FRFont name="微軟正黑體" style="0" size="96"/>
 <Background name="ColorBackground" color="-2302238"/>
-<Border/>
-</Style>
-<Style imageLayout="1" paddingLeft="10">
-<FRFont name="Source Han Sans K" style="0" size="112" foreground="-15260867"/>
-<Background name="ColorBackground" color="-1"/>
 <Border/>
 </Style>
 <Style style_name="Frame_Gray_001_08"/>
@@ -4251,7 +4612,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Style>
 </StyleList>
 <DesignerVersion DesignerVersion="KAA"/>
-<PreviewType PreviewType="3"/>
+<PreviewType PreviewType="1"/>
 <TemplateIdAttMark class="com.fr.base.iofile.attr.TemplateIdAttrMark">
 <TemplateIdAttMark TemplateId="abc32622-94f8-48b9-9432-78fa3a57ec63"/>
 </TemplateIdAttMark>
