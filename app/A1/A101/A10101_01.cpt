@@ -39,6 +39,25 @@ WHERE company_id = '${companyID}']]></Query>
 <PageQuery>
 <![CDATA[]]></PageQuery>
 </TableData>
+<TableData name="language_template" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="gp_fileNameWithExtType"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[frPlusR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM `language_template`
+WHERE file_name = '${gp_fileNameWithExtType}']]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
 </TableDataMap>
 <ReportWebAttr>
 <ServerPrinter/>
@@ -78,7 +97,7 @@ WHERE company_id = '${companyID}']]></Query>
 <JSImport>
 <![CDATA[fPlus/js/method/getURLFormula.js]]></JSImport>
 <Content>
-<![CDATA[if (!parent) {} else {
+<![CDATA[if (!window.frameElement) {} else {
 	parent.window.subContentPane = contentPane;
 	parent.window.subWindow = window;
 }
@@ -127,7 +146,13 @@ mainPagination.pagination("go",pageNum);
 <![CDATA[//set global variables.
 window.contentPaneWidgets = []A; 
 window.paraPaneGlobalWidgets = {};
-window.mainPaneMode = "view";]]></Content>
+if (window.frameElement) {
+	if (window.frameElement.id === "subFrame") {
+		window.FRDialogTarget = parent;
+	} else {
+		window.FRDialogTarget = window;
+	};
+}]]></Content>
 </JavaScript>
 </Listener>
 <ToolBars/>
@@ -155,7 +180,7 @@ window.mainPaneMode = "view";]]></Content>
 <RowHeight defaultValue="723900">
 <![CDATA[288000,1440000,685800,288000,1152000,1524000,288000,1152000,288000,723900,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
-<![CDATA[2743200,723900,288000,1218240,288000,1218240,288000,1219200,288000,5760000,288000,11520000,288000,8640000,288000,5760000,288000,8640000,288000,8640000,288000,8640000,288000,8640000,288000,11520000,288000,2743200]]></ColumnWidth>
+<![CDATA[2743200,723900,288000,1218240,288000,1218240,288000,1219200,288000,11734800,288000,13525500,288000,8640000,288000,5760000,288000,8640000,288000,8640000,288000,8640000,288000,8640000,288000,11520000,288000,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="0" r="0" s="0">
 <PrivilegeControl/>
@@ -293,6 +318,10 @@ window.mainPaneMode = "view";]]></Content>
 <![CDATA[="Contact Info"]]></Attributes>
 </O>
 <PrivilegeControl/>
+<Present class="com.fr.base.present.FormulaPresent">
+<Content>
+<![CDATA[=IF(LEN(language_template.select($gp_userLanguage,column_name==$$$))>0,language_template.select($gp_userLanguage,column_name==$$$),$$$)]]></Content>
+</Present>
 <Expand/>
 </C>
 <C c="11" r="1" s="0">
@@ -665,6 +694,10 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
+<Present class="com.fr.base.present.FormulaPresent">
+<Content>
+<![CDATA[=IF(LEN(language_template.select($gp_userLanguage,column_name==$$$))>0,language_template.select($gp_userLanguage,column_name==$$$),$$$)]]></Content>
+</Present>
 <Expand/>
 </C>
 <C c="10" r="5" s="0">
@@ -675,10 +708,14 @@ window.mainPaneMode = "view";]]></Content>
 </C>
 <C c="11" r="5" s="8">
 <O>
-<![CDATA[address\t]]></O>
+<![CDATA[address]]></O>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
+<Present class="com.fr.base.present.FormulaPresent">
+<Content>
+<![CDATA[=IF(LEN(language_template.select($gp_userLanguage,column_name==$$$))>0,language_template.select($gp_userLanguage,column_name==$$$),$$$)]]></Content>
+</Present>
 <Expand/>
 </C>
 <C c="12" r="5" s="0">
@@ -693,6 +730,10 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
+<Present class="com.fr.base.present.FormulaPresent">
+<Content>
+<![CDATA[=IF(LEN(language_template.select($gp_userLanguage,column_name==$$$))>0,language_template.select($gp_userLanguage,column_name==$$$),$$$)]]></Content>
+</Present>
 <Expand/>
 </C>
 <C c="14" r="5" s="0">
@@ -707,6 +748,10 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
+<Present class="com.fr.base.present.FormulaPresent">
+<Content>
+<![CDATA[=IF(LEN(language_template.select($gp_userLanguage,column_name==$$$))>0,language_template.select($gp_userLanguage,column_name==$$$),$$$)]]></Content>
+</Present>
 <Expand/>
 </C>
 <C c="16" r="5" s="0">
@@ -721,6 +766,10 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
+<Present class="com.fr.base.present.FormulaPresent">
+<Content>
+<![CDATA[=IF(LEN(language_template.select($gp_userLanguage,column_name==$$$))>0,language_template.select($gp_userLanguage,column_name==$$$),$$$)]]></Content>
+</Present>
 <Expand/>
 </C>
 <C c="18" r="5" s="0">
@@ -735,6 +784,10 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
+<Present class="com.fr.base.present.FormulaPresent">
+<Content>
+<![CDATA[=IF(LEN(language_template.select($gp_userLanguage,column_name==$$$))>0,language_template.select($gp_userLanguage,column_name==$$$),$$$)]]></Content>
+</Present>
 <Expand/>
 </C>
 <C c="20" r="5" s="0">
@@ -749,6 +802,10 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
+<Present class="com.fr.base.present.FormulaPresent">
+<Content>
+<![CDATA[=IF(LEN(language_template.select($gp_userLanguage,column_name==$$$))>0,language_template.select($gp_userLanguage,column_name==$$$),$$$)]]></Content>
+</Present>
 <Expand/>
 </C>
 <C c="22" r="5" s="0">
@@ -763,6 +820,10 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
+<Present class="com.fr.base.present.FormulaPresent">
+<Content>
+<![CDATA[=IF(LEN(language_template.select($gp_userLanguage,column_name==$$$))>0,language_template.select($gp_userLanguage,column_name==$$$),$$$)]]></Content>
+</Present>
 <Expand/>
 </C>
 <C c="24" r="5" s="0">
@@ -777,6 +838,10 @@ window.mainPaneMode = "view";]]></Content>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
+<Present class="com.fr.base.present.FormulaPresent">
+<Content>
+<![CDATA[=IF(LEN(language_template.select($gp_userLanguage,column_name==$$$))>0,language_template.select($gp_userLanguage,column_name==$$$),$$$)]]></Content>
+</Present>
 <Expand/>
 </C>
 <C c="26" r="5" s="2">
@@ -922,6 +987,55 @@ F_.widget.button.defaultFrame(this,textColor).defaultDisplay(this,html).defaultE
 window[dynamicParaName]A = []A;]]></Content>
 </JavaScript>
 </Listener>
+<Listener event="click">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="id"/>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$companyID]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="contact"/>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=J8]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[let thisRow = FR.cellStr2ColumnRow(this.options.location).row;
+let seqCol = 9;
+
+var frameName = "";
+if (FRDialogTarget === parent) {
+	frameName = "subFrame";
+} else {
+	frameName = "_self";
+};
+
+let dialogWidth = contentPane.element.width() * 0.7;
+let dialogHeight = contentPane.element.height() * 0.7;
+
+let queryURLFormula = getURLFormula("A10101_01_edit.cpt");
+let queryURL = FR.remoteEvaluate('=' + queryURLFormula);
+
+
+FRDialogTarget.FR.doHyperlinkByPost(FR.servletURL + "?viewlet=" + queryURL, {
+	editMode: "delete",
+	contactID: contact,
+	companyID: id,
+	frameTarget: frameName
+}, "_dialog", {
+	"width": dialogWidth,
+	"height": dialogHeight,
+	"isCenter": true,
+	"title": ""
+});]]></Content>
+</JavaScript>
+</Listener>
 <WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
@@ -959,12 +1073,50 @@ F_.widget.button.defaultFrame(this,textColor).defaultDisplay(this,html).defaultE
 </Listener>
 <Listener event="click">
 <JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
+<Parameters>
+<Parameter>
+<Attributes name="id"/>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$companyID]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="contact"/>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=J8]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
 <Content>
 <![CDATA[let thisRow = FR.cellStr2ColumnRow(this.options.location).row;
-let seqCol = 7;
-let dynamicParaName = "cellWidgets"+contentPane.getCellValue(seqCol, thisRow);
-window[dynamicParaName]A.forEach(widget => widget.setEnable(true));]]></Content>
+let seqCol = 9;
+
+var frameName = "";
+if (FRDialogTarget === parent) {
+	frameName = "subFrame";
+} else {
+	frameName = "_self";
+};
+
+let dialogWidth = contentPane.element.width() * 0.7;
+let dialogHeight = contentPane.element.height() * 0.7;
+
+let queryURLFormula = getURLFormula("A10101_01_edit.cpt");
+let queryURL = FR.remoteEvaluate('=' + queryURLFormula);
+
+
+FRDialogTarget.FR.doHyperlinkByPost(FR.servletURL + "?viewlet=" + queryURL, {
+	editMode: "update",
+	contactID: contact,
+	frameTarget: frameName
+}, "_dialog", {
+	"width": dialogWidth,
+	"height": dialogHeight,
+	"isCenter": true,
+	"title": ""
+});]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr description="">
@@ -1037,6 +1189,8 @@ window[dynamicParaName]A.forEach(widget => widget.setEnable(true));]]></Content>
 <Expand dir="0"/>
 </C>
 <C c="10" r="7" s="11">
+<O>
+<![CDATA[▪]]></O>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
@@ -1054,13 +1208,15 @@ window[dynamicParaName]A.forEach(widget => widget.setEnable(true));]]></Content>
 <CellPageAttr/>
 <Expand dir="0"/>
 </C>
-<C c="12" r="7" s="0">
+<C c="12" r="7" s="11">
+<O>
+<![CDATA[▪]]></O>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand leftParentDefault="false" left="J8"/>
 </C>
-<C c="13" r="7" s="12">
+<C c="13" r="7" s="13">
 <O t="DSColumn">
 <Attributes dsName="company_d01_01" columnName="email"/>
 <Complex/>
@@ -1072,13 +1228,15 @@ window[dynamicParaName]A.forEach(widget => widget.setEnable(true));]]></Content>
 <CellPageAttr/>
 <Expand dir="0"/>
 </C>
-<C c="14" r="7" s="0">
+<C c="14" r="7" s="11">
+<O>
+<![CDATA[▪]]></O>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand leftParentDefault="false" left="J8"/>
 </C>
-<C c="15" r="7" s="12">
+<C c="15" r="7" s="13">
 <O t="DSColumn">
 <Attributes dsName="company_d01_01" columnName="tel"/>
 <Complex/>
@@ -1090,13 +1248,15 @@ window[dynamicParaName]A.forEach(widget => widget.setEnable(true));]]></Content>
 <CellPageAttr/>
 <Expand dir="0"/>
 </C>
-<C c="16" r="7" s="0">
+<C c="16" r="7" s="11">
+<O>
+<![CDATA[▪]]></O>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand leftParentDefault="false" left="J8"/>
 </C>
-<C c="17" r="7" s="12">
+<C c="17" r="7" s="13">
 <O t="DSColumn">
 <Attributes dsName="company_d01_01" columnName="wechat"/>
 <Complex/>
@@ -1108,13 +1268,15 @@ window[dynamicParaName]A.forEach(widget => widget.setEnable(true));]]></Content>
 <CellPageAttr/>
 <Expand dir="0"/>
 </C>
-<C c="18" r="7" s="0">
+<C c="18" r="7" s="11">
+<O>
+<![CDATA[▪]]></O>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand leftParentDefault="false" left="J8"/>
 </C>
-<C c="19" r="7" s="12">
+<C c="19" r="7" s="13">
 <O t="DSColumn">
 <Attributes dsName="company_d01_01" columnName="line"/>
 <Complex/>
@@ -1126,13 +1288,15 @@ window[dynamicParaName]A.forEach(widget => widget.setEnable(true));]]></Content>
 <CellPageAttr/>
 <Expand dir="0"/>
 </C>
-<C c="20" r="7" s="0">
+<C c="20" r="7" s="11">
+<O>
+<![CDATA[▪]]></O>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand leftParentDefault="false" left="J8"/>
 </C>
-<C c="21" r="7" s="12">
+<C c="21" r="7" s="13">
 <O t="DSColumn">
 <Attributes dsName="company_d01_01" columnName="facebook"/>
 <Complex/>
@@ -1144,13 +1308,15 @@ window[dynamicParaName]A.forEach(widget => widget.setEnable(true));]]></Content>
 <CellPageAttr/>
 <Expand dir="0"/>
 </C>
-<C c="22" r="7" s="0">
+<C c="22" r="7" s="11">
+<O>
+<![CDATA[▪]]></O>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand leftParentDefault="false" left="J8"/>
 </C>
-<C c="23" r="7" s="12">
+<C c="23" r="7" s="13">
 <O t="DSColumn">
 <Attributes dsName="company_d01_01" columnName="whatsapp"/>
 <Complex/>
@@ -1162,13 +1328,15 @@ window[dynamicParaName]A.forEach(widget => widget.setEnable(true));]]></Content>
 <CellPageAttr/>
 <Expand dir="0"/>
 </C>
-<C c="24" r="7" s="0">
+<C c="24" r="7" s="11">
+<O>
+<![CDATA[▪]]></O>
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand leftParentDefault="false" left="J8"/>
 </C>
-<C c="25" r="7" s="12">
+<C c="25" r="7" s="14">
 <O t="DSColumn">
 <Attributes dsName="company_d01_01" columnName="memo"/>
 <Complex/>
@@ -1452,6 +1620,17 @@ window[dynamicParaName]A.forEach(widget => widget.setEnable(true));]]></Content>
 <Background name="ColorBackground" color="-15260867"/>
 <LCAttr vgap="0" hgap="0" compInterval="0"/>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.NameWidget">
+<WidgetName name="gw_langSelect_combobox"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Name>
+<![CDATA[gw_langSelect_combobox]]></Name>
+</InnerWidget>
+<BoundsAttr x="210" y="10" width="116" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.FreeButton">
 <Listener event="afterinit">
 <JavaScript class="com.fr.js.JavaScriptImpl">
@@ -1460,6 +1639,44 @@ window[dynamicParaName]A.forEach(widget => widget.setEnable(true));]]></Content>
 <![CDATA[let textColor = "white";
 let html = '<span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg></span>';
 F_.widget.button.defaultFrame(this,textColor).defaultDisplay(this,html).defaultEffect(this);]]></Content>
+</JavaScript>
+</Listener>
+<Listener event="click">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="id"/>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$companyID]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[var frameName = "";
+if (FRDialogTarget === parent) {
+	frameName = "subFrame";
+} else {
+	frameName = "_self";
+};
+console.log(frameName);
+let dialogWidth = contentPane.element.width() * 0.7;
+let dialogHeight = contentPane.element.height() * 0.7;
+
+let queryURLFormula = getURLFormula("A10101_01_edit.cpt");
+let queryURL = FR.remoteEvaluate('=' + queryURLFormula);
+
+
+FRDialogTarget.FR.doHyperlinkByPost(FR.servletURL + "?viewlet=" + queryURL, {
+	editMode: "insert",
+	companyID: id,
+	frameTarget: frameName
+}, "_dialog", {
+	"width": dialogWidth,
+	"height": dialogHeight,
+	"isCenter": true,
+	"title": ""
+});]]></Content>
 </JavaScript>
 </Listener>
 <WidgetName name="insertMode_btn"/>
@@ -1521,6 +1738,7 @@ F_.widget.button.defaultFrame(this,textColor).defaultDisplay(this,html).defaultE
 <Widget widgetName="insertMode_btn"/>
 <Widget widgetName="gw_bug_btn"/>
 <Widget widgetName="gw_langSet_btn"/>
+<Widget widgetName="gw_langSelect_combobox"/>
 </MobileWidgetList>
 <FrozenWidgets/>
 <Display display="true"/>
@@ -1594,20 +1812,46 @@ F_.widget.button.defaultFrame(this,textColor).defaultDisplay(this,html).defaultE
 <Background name="ColorBackground" color="-460551"/>
 <Border/>
 </Style>
-<Style style_name="Cell_Data_001_Left"/>
-<Style imageLayout="1">
-<FRFont name="微軟正黑體" style="0" size="72"/>
-<Background name="ColorBackground" color="-460551"/>
-<Border/>
+<Style horizontal_alignment="0" imageLayout="1" paddingLeft="5">
+<FRFont name="Source Han Sans K Light" style="0" size="88"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1" color="-6908266"/>
+<Bottom style="1" color="-6908266"/>
+<Left style="1" color="-6908266"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="微軟正黑體" style="0" size="72" foreground="-8355712"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1" color="-6908266"/>
+<Bottom style="1" color="-6908266"/>
+</Border>
 </Style>
 <Style horizontal_alignment="2" imageLayout="1">
 <FRFont name="Source Han Sans K Light" style="0" size="88" foreground="-13421773"/>
 <Background name="ColorBackground" color="-1"/>
 <Border>
-<Top style="1" color="-3815218"/>
-<Bottom style="1" color="-3815218"/>
-<Left style="1" color="-3815218"/>
-<Right style="1" color="-3815218"/>
+<Top style="1" color="-6908266"/>
+<Bottom style="1" color="-6908266"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="Source Han Sans K Light" style="0" size="88" foreground="-13421773"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1" color="-6908266"/>
+<Bottom style="1" color="-6908266"/>
+</Border>
+</Style>
+<Style horizontal_alignment="2" imageLayout="1">
+<FRFont name="Source Han Sans K Light" style="0" size="88" foreground="-13421773"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1" color="-6908266"/>
+<Bottom style="1" color="-6908266"/>
+<Right style="1" color="-6908266"/>
 </Border>
 </Style>
 </StyleList>
