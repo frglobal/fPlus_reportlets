@@ -16,7 +16,7 @@
 <Parameter>
 <Attributes name="pageNum"/>
 <O t="I">
-<![CDATA[2]]></O>
+<![CDATA[1]]></O>
 </Parameter>
 </Parameters>
 <Attributes maxMemRowCount="-1"/>
@@ -1047,7 +1047,7 @@ window[dynamicParaName]A = []A;]]></Content>
 <Attributes name="contact"/>
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=K8]]></Attributes>
+<![CDATA[=J8]]></Attributes>
 </O>
 </Parameter>
 </Parameters>
@@ -1131,7 +1131,7 @@ F_.widget.button.defaultFrame(this,textColor).defaultDisplay(this,html).defaultE
 <Attributes name="contact"/>
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=K8]]></Attributes>
+<![CDATA[=J8]]></Attributes>
 </O>
 </Parameter>
 </Parameters>
@@ -1545,107 +1545,7 @@ FRDialogTarget.FR.doHyperlinkByPost(FR.servletURL + "?viewlet=" + queryURL, {
 <RightList/>
 </Footer>
 </ReportAttrSet>
-<ReportWriteAttr>
-<SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
-<Name>
-<![CDATA[quo_main]]></Name>
-<Attributes dsName="cco"/>
-<DMLConfig class="com.fr.write.config.UpdateConfig">
-<Table schema="" name="ord_main"/>
-<ColumnConfig name="ord_no" isKey="true" skipUnmodified="false">
-<ColumnRow column="12" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="ord_date" isKey="false" skipUnmodified="false">
-<ColumnRow column="12" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="cust_id" isKey="false" skipUnmodified="false">
-<ColumnRow column="12" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="sale_man" isKey="false" skipUnmodified="false">
-<ColumnRow column="12" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="sale_total" isKey="false" skipUnmodified="false">
-<ColumnRow column="12" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="final_total" isKey="false" skipUnmodified="false">
-<ColumnRow column="12" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="sale_tax" isKey="false" skipUnmodified="false">
-<ColumnRow column="12" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="ord_company" isKey="false" skipUnmodified="false">
-<ColumnRow column="12" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="memo" isKey="false" skipUnmodified="false">
-<ColumnRow column="3" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="create_time" isKey="false" skipUnmodified="false">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=NOW()]]></Attributes>
-</O>
-</ColumnConfig>
-<ColumnConfig name="create_man" isKey="false" skipUnmodified="false">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=$g_p_curr_emp]]></Attributes>
-</O>
-</ColumnConfig>
-<ColumnConfig name="update_man" isKey="false" skipUnmodified="false">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=$g_p_curr_emp]]></Attributes>
-</O>
-</ColumnConfig>
-<Condition class="com.fr.data.condition.ListCondition"/>
-</DMLConfig>
-</SubmitVisitor>
-<SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
-<Name>
-<![CDATA[quo_detail]]></Name>
-<Attributes dsName="cco"/>
-<DMLConfig class="com.fr.write.config.IntelliDMLConfig">
-<Table schema="" name="ord_detail_m"/>
-<ColumnConfig name="ord_no" isKey="false" skipUnmodified="false">
-<ColumnRow column="12" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="seq" isKey="false" skipUnmodified="false">
-<ColumnRow column="3" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="prod_id" isKey="false" skipUnmodified="false">
-<ColumnRow column="11" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="prod_name" isKey="false" skipUnmodified="false">
-<ColumnRow column="12" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="prod_spec" isKey="false" skipUnmodified="false">
-<ColumnRow column="12" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="qty" isKey="false" skipUnmodified="false">
-<ColumnRow column="12" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="sale_price" isKey="false" skipUnmodified="false">
-<ColumnRow column="12" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="sale_amt" isKey="false" skipUnmodified="false">
-<ColumnRow column="12" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="memo" isKey="false" skipUnmodified="false">
-<ColumnRow column="12" row="6"/>
-</ColumnConfig>
-<ColumnConfig name="update_man" isKey="false" skipUnmodified="false">
-<O t="XMLable" class="com.fr.base.Formula">
-<Attributes>
-<![CDATA[=$g_p_curr_emp]]></Attributes>
-</O>
-</ColumnConfig>
-<ColumnConfig name="uid" isKey="true" skipUnmodified="false">
-<ColumnRow column="2" row="6"/>
-</ColumnConfig>
-<Condition class="com.fr.data.condition.ListCondition"/>
-</DMLConfig>
-</SubmitVisitor>
-</ReportWriteAttr>
+<ReportWriteAttr/>
 <PrivilegeControl/>
 </Report>
 <ReportParameterAttr>

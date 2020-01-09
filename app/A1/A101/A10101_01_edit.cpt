@@ -3349,6 +3349,51 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </SubmitVisitor>
 <SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
 <Name>
+<![CDATA[update]]></Name>
+<Attributes dsName="frPlusW"/>
+<DMLConfig class="com.fr.write.config.UpdateConfig">
+<Table schema="" name="company_d01"/>
+<ColumnConfig name="company_id" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="11"/>
+</ColumnConfig>
+<ColumnConfig name="contact_title" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="14"/>
+</ColumnConfig>
+<ColumnConfig name="address" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="17"/>
+</ColumnConfig>
+<ColumnConfig name="email" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="20"/>
+</ColumnConfig>
+<ColumnConfig name="tel" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="23"/>
+</ColumnConfig>
+<ColumnConfig name="wechat" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="26"/>
+</ColumnConfig>
+<ColumnConfig name="line" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="29"/>
+</ColumnConfig>
+<ColumnConfig name="facebook" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="32"/>
+</ColumnConfig>
+<ColumnConfig name="whatsapp" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="35"/>
+</ColumnConfig>
+<ColumnConfig name="memo" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="39"/>
+</ColumnConfig>
+<ColumnConfig name="id" isKey="true" skipUnmodified="false">
+<ColumnRow column="5" row="8"/>
+</ColumnConfig>
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[A2=="update"]]></Formula>
+</Condition>
+</DMLConfig>
+</SubmitVisitor>
+<SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
+<Name>
 <![CDATA[delete]]></Name>
 <Attributes dsName="frPlusW"/>
 <DMLConfig class="com.fr.write.config.DeleteConfig">

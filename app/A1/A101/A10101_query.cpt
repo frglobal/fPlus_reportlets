@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WorkBook xmlVersion="20170720" releaseVersion="10.0.0">
+<TableDataMap>
+<TableData name="company_m" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[frPlusR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT * FROM `company_m`
+WHERE 1=1]]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+</TableDataMap>
 <ReportWebAttr>
 <ServerPrinter/>
 <WebPageContent>
@@ -7,6 +22,26 @@
 <WebPage isPage="false" showAsImage="false" autoScale="false" tdHeavy="false"/>
 </WebPageContent>
 <WebWriteContent>
+<Listener event="afterload">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[$('#my-slider').sliderPro({
+	width: 960,
+	height: 500,
+	arrows: true,
+	buttons: false,
+	waitForLayers: true,
+	thumbnailWidth: 200,
+	thumbnailHeight: 100,
+	thumbnailPointer: true,
+	autoplay: false,
+	autoScaleLayers: false
+});
+
+$('#my-slider').on('gotoSlide',function(data){console.log(data.index);});]]></Content>
+</JavaScript>
+</Listener>
 <ToolBars/>
 <EditRowColor setColor="false"/>
 <WebWrite SheetPosition="3"/>
@@ -15,8 +50,15 @@
 <ShowWidgets/>
 <OtherAttr autoStash="false"/>
 </WebWriteContent>
+<Background name="ColorBackground" color="-3420206"/>
+<CSSImport>
+<![CDATA[fPlus/css/third_party/slider-pro.min.css]]></CSSImport>
+<CSSImport>
+<![CDATA[fPlus/css/third_party/slider-pro-fr.css]]></CSSImport>
+<JSImport>
+<![CDATA[fPlus/js/third_party/jquery.sliderPro.min.js]]></JSImport>
 </ReportWebAttr>
-<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<Report class="com.fr.report.worksheet.WorkSheet" name="list">
 <ReportPageAttr>
 <HR/>
 <FR/>
@@ -26,12 +68,416 @@
 <ColumnPrivilegeControl/>
 <RowPrivilegeControl/>
 <RowHeight defaultValue="723900">
-<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<![CDATA[1676400,288000,1152000,288000,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
-<![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<![CDATA[1440000,288000,1440000,5143500,576000,5143500,576000,5143500,576000,5143500,576000,5143500,576000,5143500,576000,5143500,576000,2743200]]></ColumnWidth>
 <CellElementList>
-<C c="0" r="0">
+<C c="0" r="0" s="0">
 <PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="0" s="1">
+<O>
+<![CDATA[company_id]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="0" s="1">
+<O>
+<![CDATA[abbr_name]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="0" s="1">
+<O>
+<![CDATA[en_name]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="0" s="1">
+<O>
+<![CDATA[business_code]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="0" s="1">
+<O>
+<![CDATA[tel]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="0" s="1">
+<O>
+<![CDATA[fax]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="0" s="1">
+<O>
+<![CDATA[address]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="1" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="2" s="2">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.CheckBox">
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[]]></Text>
+</Widget>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="1" r="2" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="2" r="2" s="3">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=&D3]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="3" r="2" s="4">
+<O t="DSColumn">
+<Attributes dsName="company_m" columnName="company_id"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="2"/>
+<CellPageAttr/>
+<Expand dir="0" leftParentDefault="false"/>
+</C>
+<C c="4" r="2" s="5">
+<O>
+<![CDATA[▪]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="5" r="2" s="4">
+<O t="DSColumn">
+<Attributes dsName="company_m" columnName="short_name"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="2"/>
+<CellPageAttr/>
+<Expand dir="0" leftParentDefault="false" left="D3"/>
+</C>
+<C c="6" r="2" s="5">
+<O>
+<![CDATA[▪]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="7" r="2" s="4">
+<O t="DSColumn">
+<Attributes dsName="company_m" columnName="short_name_en"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="2"/>
+<CellPageAttr/>
+<Expand dir="0" leftParentDefault="false" left="D3"/>
+</C>
+<C c="8" r="2" s="5">
+<O>
+<![CDATA[▪]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="9" r="2" s="4">
+<O t="DSColumn">
+<Attributes dsName="company_m" columnName="business_code"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="2"/>
+<CellPageAttr/>
+<Expand dir="0" leftParentDefault="false" left="D3"/>
+</C>
+<C c="10" r="2" s="5">
+<O>
+<![CDATA[▪]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="11" r="2" s="4">
+<O t="DSColumn">
+<Attributes dsName="company_m" columnName="tel"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="2"/>
+<CellPageAttr/>
+<Expand dir="0" leftParentDefault="false" left="D3"/>
+</C>
+<C c="12" r="2" s="5">
+<O>
+<![CDATA[▪]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="13" r="2" s="4">
+<O t="DSColumn">
+<Attributes dsName="company_m" columnName="fax"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="2"/>
+<CellPageAttr/>
+<Expand dir="0" leftParentDefault="false" left="D3"/>
+</C>
+<C c="14" r="2" s="5">
+<O>
+<![CDATA[▪]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="15" r="2" s="6">
+<O t="DSColumn">
+<Attributes dsName="company_m" columnName="address"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="2"/>
+<CellPageAttr/>
+<Expand dir="0" leftParentDefault="false" left="D3"/>
+</C>
+<C c="16" r="2" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="0" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="1" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="2" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="3" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="4" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="5" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="6" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="7" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="8" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="9" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="10" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="11" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="12" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="13" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="14" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="15" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+<C c="16" r="3" s="0">
+<PrivilegeControl/>
+<Expand leftParentDefault="false" left="D3"/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+<Background name="ColorBackground" color="-1"/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<Report class="com.fr.report.worksheet.WorkSheet" name="report">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[22860000,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[45720000,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="7">
+<O>
+<![CDATA[<div class=\"slider-pro\" id=\"my-slider\">\n    <div class=\"sp-slides\">\n        <!-- Slide 1 -->\n        <div id=\"test01.cpt\" class=\"sp-slide\"><img class=\"sp-image\" src=\"/webroot/fPlus/imgs/report/EMS.jpg\" /></div> \n        <!-- Slide 2 -->\n        <div id=\"test02.cpt\" class=\"sp-slide\">\n        \t<img class=\"sp-image\" src=\"/webroot/fPlus/imgs/report/Letter001.jpg\" />\n            <p></p>\n        </div> <!-- Slide 3 -->\n        <div id=\"test03.cpt\" class=\"sp-slide\">\n        \t<img class=\"sp-image\" src=\"/webroot/fPlus/imgs/report/Letter002.jpg\" />\n            <h3 class=\"sp-layer\"></h3>\n            <p class=\"sp-layer\"></p>\n        </div>\n    </div>\n    <div class=\"sp-thumbnails\">\n\t\t<div class=\"sp-thumbnail\">\n\t\t\t<div class=\"sp-thumbnail-title\">EMS中華郵政貨運單</div>\n\t\t\t<div class=\"sp-thumbnail-description\">200mm*140mm</div>\n\t\t</div>\n\t\t<div class=\"sp-thumbnail\">\n\t\t\t<div class=\"sp-thumbnail-title\">橫式信封01</div>\n\t\t\t<div class=\"sp-thumbnail-description\">100mm*30mm</div>\n\t\t</div>\n\t\t<div class=\"sp-thumbnail\">\n\t\t\t<div class=\"sp-thumbnail-title\">標籤紙01</div>\n\t\t\t<div class=\"sp-thumbnail-description\">5mm*51mm</div>\n\t\t</div>\n\t</div>\n</div>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0" showAsHTML="true"/>
+<CellPageAttr/>
 <Expand/>
 </C>
 </CellElementList>
@@ -44,7 +490,7 @@
 <PrivilegeControl/>
 </Report>
 <ReportParameterAttr>
-<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0" useParamsTemplate="false"/>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="0" useParamsTemplate="false"/>
 <PWTitle>
 <![CDATA[參數]]></PWTitle>
 <ParameterUI class="com.fr.form.main.parameter.FormParameterUI">
@@ -68,25 +514,45 @@
 <Background name="ColorBackground" color="-15260867"/>
 <LCAttr vgap="0" hgap="0" compInterval="0"/>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
-<InnerWidget class="com.fr.form.parameter.FormSubmitButton">
-<WidgetName name="formSubmit0"/>
-<WidgetAttr description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<Text>
-<![CDATA[查詢]]></Text>
-<Hotkeys>
-<![CDATA[enter]]></Hotkeys>
-</InnerWidget>
-<BoundsAttr x="311" y="244" width="80" height="21"/>
-</Widget>
-<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.FreeButton">
 <Listener event="click">
 <JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
+<Parameters>
+<Parameter>
+<Attributes name="showSlider"/>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=$showSlider]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
 <Content>
-<![CDATA[FR.doHyperlinkByPost("/webroot/decision/view/report?viewlet=GettingStarted.cpt&op=write_plus",{},"_dialog",{"width":1200,"height":800,"isCenter":true,"title":""});]]></Content>
+<![CDATA[let show = "";
+if (showSlider == null || showSlider == 0) {
+	show = 1;
+} else {
+	show = 0;
+};
+debugger;
+FR.ajax({
+	url: "/webroot/decision/view/report?op=fr_dialog&cmd=parameters_d",
+	type: "POST",
+	data: {
+		"showSlider": 1
+	},
+	headers: {
+		sessionID: FR.SessionMgr.getSessionID()
+	},
+	complete: function(res, status) {
+		if (window.FR && FR.Chart && FR.Chart.WebUtils) {
+			FR.Chart.WebUtils.clearCharts();
+		};
+		if (window.FR && FR.destroyDialog) {
+			_g().loadContentPane();
+		};
+	}
+});
+debugger;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetName name="button0"/>
@@ -95,8 +561,10 @@
 </WidgetAttr>
 <Text>
 <![CDATA[button0]]></Text>
+<FRFont name="SimSun" style="0" size="72"/>
+<isCustomType isCustomType="true"/>
 </InnerWidget>
-<BoundsAttr x="313" y="210" width="80" height="21"/>
+<BoundsAttr x="24" y="9" width="80" height="21"/>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.NameWidget">
@@ -105,50 +573,91 @@
 <PrivilegeControl/>
 </WidgetAttr>
 <Name>
-<![CDATA[gw_query_btn]]></Name>
+<![CDATA[gw_langSelect_combobox]]></Name>
 </InnerWidget>
-<BoundsAttr x="109" y="226" width="80" height="54"/>
-</Widget>
-<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
-<InnerWidget class="com.fr.form.ui.TextEditor">
-<WidgetName name="p1"/>
-<WidgetAttr description="">
-<PrivilegeControl/>
-</WidgetAttr>
-<TextAttr/>
-<Reg class="com.fr.form.ui.reg.NoneReg"/>
-<widgetValue>
-<O>
-<![CDATA[]]></O>
-</widgetValue>
-<MobileScanCodeAttr scanCode="true" textInputMode="0"/>
-</InnerWidget>
-<BoundsAttr x="112" y="143" width="80" height="21"/>
+<BoundsAttr x="119" y="10" width="120" height="20"/>
 </Widget>
 <Sorted sorted="false"/>
 <MobileWidgetList>
-<Widget widgetName="p1"/>
 <Widget widgetName="button0"/>
 <Widget widgetName="nameWidget0"/>
-<Widget widgetName="formSubmit0"/>
 </MobileWidgetList>
 <FrozenWidgets/>
 <Display display="true"/>
-<DelayDisplayContent delay="true"/>
+<DelayDisplayContent delay="false"/>
 <UseParamsTemplate use="false"/>
 <Position position="0"/>
-<Design_Width design_width="1297"/>
+<Design_Width design_width="1254"/>
 <NameTagModified/>
 <WidgetNameTagMap/>
 <ParamAttr class="com.fr.report.mobile.DefaultMobileParamStyle"/>
 </Layout>
-<DesignAttr width="1297" height="459"/>
+<DesignAttr width="1254" height="161"/>
 </ParameterUI>
 <Background name="ColorBackground" color="-15260867"/>
 </ReportParameterAttr>
-<StyleList/>
+<StyleList>
+<Style imageLayout="1">
+<FRFont name="Dialog" style="0" size="72"/>
+<Background name="ColorBackground" color="-3420206"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1" paddingLeft="11">
+<FRFont name="Source Han Sans K Light" style="0" size="88"/>
+<Background name="ColorBackground" color="-3420206"/>
+<Border>
+<Top color="-16777216"/>
+<Bottom style="5" color="-13400848"/>
+<Left color="-16777216"/>
+<Right color="-16777216"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="Dialog" style="0" size="72"/>
+<Background name="ColorBackground" color="-3420206"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="Source Han Sans K Light" style="0" size="72"/>
+<Background name="ColorBackground" color="-3420206"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1" paddingLeft="5">
+<FRFont name="Source Han Sans K Light" style="0" size="88"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1" color="-6908266"/>
+<Bottom style="1" color="-6908266"/>
+<Left style="1" color="-6908266"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="Source Han Sans K Light" style="0" size="64" foreground="-6908266"/>
+<Background name="ColorBackground" color="-3420206"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="2" imageLayout="1" paddingLeft="5">
+<FRFont name="Source Han Sans K Light" style="0" size="88"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1" color="-6908266"/>
+<Bottom style="1" color="-6908266"/>
+<Left style="1" color="-6908266"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="Source Han Sans K Light" style="0" size="72"/>
+<Background name="ColorBackground" color="-3420206"/>
+<Border>
+<Top color="-16777216"/>
+<Bottom color="-16777216"/>
+<Left color="-16777216"/>
+<Right color="-16777216"/>
+</Border>
+</Style>
+</StyleList>
 <DesignerVersion DesignerVersion="KAA"/>
-<PreviewType PreviewType="3"/>
+<PreviewType PreviewType="1"/>
 <TemplateIdAttMark class="com.fr.base.iofile.attr.TemplateIdAttrMark">
 <TemplateIdAttMark TemplateId="abafdf12-818b-4267-b789-8a47af2efc32"/>
 </TemplateIdAttMark>
