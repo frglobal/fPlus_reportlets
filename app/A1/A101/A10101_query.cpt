@@ -68,7 +68,7 @@ $('#my-slider').on('gotoSlide',function(data){console.log(data.index);});]]></Co
 <ColumnPrivilegeControl/>
 <RowPrivilegeControl/>
 <RowHeight defaultValue="723900">
-<![CDATA[1676400,288000,1152000,288000,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<![CDATA[1676400,288000,1152000,288000,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
 <![CDATA[1440000,288000,1440000,5143500,576000,5143500,576000,5143500,576000,5143500,576000,5143500,576000,5143500,576000,5143500,576000,2743200]]></ColumnWidth>
 <CellElementList>
@@ -468,9 +468,9 @@ $('#my-slider').on('gotoSlide',function(data){console.log(data.index);});]]></Co
 <ColumnPrivilegeControl/>
 <RowPrivilegeControl/>
 <RowHeight defaultValue="723900">
-<![CDATA[22860000,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<![CDATA[22860000,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
-<![CDATA[45720000,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<![CDATA[45720000,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="0" r="0" s="7">
 <O>
@@ -606,13 +606,10 @@ debugger;]]></Content>
 <FRFont name="Source Han Sans K Light" style="0" size="88"/>
 <Background name="ColorBackground" color="-3420206"/>
 <Border>
-<Top color="-16777216"/>
 <Bottom style="5" color="-13400848"/>
-<Left color="-16777216"/>
-<Right color="-16777216"/>
 </Border>
 </Style>
-<Style horizontal_alignment="0" imageLayout="1">
+<Style horizontal_alignment="4" imageLayout="1">
 <FRFont name="Dialog" style="0" size="72"/>
 <Background name="ColorBackground" color="-3420206"/>
 <Border/>
@@ -648,12 +645,7 @@ debugger;]]></Content>
 <Style imageLayout="1">
 <FRFont name="Source Han Sans K Light" style="0" size="72"/>
 <Background name="ColorBackground" color="-3420206"/>
-<Border>
-<Top color="-16777216"/>
-<Bottom color="-16777216"/>
-<Left color="-16777216"/>
-<Right color="-16777216"/>
-</Border>
+<Border/>
 </Style>
 </StyleList>
 <DesignerVersion DesignerVersion="KAA"/>

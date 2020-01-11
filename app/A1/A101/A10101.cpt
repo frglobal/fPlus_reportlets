@@ -498,15 +498,34 @@ F_.widget.button.defaultFrame(this,textColor).defaultDisplay(this,html).defaultE
 <JSImport>
 <![CDATA[fPlus/js/method/getURLFormula.js]]></JSImport>
 <Content>
-<![CDATA[defaultHeight = (document.body.clientHeight-200)+"px";
-$("#subFrame").css("height",defaultHeight);
+<![CDATA[defaultHeight = (document.body.clientHeight-150)+"px";
+let mode = contentPane.getCellValue(0, 1);
+let language_code = contentPane.parameterEl.options.form.getWidgetByName("gw_langSelect_combobox").getValue();
 
-var formula = getURLFormula("A10101_02.cpt")
+if (mode === "insert") {
+	
+	FR.Msg.alert("不可執行提示", "新增狀態不可執行");
+	
+} else {
 
-F_.cellFormula(formula, function callback(value) {
-	var d01 = F_.widget.pagination.config(dataset, offset, "subFrame", value);
-	window.subPagination.pagination(d01);
-});]]></Content>
+	$("#subFrame").css("height", defaultHeight);
+
+	$("#subFrame").css("")
+
+	var id = contentPane.getCellValue(5, 8);
+
+	var formula = getURLFormula("A10101_02.cpt");
+
+	var url = FR.remoteEvaluate('=' + formula);
+
+	let path = F_.FRServletURL + "?viewlet=" + url;
+
+	F_.doHyperlink("post", path, {
+		companyID: id,
+		gp_userLanguage: language_code
+	}, "subFrame");
+
+};]]></Content>
 </JavaScript>
 </Listener>
 <WidgetName name="payment_btn"/>

@@ -6,7 +6,7 @@
 <Parameter>
 <Attributes name="reference"/>
 <O>
-<![CDATA[en]]></O>
+<![CDATA[en_US]]></O>
 </Parameter>
 <Parameter>
 <Attributes name="fileName"/>
