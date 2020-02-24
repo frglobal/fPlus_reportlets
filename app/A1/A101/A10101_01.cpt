@@ -11,7 +11,7 @@
 <Parameter>
 <Attributes name="pageLimit"/>
 <O>
-<![CDATA[20]]></O>
+<![CDATA[10]]></O>
 </Parameter>
 <Parameter>
 <Attributes name="pageNum"/>
@@ -36,7 +36,7 @@ limit ${pageLimit} offset ${(pageNum-1)*pageLimit}]]></Query>
 <Parameter>
 <Attributes name="companyID"/>
 <O>
-<![CDATA[]]></O>
+<![CDATA[C2017010001]]></O>
 </Parameter>
 </Parameters>
 <Attributes maxMemRowCount="-1"/>
@@ -94,7 +94,7 @@ WHERE file_name = '${gp_fileNameWithExtType}']]></Query>
 <Attributes name="offset"/>
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
-<![CDATA[=20]]></Attributes>
+<![CDATA[=10]]></Attributes>
 </O>
 </Parameter>
 <Parameter>
@@ -1083,6 +1083,7 @@ FRDialogTarget.FR.doHyperlinkByPost(FR.servletURL + "?viewlet=" + queryURL, {
 </JavaScript>
 </Listener>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -1166,6 +1167,7 @@ FRDialogTarget.FR.doHyperlinkByPost(FR.servletURL + "?viewlet=" + queryURL, {
 </JavaScript>
 </Listener>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -1564,6 +1566,7 @@ FRDialogTarget.FR.doHyperlinkByPost(FR.servletURL + "?viewlet=" + queryURL, {
 </Listener>
 <WidgetName name="para"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="para" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Margin top="0" left="0" bottom="0" right="0"/>
@@ -1583,6 +1586,7 @@ FRDialogTarget.FR.doHyperlinkByPost(FR.servletURL + "?viewlet=" + queryURL, {
 <InnerWidget class="com.fr.form.ui.NameWidget">
 <WidgetName name="gw_langSelect_combobox"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="gw_langSelect_combobox" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Name>
@@ -1641,6 +1645,7 @@ FRDialogTarget.FR.doHyperlinkByPost(FR.servletURL + "?viewlet=" + queryURL, {
 </Listener>
 <WidgetName name="insertMode_btn"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="insertMode_btn" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -1663,6 +1668,7 @@ FRDialogTarget.FR.doHyperlinkByPost(FR.servletURL + "?viewlet=" + queryURL, {
 <InnerWidget class="com.fr.form.ui.NameWidget">
 <WidgetName name="gw_bug_btn"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="gw_bug_btn" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Name>
@@ -1674,6 +1680,7 @@ FRDialogTarget.FR.doHyperlinkByPost(FR.servletURL + "?viewlet=" + queryURL, {
 <InnerWidget class="com.fr.form.ui.NameWidget">
 <WidgetName name="gw_query_btn"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="gw_query_btn" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Name>
@@ -1685,6 +1692,7 @@ FRDialogTarget.FR.doHyperlinkByPost(FR.servletURL + "?viewlet=" + queryURL, {
 <InnerWidget class="com.fr.form.ui.NameWidget">
 <WidgetName name="gw_langSet_btn"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="gw_langSet_btn" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Name>
@@ -1701,6 +1709,8 @@ FRDialogTarget.FR.doHyperlinkByPost(FR.servletURL + "?viewlet=" + queryURL, {
 <Widget widgetName="gw_langSelect_combobox"/>
 </MobileWidgetList>
 <FrozenWidgets/>
+<MobileBookMarkStyle class="com.fr.form.ui.mobile.impl.DefaultMobileBookMarkStyle"/>
+<ShowBookmarks showBookmarks="true"/>
 <Display display="true"/>
 <DelayDisplayContent delay="false"/>
 <UseParamsTemplate use="false"/>

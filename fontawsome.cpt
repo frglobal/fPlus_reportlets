@@ -168,6 +168,14 @@
 <CellPageAttr/>
 <Expand/>
 </C>
+<C c="4" r="3" s="0">
+<O>
+<![CDATA[<i class=\"fas fa-th\"></i>]]></O>
+<PrivilegeControl/>
+<CellGUIAttr showAsHTML="true"/>
+<CellPageAttr/>
+<Expand/>
+</C>
 </CellElementList>
 <ReportAttrSet>
 <ReportSettings headerHeight="0" footerHeight="0">

@@ -177,7 +177,7 @@ if (mode === "insert") {
 <ShowWidgets show="true"/>
 <OtherAttr autoStash="false"/>
 </WebWriteContent>
-<Background name="ColorBackground" color="-460551"/>
+<Background name="ColorBackground"/>
 </ReportWebAttr>
 <Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
 <ReportPageAttr>
@@ -199,119 +199,119 @@ if (mode === "insert") {
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="0" s="0">
+<C c="1" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="0" s="0">
+<C c="2" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="0" s="0">
+<C c="3" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="0" s="0">
+<C c="4" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="0" s="0">
+<C c="5" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="0" s="0">
+<C c="6" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="0" s="0">
+<C c="7" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="0" s="0">
+<C c="8" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="0" s="0">
+<C c="9" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="0" s="0">
+<C c="10" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="0" s="0">
+<C c="11" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="0" s="0">
+<C c="12" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="0" s="0">
+<C c="13" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="0" s="0">
+<C c="14" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="0" s="0">
+<C c="15" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="0" s="0">
+<C c="16" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="0" s="0">
+<C c="17" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="18" r="0" s="0">
+<C c="18" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="19" r="0" s="0">
+<C c="19" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="20" r="0" s="0">
+<C c="20" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="21" r="0" s="0">
+<C c="21" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="22" r="0" s="0">
+<C c="22" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="23" r="0" s="0">
+<C c="23" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="24" r="0" s="0">
+<C c="24" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="25" r="0" s="0">
+<C c="25" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="26" r="0" s="0">
+<C c="26" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="27" r="0" s="0">
+<C c="27" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="28" r="0" s="0">
+<C c="28" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="29" r="0" s="0">
+<C c="29" r="0" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -331,15 +331,15 @@ if (mode === "insert") {
 </HighlightList>
 <Expand/>
 </C>
-<C c="1" r="1" s="0">
+<C c="1" r="1" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="1" s="1">
+<C c="2" r="1" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="1" cs="9" s="2">
+<C c="3" r="1" cs="9" s="3">
 <O>
 <![CDATA[Company Info]]></O>
 <PrivilegeControl/>
@@ -349,11 +349,11 @@ if (mode === "insert") {
 </Present>
 <Expand/>
 </C>
-<C c="12" r="1" s="0">
+<C c="12" r="1" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="1" cs="3" s="3">
+<C c="13" r="1" cs="3" s="4">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=$gp_userLanguage]]></Attributes>
@@ -374,15 +374,15 @@ if (mode === "insert") {
 </Present>
 <Expand/>
 </C>
-<C c="16" r="1" s="0">
+<C c="16" r="1" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="1" s="0">
+<C c="17" r="1" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="18" r="1" s="0">
+<C c="18" r="1" s="1">
 <O>
 <![CDATA[contact]]></O>
 <PrivilegeControl/>
@@ -441,6 +441,7 @@ this.fireEvent("click");]]></Content>
 </Listener>
 <WidgetName name="contact_btn"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="contact_btn" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -458,11 +459,11 @@ this.fireEvent("click");]]></Content>
 </Widget>
 <Expand/>
 </C>
-<C c="19" r="1" s="0">
+<C c="19" r="1" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="20" r="1" s="0">
+<C c="20" r="1" s="1">
 <O>
 <![CDATA[payment]]></O>
 <PrivilegeControl/>
@@ -530,6 +531,7 @@ if (mode === "insert") {
 </Listener>
 <WidgetName name="payment_btn"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="payment_btn" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -547,40 +549,40 @@ if (mode === "insert") {
 </Widget>
 <Expand/>
 </C>
-<C c="21" r="1" s="0">
+<C c="21" r="1" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="22" r="1" s="0">
+<C c="22" r="1" s="1">
 <PrivilegeControl/>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="23" r="1" s="0">
+<C c="23" r="1" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="24" r="1" s="0">
+<C c="24" r="1" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="25" r="1" s="0">
+<C c="25" r="1" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="26" r="1" s="0">
+<C c="26" r="1" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="27" r="1" s="0">
+<C c="27" r="1" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="28" r="1" s="0">
+<C c="28" r="1" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="29" r="1" s="0">
+<C c="29" r="1" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -590,15 +592,15 @@ if (mode === "insert") {
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="2" s="0">
+<C c="1" r="2" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="2" s="0">
+<C c="2" r="2" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="2" cs="9" s="4">
+<C c="3" r="2" cs="9" s="5">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=$gp_fileNameWithAppPrefix]]></Attributes>
@@ -606,93 +608,93 @@ if (mode === "insert") {
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="2" s="0">
+<C c="12" r="2" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="2" s="5">
+<C c="13" r="2" s="6">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="2" s="0">
+<C c="14" r="2" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="2" s="0">
+<C c="15" r="2" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="2" s="0">
+<C c="16" r="2" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="2" s="0">
+<C c="17" r="2" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="18" r="2" s="0">
-<PrivilegeControl/>
-<CellGUIAttr adjustmode="0"/>
-<CellPageAttr/>
-<Expand/>
-</C>
-<C c="19" r="2" s="0">
+<C c="18" r="2" s="1">
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="20" r="2" s="0">
+<C c="19" r="2" s="1">
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="21" r="2" s="0">
+<C c="20" r="2" s="1">
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="22" r="2" s="0">
+<C c="21" r="2" s="1">
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="23" r="2" s="0">
+<C c="22" r="2" s="1">
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="24" r="2" s="0">
+<C c="23" r="2" s="1">
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="25" r="2" s="0">
+<C c="24" r="2" s="1">
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="26" r="2" s="0">
+<C c="25" r="2" s="1">
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="0"/>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="27" r="2" s="0">
+<C c="26" r="2" s="1">
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="0"/>
+<CellPageAttr/>
+<Expand/>
+</C>
+<C c="27" r="2" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="28" r="2" s="0">
+<C c="28" r="2" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="29" r="2" s="0">
+<C c="29" r="2" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -700,115 +702,119 @@ if (mode === "insert") {
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="3" s="0">
+<C c="1" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="3" s="0">
+<C c="2" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="3" s="0">
+<C c="3" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="3" s="0">
+<C c="4" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="3" s="0">
+<C c="5" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="3" s="0">
+<C c="6" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="3" s="0">
+<C c="7" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="3" s="0">
+<C c="8" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="3" s="0">
+<C c="9" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="3" s="0">
+<C c="10" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="3" s="0">
+<C c="11" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="3" s="0">
+<C c="12" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="3" s="0">
+<C c="13" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="3" s="0">
+<C c="14" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="3" s="0">
+<C c="15" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="3" s="0">
+<C c="16" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="3" s="0">
+<C c="17" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="18" r="3" s="0">
+<C c="18" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="19" r="3" s="0">
+<C c="19" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="20" r="3" s="0">
+<C c="20" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="21" r="3" s="0">
+<C c="21" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="22" r="3" s="0">
+<C c="22" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="23" r="3" s="0">
+<C c="23" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="24" r="3" s="0">
+<C c="24" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="25" r="3" s="0">
+<C c="25" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="26" r="3" s="0">
+<C c="26" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="27" r="3" s="0">
+<C c="27" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="28" r="3" s="0">
+<C c="28" r="3" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="29" r="3" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -818,15 +824,15 @@ if (mode === "insert") {
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="4" s="0">
+<C c="1" r="4" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="4" s="0">
+<C c="2" r="4" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="4" cs="13" s="0">
+<C c="3" r="4" cs="13" s="1">
 <O>
 <![CDATA[<div id=\"mainPagination\"></div>]]></O>
 <PrivilegeControl/>
@@ -834,15 +840,15 @@ if (mode === "insert") {
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="16" r="4" s="0">
+<C c="16" r="4" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="4" s="0">
+<C c="17" r="4" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="18" r="4" cs="11" rs="44" s="6">
+<C c="18" r="4" cs="11" rs="44" s="7">
 <O>
 <![CDATA[<iframe id=\"subFrame\" name=\"subFrame\" scrolling=\"auto\" src=\"\" style=\"width:100%; border:none;\")></iframe>]]></O>
 <PrivilegeControl/>
@@ -850,7 +856,7 @@ if (mode === "insert") {
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="29" r="4" s="0">
+<C c="29" r="4" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -860,75 +866,75 @@ if (mode === "insert") {
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="5" s="0">
+<C c="1" r="5" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="5" s="0">
+<C c="2" r="5" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="5" s="7">
+<C c="3" r="5" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="5" s="7">
+<C c="4" r="5" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="5" s="7">
+<C c="5" r="5" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="5" s="7">
+<C c="6" r="5" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="5" s="7">
+<C c="7" r="5" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="5" s="7">
+<C c="8" r="5" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="5" s="7">
+<C c="9" r="5" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="5" s="7">
+<C c="10" r="5" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="5" s="7">
+<C c="11" r="5" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="5" s="7">
+<C c="12" r="5" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="5" s="7">
+<C c="13" r="5" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="5" s="7">
+<C c="14" r="5" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="5" s="7">
+<C c="15" r="5" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="5" s="0">
+<C c="16" r="5" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="5" s="0">
+<C c="17" r="5" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="29" r="5" rs="44" s="0">
+<C c="29" r="5" rs="44" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -938,71 +944,71 @@ if (mode === "insert") {
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="6" s="0">
+<C c="1" r="6" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="6" s="0">
+<C c="2" r="6" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="6" s="8">
+<C c="3" r="6" s="9">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="6" s="9">
+<C c="4" r="6" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="6" s="9">
+<C c="5" r="6" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="6" s="9">
+<C c="6" r="6" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="6" s="9">
+<C c="7" r="6" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="6" s="9">
+<C c="8" r="6" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="6" s="9">
+<C c="9" r="6" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="6" s="9">
+<C c="10" r="6" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="6" s="9">
+<C c="11" r="6" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="6" s="9">
+<C c="12" r="6" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="6" s="9">
+<C c="13" r="6" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="6" s="9">
+<C c="14" r="6" s="10">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="6" s="10">
+<C c="15" r="6" s="11">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="6" s="0">
+<C c="16" r="6" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="6" s="0">
+<C c="17" r="6" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1012,23 +1018,23 @@ if (mode === "insert") {
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="7" s="0">
+<C c="1" r="7" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="7" s="11">
+<C c="2" r="7" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="7" s="12">
+<C c="3" r="7" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="7" s="13">
+<C c="4" r="7" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="7" cs="3" s="14">
+<C c="5" r="7" cs="3" s="15">
 <O>
 <![CDATA[company_id]]></O>
 <PrivilegeControl/>
@@ -1038,19 +1044,19 @@ if (mode === "insert") {
 </Present>
 <Expand/>
 </C>
-<C c="8" r="7" s="15">
+<C c="8" r="7" s="16">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="7" s="15">
+<C c="9" r="7" s="16">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="7" s="15">
+<C c="10" r="7" s="16">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="7" cs="3" s="14">
+<C c="11" r="7" cs="3" s="15">
 <O>
 <![CDATA[region]]></O>
 <PrivilegeControl/>
@@ -1060,19 +1066,19 @@ if (mode === "insert") {
 </Present>
 <Expand/>
 </C>
-<C c="14" r="7" s="15">
+<C c="14" r="7" s="16">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="7" s="16">
+<C c="15" r="7" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="7" s="0">
+<C c="16" r="7" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="7" s="0">
+<C c="17" r="7" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1082,23 +1088,23 @@ if (mode === "insert") {
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="8" s="0">
+<C c="1" r="8" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="8" s="0">
+<C c="2" r="8" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="8" s="12">
+<C c="3" r="8" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="8" s="13">
+<C c="4" r="8" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="8" cs="3" s="17">
+<C c="5" r="8" cs="3" s="18">
 <O t="DSColumn">
 <Attributes dsName="company_m01" columnName="company_id"/>
 <Condition class="com.fr.data.condition.ListCondition"/>
@@ -1122,6 +1128,7 @@ if (mode === "insert") {
 </Listener>
 <WidgetName name="company_id"/>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="company_id" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -1131,19 +1138,19 @@ if (mode === "insert") {
 </Widget>
 <Expand dir="0"/>
 </C>
-<C c="8" r="8" s="13">
+<C c="8" r="8" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="8" s="13">
+<C c="9" r="8" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="8" s="13">
+<C c="10" r="8" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="8" cs="3" s="17">
+<C c="11" r="8" cs="3" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(region, company_id = F9)]]></Attributes>
@@ -1160,6 +1167,7 @@ if (mode === "insert") {
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Dictionary class="com.fr.data.impl.TableDataDictionary">
@@ -1175,19 +1183,19 @@ if (mode === "insert") {
 </Widget>
 <Expand/>
 </C>
-<C c="14" r="8" s="13">
+<C c="14" r="8" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="8" s="16">
+<C c="15" r="8" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="8" s="0">
+<C c="16" r="8" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="8" s="0">
+<C c="17" r="8" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1197,71 +1205,71 @@ if (mode === "insert") {
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="9" s="0">
+<C c="1" r="9" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="9" s="0">
+<C c="2" r="9" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="9" s="12">
+<C c="3" r="9" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="9" s="13">
+<C c="4" r="9" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="9" s="13">
+<C c="5" r="9" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="9" s="13">
+<C c="6" r="9" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="9" s="13">
+<C c="7" r="9" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="9" s="13">
+<C c="8" r="9" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="9" s="13">
+<C c="9" r="9" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="9" s="13">
+<C c="10" r="9" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="9" s="13">
+<C c="11" r="9" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="9" s="13">
+<C c="12" r="9" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="9" s="13">
+<C c="13" r="9" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="9" s="13">
+<C c="14" r="9" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="9" s="16">
+<C c="15" r="9" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="9" s="0">
+<C c="16" r="9" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="9" s="0">
+<C c="17" r="9" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1271,15 +1279,15 @@ if (mode === "insert") {
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="10" s="0">
+<C c="1" r="10" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="10" s="11">
+<C c="2" r="10" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="10" s="12">
+<C c="3" r="10" s="13">
 <PrivilegeControl/>
 <NameJavaScriptGroup>
 <NameJavaScript name="JavaScript腳本1">
@@ -1306,11 +1314,11 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </NameJavaScriptGroup>
 <Expand dir="0"/>
 </C>
-<C c="4" r="10" s="13">
+<C c="4" r="10" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="10" cs="3" s="14">
+<C c="5" r="10" cs="3" s="15">
 <O>
 <![CDATA[short_name]]></O>
 <PrivilegeControl/>
@@ -1320,19 +1328,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="8" r="10" s="13">
+<C c="8" r="10" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="10" s="13">
+<C c="9" r="10" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="10" s="13">
+<C c="10" r="10" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="10" cs="3" s="14">
+<C c="11" r="10" cs="3" s="15">
 <O>
 <![CDATA[language_code]]></O>
 <PrivilegeControl/>
@@ -1342,19 +1350,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="14" r="10" s="13">
+<C c="14" r="10" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="10" s="16">
+<C c="15" r="10" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="10" s="0">
+<C c="16" r="10" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="10" s="0">
+<C c="17" r="10" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1364,23 +1372,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="11" s="0">
+<C c="1" r="11" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="11" s="0">
+<C c="2" r="11" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="11" s="12">
+<C c="3" r="11" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="11" s="13">
+<C c="4" r="11" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="11" cs="3" s="17">
+<C c="5" r="11" cs="3" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(short_name, company_id = F9)]]></Attributes>
@@ -1397,6 +1405,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -1407,19 +1416,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellInsertPolicy/>
 <Expand dir="0"/>
 </C>
-<C c="8" r="11" s="13">
+<C c="8" r="11" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="11" s="13">
+<C c="9" r="11" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="11" s="13">
+<C c="10" r="11" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="11" cs="3" s="18">
+<C c="11" r="11" cs="3" s="19">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(language_code, company_id = F9)]]></Attributes>
@@ -1436,6 +1445,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Dictionary class="com.fr.data.impl.TableDataDictionary">
@@ -1451,19 +1461,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Expand/>
 </C>
-<C c="14" r="11" s="13">
+<C c="14" r="11" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="11" s="16">
+<C c="15" r="11" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="11" s="0">
+<C c="16" r="11" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="11" s="0">
+<C c="17" r="11" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1473,71 +1483,71 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="12" s="0">
+<C c="1" r="12" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="12" s="0">
+<C c="2" r="12" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="12" s="12">
+<C c="3" r="12" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="12" s="13">
+<C c="4" r="12" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="12" s="13">
+<C c="5" r="12" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="12" s="13">
+<C c="6" r="12" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="12" s="13">
+<C c="7" r="12" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="12" s="13">
+<C c="8" r="12" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="12" s="13">
+<C c="9" r="12" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="12" s="13">
+<C c="10" r="12" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="12" s="13">
+<C c="11" r="12" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="12" s="13">
+<C c="12" r="12" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="12" s="13">
+<C c="13" r="12" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="12" s="13">
+<C c="14" r="12" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="12" s="16">
+<C c="15" r="12" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="12" s="0">
+<C c="16" r="12" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="12" s="0">
+<C c="17" r="12" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1547,23 +1557,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="13" s="0">
+<C c="1" r="13" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="13" s="11">
+<C c="2" r="13" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="13" s="12">
+<C c="3" r="13" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="13" s="13">
+<C c="4" r="13" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="13" cs="9" s="14">
+<C c="5" r="13" cs="9" s="15">
 <O>
 <![CDATA[full_name]]></O>
 <PrivilegeControl/>
@@ -1573,19 +1583,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="14" r="13" s="13">
+<C c="14" r="13" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="13" s="16">
+<C c="15" r="13" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="13" s="0">
+<C c="16" r="13" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="13" s="0">
+<C c="17" r="13" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1595,23 +1605,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="14" s="0">
+<C c="1" r="14" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="14" s="0">
+<C c="2" r="14" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="14" s="12">
+<C c="3" r="14" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="14" s="13">
+<C c="4" r="14" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="14" cs="9" s="17">
+<C c="5" r="14" cs="9" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(full_name, company_id = F9)]]></Attributes>
@@ -1631,6 +1641,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -1640,19 +1651,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Expand dir="0"/>
 </C>
-<C c="14" r="14" s="13">
+<C c="14" r="14" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="14" s="16">
+<C c="15" r="14" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="14" s="0">
+<C c="16" r="14" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="14" s="0">
+<C c="17" r="14" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1662,71 +1673,71 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="15" s="0">
+<C c="1" r="15" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="15" s="0">
+<C c="2" r="15" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="15" s="12">
+<C c="3" r="15" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="15" s="13">
+<C c="4" r="15" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="15" s="13">
+<C c="5" r="15" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="15" s="13">
+<C c="6" r="15" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="15" s="13">
+<C c="7" r="15" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="15" s="13">
+<C c="8" r="15" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="15" s="13">
+<C c="9" r="15" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="15" s="13">
+<C c="10" r="15" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="15" s="13">
+<C c="11" r="15" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="15" s="13">
+<C c="12" r="15" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="15" s="13">
+<C c="13" r="15" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="15" s="13">
+<C c="14" r="15" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="15" s="16">
+<C c="15" r="15" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="15" s="0">
+<C c="16" r="15" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="15" s="0">
+<C c="17" r="15" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1736,15 +1747,15 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="16" s="0">
+<C c="1" r="16" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="16" s="11">
+<C c="2" r="16" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="16" s="12">
+<C c="3" r="16" s="13">
 <PrivilegeControl/>
 <NameJavaScriptGroup>
 <NameJavaScript name="JavaScript腳本1">
@@ -1771,11 +1782,11 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </NameJavaScriptGroup>
 <Expand dir="0"/>
 </C>
-<C c="4" r="16" s="13">
+<C c="4" r="16" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="16" cs="3" s="14">
+<C c="5" r="16" cs="3" s="15">
 <O>
 <![CDATA[zip_no]]></O>
 <PrivilegeControl/>
@@ -1785,19 +1796,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="8" r="16" s="13">
+<C c="8" r="16" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="16" s="13">
+<C c="9" r="16" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="16" s="13">
+<C c="10" r="16" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="16" cs="3" s="14">
+<C c="11" r="16" cs="3" s="15">
 <O>
 <![CDATA[status]]></O>
 <PrivilegeControl/>
@@ -1807,19 +1818,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="14" r="16" s="13">
+<C c="14" r="16" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="16" s="16">
+<C c="15" r="16" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="16" s="0">
+<C c="16" r="16" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="16" s="0">
+<C c="17" r="16" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1829,23 +1840,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="17" s="0">
+<C c="1" r="17" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="17" s="0">
+<C c="2" r="17" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="17" s="12">
+<C c="3" r="17" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="17" s="13">
+<C c="4" r="17" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="17" cs="3" s="17">
+<C c="5" r="17" cs="3" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(zip_no, company_id = F9)]]></Attributes>
@@ -1862,6 +1873,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -1871,19 +1883,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Expand dir="0"/>
 </C>
-<C c="8" r="17" s="13">
+<C c="8" r="17" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="17" s="13">
+<C c="9" r="17" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="17" s="13">
+<C c="10" r="17" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="17" cs="3" s="17">
+<C c="11" r="17" cs="3" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(status, company_id = F9)]]></Attributes>
@@ -1900,25 +1912,26 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <widgetValue/>
 </Widget>
 <Expand/>
 </C>
-<C c="14" r="17" s="13">
+<C c="14" r="17" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="17" s="16">
+<C c="15" r="17" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="17" s="0">
+<C c="16" r="17" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="17" s="0">
+<C c="17" r="17" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1928,71 +1941,71 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="18" s="0">
+<C c="1" r="18" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="18" s="0">
+<C c="2" r="18" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="18" s="12">
+<C c="3" r="18" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="18" s="13">
+<C c="4" r="18" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="18" s="13">
+<C c="5" r="18" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="18" s="13">
+<C c="6" r="18" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="18" s="13">
+<C c="7" r="18" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="18" s="13">
+<C c="8" r="18" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="18" s="13">
+<C c="9" r="18" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="18" s="13">
+<C c="10" r="18" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="18" s="13">
+<C c="11" r="18" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="18" s="13">
+<C c="12" r="18" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="18" s="13">
+<C c="13" r="18" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="18" s="13">
+<C c="14" r="18" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="18" s="16">
+<C c="15" r="18" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="18" s="0">
+<C c="16" r="18" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="18" s="0">
+<C c="17" r="18" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2002,23 +2015,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="19" s="0">
+<C c="1" r="19" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="19" s="11">
+<C c="2" r="19" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="19" s="12">
+<C c="3" r="19" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="19" s="13">
+<C c="4" r="19" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="19" cs="9" s="14">
+<C c="5" r="19" cs="9" s="15">
 <O>
 <![CDATA[address]]></O>
 <PrivilegeControl/>
@@ -2028,19 +2041,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="14" r="19" s="13">
+<C c="14" r="19" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="19" s="16">
+<C c="15" r="19" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="19" s="0">
+<C c="16" r="19" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="19" s="0">
+<C c="17" r="19" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2050,23 +2063,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="20" s="0">
+<C c="1" r="20" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="20" s="0">
+<C c="2" r="20" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="20" s="12">
+<C c="3" r="20" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="20" s="13">
+<C c="4" r="20" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="20" cs="9" s="17">
+<C c="5" r="20" cs="9" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(address, company_id = F9)]]></Attributes>
@@ -2083,6 +2096,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -2092,19 +2106,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Expand/>
 </C>
-<C c="14" r="20" s="13">
+<C c="14" r="20" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="20" s="16">
+<C c="15" r="20" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="20" s="0">
+<C c="16" r="20" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="20" s="0">
+<C c="17" r="20" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2114,71 +2128,71 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="21" s="0">
+<C c="1" r="21" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="21" s="0">
+<C c="2" r="21" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="21" s="12">
+<C c="3" r="21" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="21" s="13">
+<C c="4" r="21" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="21" s="13">
+<C c="5" r="21" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="21" s="13">
+<C c="6" r="21" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="21" s="13">
+<C c="7" r="21" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="21" s="13">
+<C c="8" r="21" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="21" s="13">
+<C c="9" r="21" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="21" s="13">
+<C c="10" r="21" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="21" s="13">
+<C c="11" r="21" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="21" s="13">
+<C c="12" r="21" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="21" s="13">
+<C c="13" r="21" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="21" s="13">
+<C c="14" r="21" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="21" s="16">
+<C c="15" r="21" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="21" s="0">
+<C c="16" r="21" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="21" s="0">
+<C c="17" r="21" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2188,23 +2202,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="22" s="0">
+<C c="1" r="22" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="22" s="11">
+<C c="2" r="22" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="22" s="12">
+<C c="3" r="22" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="22" s="13">
+<C c="4" r="22" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="22" cs="9" s="14">
+<C c="5" r="22" cs="9" s="15">
 <O>
 <![CDATA[full_name_en]]></O>
 <PrivilegeControl/>
@@ -2214,19 +2228,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="14" r="22" s="13">
+<C c="14" r="22" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="22" s="16">
+<C c="15" r="22" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="22" s="0">
+<C c="16" r="22" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="22" s="0">
+<C c="17" r="22" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2236,23 +2250,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="23" s="0">
+<C c="1" r="23" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="23" s="0">
+<C c="2" r="23" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="23" s="12">
+<C c="3" r="23" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="23" s="13">
+<C c="4" r="23" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="23" cs="9" s="17">
+<C c="5" r="23" cs="9" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(full_name_en, company_id = F9)]]></Attributes>
@@ -2269,6 +2283,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -2278,19 +2293,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Expand/>
 </C>
-<C c="14" r="23" s="13">
+<C c="14" r="23" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="23" s="16">
+<C c="15" r="23" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="23" s="0">
+<C c="16" r="23" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="23" s="0">
+<C c="17" r="23" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2300,71 +2315,71 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="24" s="0">
+<C c="1" r="24" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="24" s="0">
+<C c="2" r="24" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="24" s="12">
+<C c="3" r="24" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="24" s="13">
+<C c="4" r="24" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="24" s="13">
+<C c="5" r="24" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="24" s="13">
+<C c="6" r="24" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="24" s="13">
+<C c="7" r="24" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="24" s="13">
+<C c="8" r="24" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="24" s="13">
+<C c="9" r="24" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="24" s="13">
+<C c="10" r="24" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="24" s="13">
+<C c="11" r="24" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="24" s="13">
+<C c="12" r="24" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="24" s="13">
+<C c="13" r="24" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="24" s="13">
+<C c="14" r="24" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="24" s="16">
+<C c="15" r="24" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="24" s="0">
+<C c="16" r="24" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="24" s="0">
+<C c="17" r="24" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2374,23 +2389,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="25" s="0">
+<C c="1" r="25" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="25" s="11">
+<C c="2" r="25" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="25" s="12">
+<C c="3" r="25" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="25" s="13">
+<C c="4" r="25" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="25" cs="9" s="14">
+<C c="5" r="25" cs="9" s="15">
 <O>
 <![CDATA[short_name_en]]></O>
 <PrivilegeControl/>
@@ -2400,19 +2415,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="14" r="25" s="13">
+<C c="14" r="25" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="25" s="16">
+<C c="15" r="25" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="25" s="0">
+<C c="16" r="25" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="25" s="0">
+<C c="17" r="25" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2422,23 +2437,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="26" s="0">
+<C c="1" r="26" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="26" s="0">
+<C c="2" r="26" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="26" s="12">
+<C c="3" r="26" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="26" s="13">
+<C c="4" r="26" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="26" cs="9" s="17">
+<C c="5" r="26" cs="9" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(short_name_en, company_id = F9)]]></Attributes>
@@ -2455,6 +2470,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -2464,19 +2480,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Expand/>
 </C>
-<C c="14" r="26" s="13">
+<C c="14" r="26" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="26" s="16">
+<C c="15" r="26" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="26" s="0">
+<C c="16" r="26" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="26" s="0">
+<C c="17" r="26" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2486,71 +2502,71 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="27" s="0">
+<C c="1" r="27" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="27" s="0">
+<C c="2" r="27" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="27" s="12">
+<C c="3" r="27" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="27" s="13">
+<C c="4" r="27" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="27" s="13">
+<C c="5" r="27" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="27" s="13">
+<C c="6" r="27" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="27" s="13">
+<C c="7" r="27" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="27" s="13">
+<C c="8" r="27" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="27" s="13">
+<C c="9" r="27" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="27" s="13">
+<C c="10" r="27" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="27" s="13">
+<C c="11" r="27" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="27" s="13">
+<C c="12" r="27" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="27" s="13">
+<C c="13" r="27" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="27" s="13">
+<C c="14" r="27" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="27" s="16">
+<C c="15" r="27" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="27" s="0">
+<C c="16" r="27" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="27" s="0">
+<C c="17" r="27" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2560,23 +2576,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="28" s="0">
+<C c="1" r="28" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="28" s="11">
+<C c="2" r="28" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="28" s="12">
+<C c="3" r="28" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="28" s="13">
+<C c="4" r="28" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="28" cs="9" s="14">
+<C c="5" r="28" cs="9" s="15">
 <O>
 <![CDATA[address_en]]></O>
 <PrivilegeControl/>
@@ -2586,19 +2602,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="14" r="28" s="13">
+<C c="14" r="28" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="28" s="16">
+<C c="15" r="28" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="28" s="0">
+<C c="16" r="28" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="28" s="0">
+<C c="17" r="28" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2608,23 +2624,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="29" s="0">
+<C c="1" r="29" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="29" s="0">
+<C c="2" r="29" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="29" s="12">
+<C c="3" r="29" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="29" s="13">
+<C c="4" r="29" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="29" cs="9" s="17">
+<C c="5" r="29" cs="9" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(address_en, company_id = F9)]]></Attributes>
@@ -2641,6 +2657,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -2650,19 +2667,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Expand/>
 </C>
-<C c="14" r="29" s="13">
+<C c="14" r="29" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="29" s="16">
+<C c="15" r="29" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="29" s="0">
+<C c="16" r="29" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="29" s="0">
+<C c="17" r="29" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2672,71 +2689,71 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="30" s="0">
+<C c="1" r="30" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="30" s="0">
+<C c="2" r="30" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="30" s="12">
+<C c="3" r="30" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="30" s="13">
+<C c="4" r="30" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="30" s="13">
+<C c="5" r="30" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="30" s="13">
+<C c="6" r="30" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="30" s="13">
+<C c="7" r="30" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="30" s="13">
+<C c="8" r="30" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="30" s="13">
+<C c="9" r="30" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="30" s="13">
+<C c="10" r="30" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="30" s="13">
+<C c="11" r="30" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="30" s="13">
+<C c="12" r="30" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="30" s="13">
+<C c="13" r="30" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="30" s="13">
+<C c="14" r="30" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="30" s="16">
+<C c="15" r="30" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="30" s="0">
+<C c="16" r="30" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="30" s="0">
+<C c="17" r="30" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2746,15 +2763,15 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="31" s="0">
+<C c="1" r="31" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="31" s="11">
+<C c="2" r="31" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="31" s="12">
+<C c="3" r="31" s="13">
 <PrivilegeControl/>
 <NameJavaScriptGroup>
 <NameJavaScript name="JavaScript腳本1">
@@ -2781,11 +2798,11 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </NameJavaScriptGroup>
 <Expand dir="0"/>
 </C>
-<C c="4" r="31" s="13">
+<C c="4" r="31" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="31" cs="3" s="14">
+<C c="5" r="31" cs="3" s="15">
 <O>
 <![CDATA[business_code]]></O>
 <PrivilegeControl/>
@@ -2795,19 +2812,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="8" r="31" s="13">
+<C c="8" r="31" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="31" s="13">
+<C c="9" r="31" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="31" s="13">
+<C c="10" r="31" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="31" cs="3" s="14">
+<C c="11" r="31" cs="3" s="15">
 <O>
 <![CDATA[industry_code]]></O>
 <PrivilegeControl/>
@@ -2817,19 +2834,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="14" r="31" s="13">
+<C c="14" r="31" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="31" s="16">
+<C c="15" r="31" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="31" s="0">
+<C c="16" r="31" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="31" s="0">
+<C c="17" r="31" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2839,23 +2856,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="32" s="0">
+<C c="1" r="32" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="32" s="0">
+<C c="2" r="32" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="32" s="12">
+<C c="3" r="32" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="32" s="13">
+<C c="4" r="32" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="32" cs="3" s="17">
+<C c="5" r="32" cs="3" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(business_code, company_id = F9)]]></Attributes>
@@ -2872,6 +2889,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -2881,19 +2899,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Expand dir="0"/>
 </C>
-<C c="8" r="32" s="13">
+<C c="8" r="32" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="32" s="13">
+<C c="9" r="32" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="32" s="13">
+<C c="10" r="32" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="32" cs="3" s="17">
+<C c="11" r="32" cs="3" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(industry_code, company_id = F9)]]></Attributes>
@@ -2910,6 +2928,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -2919,19 +2938,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Expand/>
 </C>
-<C c="14" r="32" s="13">
+<C c="14" r="32" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="32" s="16">
+<C c="15" r="32" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="32" s="0">
+<C c="16" r="32" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="32" s="0">
+<C c="17" r="32" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2941,71 +2960,71 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="33" s="0">
+<C c="1" r="33" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="33" s="0">
+<C c="2" r="33" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="33" s="12">
+<C c="3" r="33" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="33" s="13">
+<C c="4" r="33" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="33" s="13">
+<C c="5" r="33" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="33" s="13">
+<C c="6" r="33" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="33" s="13">
+<C c="7" r="33" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="33" s="13">
+<C c="8" r="33" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="33" s="13">
+<C c="9" r="33" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="33" s="13">
+<C c="10" r="33" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="33" s="13">
+<C c="11" r="33" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="33" s="13">
+<C c="12" r="33" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="33" s="13">
+<C c="13" r="33" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="33" s="13">
+<C c="14" r="33" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="33" s="16">
+<C c="15" r="33" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="33" s="0">
+<C c="16" r="33" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="33" s="0">
+<C c="17" r="33" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3015,15 +3034,15 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="34" s="0">
+<C c="1" r="34" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="34" s="11">
+<C c="2" r="34" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="34" s="12">
+<C c="3" r="34" s="13">
 <PrivilegeControl/>
 <NameJavaScriptGroup>
 <NameJavaScript name="JavaScript腳本1">
@@ -3050,11 +3069,11 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </NameJavaScriptGroup>
 <Expand dir="0"/>
 </C>
-<C c="4" r="34" s="13">
+<C c="4" r="34" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="34" cs="3" s="14">
+<C c="5" r="34" cs="3" s="15">
 <O>
 <![CDATA[cust_mark]]></O>
 <PrivilegeControl/>
@@ -3064,19 +3083,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="8" r="34" s="13">
+<C c="8" r="34" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="34" s="13">
+<C c="9" r="34" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="34" s="13">
+<C c="10" r="34" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="34" cs="3" s="14">
+<C c="11" r="34" cs="3" s="15">
 <O>
 <![CDATA[cust_type]]></O>
 <PrivilegeControl/>
@@ -3086,19 +3105,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="14" r="34" s="13">
+<C c="14" r="34" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="34" s="16">
+<C c="15" r="34" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="34" s="0">
+<C c="16" r="34" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="34" s="0">
+<C c="17" r="34" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3108,23 +3127,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="35" s="0">
+<C c="1" r="35" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="35" s="0">
+<C c="2" r="35" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="35" s="12">
+<C c="3" r="35" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="35" s="13">
+<C c="4" r="35" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="35" cs="3" s="17">
+<C c="5" r="35" cs="3" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(cust_mark, company_id = F9)]]></Attributes>
@@ -3141,6 +3160,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -3148,19 +3168,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Expand/>
 </C>
-<C c="8" r="35" s="13">
+<C c="8" r="35" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="35" s="13">
+<C c="9" r="35" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="35" s="13">
+<C c="10" r="35" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="35" cs="3" s="17">
+<C c="11" r="35" cs="3" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(cust_type, company_id = F9)]]></Attributes>
@@ -3177,25 +3197,26 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <widgetValue/>
 </Widget>
 <Expand/>
 </C>
-<C c="14" r="35" s="13">
+<C c="14" r="35" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="35" s="16">
+<C c="15" r="35" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="35" s="0">
+<C c="16" r="35" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="35" s="0">
+<C c="17" r="35" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3205,71 +3226,71 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="36" s="0">
+<C c="1" r="36" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="36" s="0">
+<C c="2" r="36" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="36" s="12">
+<C c="3" r="36" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="36" s="13">
+<C c="4" r="36" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="36" s="13">
+<C c="5" r="36" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="36" s="13">
+<C c="6" r="36" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="36" s="13">
+<C c="7" r="36" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="36" s="13">
+<C c="8" r="36" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="36" s="13">
+<C c="9" r="36" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="36" s="13">
+<C c="10" r="36" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="36" s="13">
+<C c="11" r="36" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="36" s="13">
+<C c="12" r="36" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="36" s="13">
+<C c="13" r="36" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="36" s="13">
+<C c="14" r="36" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="36" s="16">
+<C c="15" r="36" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="36" s="0">
+<C c="16" r="36" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="36" s="0">
+<C c="17" r="36" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3279,71 +3300,71 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="37" s="0">
+<C c="1" r="37" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="37" s="0">
+<C c="2" r="37" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="37" s="12">
+<C c="3" r="37" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="37" s="13">
+<C c="4" r="37" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="37" s="13">
+<C c="5" r="37" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="37" s="13">
+<C c="6" r="37" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="37" s="13">
+<C c="7" r="37" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="37" s="13">
+<C c="8" r="37" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="37" s="13">
+<C c="9" r="37" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="37" s="13">
+<C c="10" r="37" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="37" s="13">
+<C c="11" r="37" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="37" s="13">
+<C c="12" r="37" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="37" s="13">
+<C c="13" r="37" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="37" s="13">
+<C c="14" r="37" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="37" s="16">
+<C c="15" r="37" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="37" s="0">
+<C c="16" r="37" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="37" s="0">
+<C c="17" r="37" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3353,15 +3374,15 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="38" s="0">
+<C c="1" r="38" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="38" s="11">
+<C c="2" r="38" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="38" s="12">
+<C c="3" r="38" s="13">
 <PrivilegeControl/>
 <NameJavaScriptGroup>
 <NameJavaScript name="JavaScript腳本1">
@@ -3388,11 +3409,11 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </NameJavaScriptGroup>
 <Expand dir="0"/>
 </C>
-<C c="4" r="38" s="13">
+<C c="4" r="38" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="38" cs="3" s="14">
+<C c="5" r="38" cs="3" s="15">
 <O>
 <![CDATA[is Supplier]]></O>
 <PrivilegeControl/>
@@ -3402,19 +3423,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="8" r="38" s="13">
+<C c="8" r="38" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="38" s="13">
+<C c="9" r="38" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="38" s="13">
+<C c="10" r="38" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="38" cs="3" s="14">
+<C c="11" r="38" cs="3" s="15">
 <O>
 <![CDATA[supplier_type]]></O>
 <PrivilegeControl/>
@@ -3424,19 +3445,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="14" r="38" s="13">
+<C c="14" r="38" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="38" s="16">
+<C c="15" r="38" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="38" s="0">
+<C c="16" r="38" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="38" s="0">
+<C c="17" r="38" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3446,23 +3467,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="39" s="0">
+<C c="1" r="39" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="39" s="0">
+<C c="2" r="39" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="39" s="12">
+<C c="3" r="39" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="39" s="13">
+<C c="4" r="39" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="39" cs="3" s="17">
+<C c="5" r="39" cs="3" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(supplier_mark, company_id = F9)]]></Attributes>
@@ -3479,6 +3500,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -3486,19 +3508,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Expand/>
 </C>
-<C c="8" r="39" s="13">
+<C c="8" r="39" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="39" s="13">
+<C c="9" r="39" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="39" s="13">
+<C c="10" r="39" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="39" cs="3" s="17">
+<C c="11" r="39" cs="3" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(supplier_type, company_id = F9)]]></Attributes>
@@ -3515,25 +3537,26 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <widgetValue/>
 </Widget>
 <Expand/>
 </C>
-<C c="14" r="39" s="13">
+<C c="14" r="39" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="39" s="16">
+<C c="15" r="39" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="39" s="0">
+<C c="16" r="39" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="39" s="0">
+<C c="17" r="39" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3543,71 +3566,71 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="40" s="0">
+<C c="1" r="40" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="40" s="0">
+<C c="2" r="40" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="40" s="12">
+<C c="3" r="40" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="40" s="13">
+<C c="4" r="40" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="40" s="13">
+<C c="5" r="40" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="40" s="13">
+<C c="6" r="40" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="40" s="13">
+<C c="7" r="40" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="40" s="13">
+<C c="8" r="40" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="40" s="13">
+<C c="9" r="40" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="40" s="13">
+<C c="10" r="40" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="40" s="13">
+<C c="11" r="40" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="40" s="13">
+<C c="12" r="40" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="40" s="13">
+<C c="13" r="40" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="40" s="13">
+<C c="14" r="40" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="40" s="16">
+<C c="15" r="40" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="40" s="0">
+<C c="16" r="40" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="40" s="0">
+<C c="17" r="40" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3617,15 +3640,15 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="41" s="0">
+<C c="1" r="41" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="41" s="11">
+<C c="2" r="41" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="41" s="12">
+<C c="3" r="41" s="13">
 <PrivilegeControl/>
 <NameJavaScriptGroup>
 <NameJavaScript name="JavaScript腳本1">
@@ -3652,11 +3675,11 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </NameJavaScriptGroup>
 <Expand dir="0"/>
 </C>
-<C c="4" r="41" s="13">
+<C c="4" r="41" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="41" cs="3" s="14">
+<C c="5" r="41" cs="3" s="15">
 <O>
 <![CDATA[tel]]></O>
 <PrivilegeControl/>
@@ -3666,19 +3689,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="8" r="41" s="13">
+<C c="8" r="41" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="41" s="13">
+<C c="9" r="41" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="41" s="13">
+<C c="10" r="41" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="41" cs="3" s="14">
+<C c="11" r="41" cs="3" s="15">
 <O>
 <![CDATA[fax]]></O>
 <PrivilegeControl/>
@@ -3688,19 +3711,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="14" r="41" s="13">
+<C c="14" r="41" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="41" s="16">
+<C c="15" r="41" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="41" s="0">
+<C c="16" r="41" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="41" s="0">
+<C c="17" r="41" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3710,23 +3733,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="42" s="0">
+<C c="1" r="42" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="42" s="0">
+<C c="2" r="42" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="42" s="12">
+<C c="3" r="42" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="42" s="13">
+<C c="4" r="42" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="42" cs="3" s="17">
+<C c="5" r="42" cs="3" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(tel, company_id = F9)]]></Attributes>
@@ -3743,6 +3766,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -3752,19 +3776,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Expand dir="0"/>
 </C>
-<C c="8" r="42" s="13">
+<C c="8" r="42" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="42" s="13">
+<C c="9" r="42" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="42" s="13">
+<C c="10" r="42" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="42" cs="3" s="17">
+<C c="11" r="42" cs="3" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(fax, company_id = F9)]]></Attributes>
@@ -3781,6 +3805,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -3790,19 +3815,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Expand/>
 </C>
-<C c="14" r="42" s="13">
+<C c="14" r="42" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="42" s="16">
+<C c="15" r="42" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="42" s="0">
+<C c="16" r="42" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="42" s="0">
+<C c="17" r="42" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3812,71 +3837,71 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="43" s="0">
+<C c="1" r="43" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="43" s="0">
+<C c="2" r="43" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="43" s="12">
+<C c="3" r="43" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="43" s="13">
+<C c="4" r="43" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="43" s="13">
+<C c="5" r="43" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="43" s="13">
+<C c="6" r="43" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="43" s="13">
+<C c="7" r="43" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="43" s="13">
+<C c="8" r="43" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="43" s="13">
+<C c="9" r="43" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="43" s="13">
+<C c="10" r="43" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="43" s="13">
+<C c="11" r="43" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="43" s="13">
+<C c="12" r="43" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="43" s="13">
+<C c="13" r="43" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="43" s="13">
+<C c="14" r="43" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="43" s="16">
+<C c="15" r="43" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="43" s="0">
+<C c="16" r="43" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="43" s="0">
+<C c="17" r="43" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3886,15 +3911,15 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="44" s="0">
+<C c="1" r="44" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="44" s="11">
+<C c="2" r="44" s="12">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="44" s="12">
+<C c="3" r="44" s="13">
 <PrivilegeControl/>
 <NameJavaScriptGroup>
 <NameJavaScript name="JavaScript腳本1">
@@ -3921,11 +3946,11 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </NameJavaScriptGroup>
 <Expand dir="0"/>
 </C>
-<C c="4" r="44" s="13">
+<C c="4" r="44" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="44" cs="3" s="14">
+<C c="5" r="44" cs="3" s="15">
 <O>
 <![CDATA[main_sales]]></O>
 <PrivilegeControl/>
@@ -3935,19 +3960,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="8" r="44" s="13">
+<C c="8" r="44" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="44" s="13">
+<C c="9" r="44" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="44" s="13">
+<C c="10" r="44" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="44" cs="3" s="14">
+<C c="11" r="44" cs="3" s="15">
 <O>
 <![CDATA[main_pre_sales]]></O>
 <PrivilegeControl/>
@@ -3957,19 +3982,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Present>
 <Expand/>
 </C>
-<C c="14" r="44" s="13">
+<C c="14" r="44" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="44" s="16">
+<C c="15" r="44" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="44" s="0">
+<C c="16" r="44" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="44" s="0">
+<C c="17" r="44" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -3979,23 +4004,23 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="45" s="0">
+<C c="1" r="45" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="45" s="0">
+<C c="2" r="45" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="45" s="12">
+<C c="3" r="45" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="45" s="13">
+<C c="4" r="45" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="45" cs="3" s="17">
+<C c="5" r="45" cs="3" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(main_sales, company_id = F9)]]></Attributes>
@@ -4012,6 +4037,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -4019,19 +4045,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Widget>
 <Expand/>
 </C>
-<C c="8" r="45" s="13">
+<C c="8" r="45" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="45" s="13">
+<C c="9" r="45" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="45" s="13">
+<C c="10" r="45" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="45" cs="3" s="17">
+<C c="11" r="45" cs="3" s="18">
 <O t="XMLable" class="com.fr.base.Formula">
 <Attributes>
 <![CDATA[=company_m01.select(main_pre_sales, company_id = F9)]]></Attributes>
@@ -4048,25 +4074,26 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </JavaScript>
 </Listener>
 <WidgetAttr disabled="true" description="">
+<MobileBookMark useBookMark="true" bookMarkName="" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <widgetValue/>
 </Widget>
 <Expand/>
 </C>
-<C c="14" r="45" s="13">
+<C c="14" r="45" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="45" s="16">
+<C c="15" r="45" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="45" s="0">
+<C c="16" r="45" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="45" s="0">
+<C c="17" r="45" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -4076,71 +4103,71 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="46" s="0">
+<C c="1" r="46" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="46" s="0">
+<C c="2" r="46" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="46" s="12">
+<C c="3" r="46" s="13">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="46" s="13">
+<C c="4" r="46" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="46" s="13">
+<C c="5" r="46" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="46" s="13">
+<C c="6" r="46" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="46" s="13">
+<C c="7" r="46" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="46" s="13">
+<C c="8" r="46" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="46" s="13">
+<C c="9" r="46" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="46" s="13">
+<C c="10" r="46" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="46" s="13">
+<C c="11" r="46" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="46" s="13">
+<C c="12" r="46" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="46" s="13">
+<C c="13" r="46" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="46" s="13">
+<C c="14" r="46" s="14">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="46" s="16">
+<C c="15" r="46" s="17">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="46" s="0">
+<C c="16" r="46" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="46" s="0">
+<C c="17" r="46" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -4150,71 +4177,71 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="47" s="0">
+<C c="1" r="47" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="47" s="0">
+<C c="2" r="47" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="47" s="19">
+<C c="3" r="47" s="20">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="47" s="20">
+<C c="4" r="47" s="21">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="47" s="20">
+<C c="5" r="47" s="21">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="47" s="20">
+<C c="6" r="47" s="21">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="47" s="20">
+<C c="7" r="47" s="21">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="47" s="20">
+<C c="8" r="47" s="21">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="47" s="20">
+<C c="9" r="47" s="21">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="47" s="20">
+<C c="10" r="47" s="21">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="47" s="20">
+<C c="11" r="47" s="21">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="47" s="20">
+<C c="12" r="47" s="21">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="47" s="20">
+<C c="13" r="47" s="21">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="47" s="20">
+<C c="14" r="47" s="21">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="47" s="21">
+<C c="15" r="47" s="22">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="47" s="0">
+<C c="16" r="47" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="47" s="0">
+<C c="17" r="47" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -4224,27 +4251,27 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="48" s="0">
+<C c="1" r="48" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="48" s="22">
+<C c="2" r="48" s="23">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="48" cs="13" s="23">
+<C c="3" r="48" cs="13" s="24">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="16" r="48" s="0">
+<C c="16" r="48" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="17" r="48" s="0">
+<C c="17" r="48" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="18" r="48" cs="12" s="23">
+<C c="18" r="48" cs="12" s="24">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -4254,7 +4281,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <CellPageAttr/>
 <Expand/>
 </C>
-<C c="1" r="49" cs="29" s="0">
+<C c="1" r="49" cs="29" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -4478,6 +4505,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <Layout class="com.fr.form.ui.container.WParameterLayout">
 <WidgetName name="para"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="para" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Margin top="0" left="0" bottom="0" right="0"/>
@@ -4497,17 +4525,19 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <InnerWidget class="com.fr.form.ui.NameWidget">
 <WidgetName name="gw_langSelect_combobox"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="gw_langSelect_combobox" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Name>
 <![CDATA[gw_langSelect_combobox]]></Name>
 </InnerWidget>
-<BoundsAttr x="372" y="9" width="120" height="20"/>
+<BoundsAttr x="372" y="3" width="120" height="30"/>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.NameWidget">
 <WidgetName name="gw_insertMode_btn"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="gw_insertMode_btn" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Name>
@@ -4519,6 +4549,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <InnerWidget class="com.fr.form.ui.NameWidget">
 <WidgetName name="gw_cancelMode_btn"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="gw_cancelMode_btn" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Name>
@@ -4530,6 +4561,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <InnerWidget class="com.fr.form.ui.NameWidget">
 <WidgetName name="gw_bug_btn"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="gw_bug_btn" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Name>
@@ -4541,6 +4573,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <InnerWidget class="com.fr.form.ui.NameWidget">
 <WidgetName name="gw_save_btn"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="gw_save_btn" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Name>
@@ -4553,6 +4586,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <WidgetName name="gw_langSet_btn"/>
 <LabelName name="en"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="gw_langSet_btn" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Name>
@@ -4564,6 +4598,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <InnerWidget class="com.fr.form.ui.NameWidget">
 <WidgetName name="gw_updateMode_btn"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="gw_updateMode_btn" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Name>
@@ -4575,6 +4610,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <InnerWidget class="com.fr.form.ui.NameWidget">
 <WidgetName name="gw_deleteMode_btn"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="gw_deleteMode_btn" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Name>
@@ -4586,6 +4622,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <InnerWidget class="com.fr.form.ui.NameWidget">
 <WidgetName name="gw_query_btn"/>
 <WidgetAttr description="">
+<MobileBookMark useBookMark="true" bookMarkName="gw_query_btn" frozen="false"/>
 <PrivilegeControl/>
 </WidgetAttr>
 <Name>
@@ -4606,6 +4643,8 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <Widget widgetName="gw_langSelect_combobox"/>
 </MobileWidgetList>
 <FrozenWidgets/>
+<MobileBookMarkStyle class="com.fr.form.ui.mobile.impl.DefaultMobileBookMarkStyle"/>
+<ShowBookmarks showBookmarks="true"/>
 <Display display="true"/>
 <DelayDisplayContent delay="false"/>
 <UseParamsTemplate use="false"/>
@@ -4615,7 +4654,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <WidgetNameTagMap/>
 <ParamAttr class="com.fr.report.mobile.DefaultMobileParamStyle"/>
 </Layout>
-<DesignAttr width="766" height="36"/>
+<DesignAttr width="766" height="-12"/>
 </ParameterUI>
 <Background name="ColorBackground" color="-15260867"/>
 </ReportParameterAttr>
@@ -4627,37 +4666,42 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 </Style>
 <Style imageLayout="1">
 <FRFont name="Dialog" style="0" size="72"/>
-<Background name="ColorBackground" color="-13792016"/>
+<Background name="ColorBackground" color="-1"/>
+<Border/>
+</Style>
+<Style imageLayout="1">
+<FRFont name="Dialog" style="0" size="72"/>
+<Background name="ColorBackground" color="-14635547"/>
 <Border/>
 </Style>
 <Style horizontal_alignment="2" imageLayout="1" paddingLeft="10">
 <FRFont name="Source Han Sans K" style="0" size="128" foreground="-15260867"/>
-<Background name="ColorBackground" color="-460551"/>
+<Background name="ColorBackground" color="-1"/>
 <Border/>
 </Style>
 <Style horizontal_alignment="0" imageLayout="1">
 <FRFont name="Source Han Sans K Light" style="1" size="112" foreground="-15260867"/>
-<Background name="ColorBackground" color="-460551"/>
+<Background name="ColorBackground" color="-1"/>
 <Border/>
 </Style>
 <Style imageLayout="1" paddingLeft="10">
 <FRFont name="Source Han Sans K Light" style="0" size="72" foreground="-6908266"/>
-<Background name="ColorBackground" color="-460551"/>
+<Background name="ColorBackground" color="-1"/>
 <Border/>
 </Style>
 <Style imageLayout="1">
 <FRFont name="Source Han Sans K Light" style="0" size="72"/>
-<Background name="ColorBackground" color="-460551"/>
+<Background name="ColorBackground" color="-1"/>
 <Border/>
 </Style>
 <Style horizontal_alignment="2" vertical_alignment="1" imageLayout="1">
 <FRFont name="Dialog" style="0" size="72"/>
-<Background name="ColorBackground" color="-460551"/>
+<Background name="ColorBackground" color="-1"/>
 <Border/>
 </Style>
 <Style horizontal_alignment="2" imageLayout="1">
 <FRFont name="Dialog" style="0" size="72"/>
-<Background name="ColorBackground" color="-460551"/>
+<Background name="ColorBackground" color="-1"/>
 <Border/>
 </Style>
 <Style style_name="Frame_Gray_001_02"/>
@@ -4665,7 +4709,7 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <Style style_name="Frame_Gray_001_04"/>
 <Style imageLayout="1">
 <FRFont name="微軟正黑體" style="0" size="80"/>
-<Background name="ColorBackground" color="-460551"/>
+<Background name="ColorBackground" color="-1"/>
 <Border/>
 </Style>
 <Style style_name="Frame_Gray_001_01"/>
@@ -4700,12 +4744,12 @@ topWin.FS.tabPane.addItem({title:"Q01報價作業_Web",src:url}) ;]]></Content>
 <Style style_name="Frame_Gray_001_06"/>
 <Style imageLayout="1">
 <FRFont name="SimSun" style="0" size="72"/>
-<Background name="ColorBackground" color="-460551"/>
+<Background name="ColorBackground" color="-1"/>
 <Border/>
 </Style>
 <Style imageLayout="1">
 <FRFont name="Dialog" style="0" size="72"/>
-<Background name="ColorBackground" color="-460551"/>
+<Background name="ColorBackground" color="-1"/>
 <Border>
 <Bottom style="5" color="-13792016"/>
 </Border>
